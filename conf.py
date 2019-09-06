@@ -43,7 +43,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Maletero.Oferta'
+project = u'Engideveloper Maletero'
 copyright = u'2019', 'Leonardo Gomez'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -196,7 +196,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'EngideveloperMaltero.tex', u'Engideveloper_Maletero_Oferta',
+  ('index', 'EngideveloperMaletero.tex', u'EngideveloperMaletero',
    u'', 'manual'),
 ]
 
@@ -226,7 +226,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', '', u'Maletero Oferta',
+    ('index', '', u'Engideveloper.Maletero',
      [u''], 1)
 ]
 
@@ -240,7 +240,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'Engideveloper Maletero', u'Engideveloper Maletero Manual',
+  ('index', 'EngideveloperMaletero', u'EngideveloperMaletero',
    u'', 'EngideveloperMaletero', 'One line description of project.',
    'Miscellaneous'),
 ]

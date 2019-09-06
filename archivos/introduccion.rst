@@ -1,7 +1,7 @@
 .. index::
    single: introduccion
 
-Introducción
+INTRODUCCION
 ============
 
 
@@ -51,6 +51,9 @@ La estructura del Proyecto esta de la siguiente forma que se esta usando es::
   ├── Maletero
   │   │ 
   │   │ 
+      ├── Persona 
+          │ 
+          ├── Oferta
       ├── Ventas
           │ 
           ├── Oferta
