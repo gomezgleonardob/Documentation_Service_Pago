@@ -5,13 +5,12 @@ OFERTA
     :hidden:
     
     introduccion
-    errores
-    crear
-    listar
-    actualizar
-    eliminar
+    oferta
+    pago
+    formapago
+    solicitud
+    categoria
     
-
 .. include:: /archivos/map.rst.inc
 
 
