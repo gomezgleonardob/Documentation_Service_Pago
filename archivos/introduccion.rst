@@ -34,24 +34,15 @@ Este servicio es un web service REST el cual recibe la información a traves del
 Estructura
 ==========
 
-La estructura del Proyecto esta de la siguiente forma que vamos a usar e::
+La estructura del Proyecto esta de la siguiente forma que vamos a usar es::
 
-  .
+     
+  │ 
+  │ 
   ├── Maletero
   │   │ 
-  │   ├── Persona
   │   │ 
-  │   │   ├── ...
-  │   │   └── html
-  │   │       ├── ...
-  │   │       └── index.html
-  │   ├── Ventas
-  │   └── source
-  │       ├── ...
-  │       ├── conf.py
-  │       └── index.rst
-  ├── LICENSE.txt
-  ├── README.md
-  └── miproyecto
-      ├── ...
-      └── main.py
+      ├── Ventas
+          │ 
+          ├── Oferta
+
