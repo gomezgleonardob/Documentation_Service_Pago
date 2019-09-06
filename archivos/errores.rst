@@ -1,6 +1,0 @@
-.. index::
-   single: errores
-
-Errores
-=======
-

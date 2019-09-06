@@ -1,8 +1,8 @@
 .. index::
-   single: eliminar
+   single: pago
 
-ELIMINAR
-==========
+PAGO
+====
 
 Esta transacción recibe la petición  para actualizar  una oferta , luego se enruta hacia el microservicio correspondiente y responde en un objeto con formato JSON.
 
@@ -84,7 +84,7 @@ ATRIBUTOS
    :header-rows: 1
    :class: longtable
    :widths: 1 1
-..
+.. 
 
 JSON OUT
 ~~~~~~~~
