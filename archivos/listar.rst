@@ -1,12 +1,10 @@
 .. index::
-   single: crear
+   single: listar
 
-ACTUALIZAR
-==========
+LISTAR
+------
 
-Esta transacción recibe la petición  para actualizar  una oferta , luego se enruta hacia el microservicio correspondiente y responde en un objeto con formato JSON.
-
-Los atributos que se pueden actualizar son :
+Esta transacción recibe la petición filtrar una oferta
 
 * Moneda.
 * Valor de la oferta.
@@ -37,8 +35,6 @@ JSON IN
         "usuverificado":1,
 }
 ..
-
-
 
 
 FILTROS

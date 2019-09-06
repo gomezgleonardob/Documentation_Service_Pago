@@ -1,8 +1,8 @@
 .. index::
-   single: crear
+   single: actualizar
 
 ACTUALIZAR
-==========
+----------
 
 Esta transacción recibe la petición  para actualizar  una oferta , luego se enruta hacia el microservicio correspondiente y responde en un objeto con formato JSON.
 
@@ -13,7 +13,7 @@ Los atributos que se pueden actualizar son :
 * Fecha de entrega.
 
 JSON IN
--------
+~~~~~~~
 
 .. code-block:: javascript
 
@@ -73,16 +73,18 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 
 
 ATRIBUTOS
----------
+~~~~~~~~~
 
 .. tabularcolumns:: |p{1cm}|p{7cm}|
 
-.. csv-table:: Lorem Ipsum
+.. csv-table:: Fitros
    :file: archivos/csv/atributos.csv
    :header-rows: 1
    :class: longtable
    :widths: 1 1
-
+..
 
 JSON OUT
---------
+~~~~~~~~
+
+
