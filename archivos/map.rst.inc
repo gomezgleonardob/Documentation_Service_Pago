@@ -1,3 +1,3 @@
 * :doc:`/archivos/transaccion`
 * :doc:`/archivos/errores`
-* :doc:`/archivos/transacciones`
+* :doc:`/archivos/crear`
