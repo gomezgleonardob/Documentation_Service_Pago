@@ -5,7 +5,7 @@ PAGOS
     :hidden:
     
     introduccion
-    transacciones
+    crear
     errores
     
     
