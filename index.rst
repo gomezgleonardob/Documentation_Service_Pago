@@ -1,8 +1,8 @@
 
-Practicas de Electrónica Digital
-================================
+Maletero Oferta
+===============
 
-Bienvenidos se indicara las practicas a realizar.
+Documentación de Maletero Oferta.
 
 .. toctree::
    :hidden:

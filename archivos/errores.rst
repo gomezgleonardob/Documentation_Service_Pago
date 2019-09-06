@@ -1,5 +1,5 @@
 .. index::
-   single: Errores
+   single: errores
 
 Errores
 =======
