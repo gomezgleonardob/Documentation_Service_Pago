@@ -1,15 +1,14 @@
 .. index::
-   single: transacciones
-
-Transacciones
-=============
+   single: crear
 
 CREAR
------
+=====
 
-Esta transacción recibe la petición  para crear una oferta , luego se  enruta hacia el microservicio correspondiente y responde en un objeto con formato JSON. 
+Esta transacción recibe la petición  para crear una oferta , luego se  enruta hacia el microservicio correspondiente y responde en un objeto con formato JSON.
 
-**JSON IN**
+JSON IN
+-------
+
 
 .. code-block:: javascript
 
@@ -64,6 +63,15 @@ Esta transacción recibe la petición  para crear una oferta , luego se  enruta 
     }
 
 }
+..
 
 
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
+
+
+ATRIBUTOS
+---------
+
+
+JSON OUT
+--------
