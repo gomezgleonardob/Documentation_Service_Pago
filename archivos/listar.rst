@@ -15,25 +15,28 @@ JSON IN
 
 .. code-block:: javascript
 
-{
+   {
 
-      {
+         {
 
-    "limit":"10",
-    "orderby":"",
-    "filtro":{
-        "ofertaPK":{
-            "ofeid":"",
-            "viaid":"",
-            "solid":""
-        },
-        "ofeestado":"Activo"
-    },
-    "usuario":{
-        "usuid":"1",
-        "usuclave":"21232f297a57a5a743894a0e4a801fc3",
-        "usuverificado":1,
-}
+            "limit":"10",
+            "orderby":"",
+                     "filtro":{
+                            "ofertaPK":{
+                                        "ofeid":"",
+                                        "viaid":"",
+                                        "solid":""
+                                        },
+                             "ofeestado":"Activo"
+       },
+          "usuario":{
+          "usuid":"1",
+          "usuclave":"21232f297a57a5a743894a0e4a801fc3",
+         "usuverificado":1,
+       }
+       
+ }
+ 
 ..
 
 
