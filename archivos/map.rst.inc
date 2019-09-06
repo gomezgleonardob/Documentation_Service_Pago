@@ -1,6 +1,6 @@
 * :doc:`/archivos/introduccion`
-* :doc:`/archivos/errores`
-* :doc:`/archivos/crear`
-  :doc:`/archivos/actualizar`
-  :doc:`/archivos/eliminar`
-  :doc:`/archivos/listar`
+* :doc:`/archivos/categoria`
+* :doc:`/archivos/formapago`
+  :doc:`/archivos/pago`
+  :doc:`/archivos/solicitud`
+  :doc:`/archivos/oferta`
