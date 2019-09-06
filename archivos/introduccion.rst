@@ -26,4 +26,4 @@ Este servicio es un web service REST el cual recibe la información a traves del
 
     • **Nombreclase**: Nombre de la clase sobre la cual se va realizar la operación por ejemplo GenericDao, este nombre debe estar especificado en la documentación del cada modulo.
 
-    • **IpPP: ip del usuario que realiza la petición
+    • **Ip**: ip del usuario que realiza la petición
