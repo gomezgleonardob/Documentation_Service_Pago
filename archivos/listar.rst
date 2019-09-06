@@ -13,7 +13,7 @@ Los atributos que se pueden actualizar son :
 * Fecha de entrega.
 
 JSON IN
--------
+~~~~~~~
 
 .. code-block:: javascript
 
@@ -42,8 +42,8 @@ JSON IN
 
 
 FILTROS
--------
+~~~~~~~
 
 
 JSON OUT
---------
+~~~~~~~~
