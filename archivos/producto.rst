@@ -1,0 +1,432 @@
+.. index::
+   single: producto
+
+MALETERO.PRODUCTO
+=================
+
+Dentro del modulo producto tenemos los siguientes entidades.
+ 
+PAGO
+FORMA DE PAGO
+OFERTA SOLICITUD 
+
+PAGO
+----
+
+CREAR PAGO
+^^^^^^^^^^
+
+Esta transacción recibe la petición  para actualizar  una oferta , luego se enruta hacia el microservicio correspondiente y responde en un objeto con formato JSON.
+
+Los atributos que se pueden actualizar son :
+
+* Moneda.
+* Valor de la oferta.
+* Fecha de entrega.
+
+JSON IN
+~~~~~~~
+
+.. code-block:: javascript
+
+
+     
+..
+
+
+Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
+
+
+ATRIBUTOS
+~~~~~~~~~
+
+.. csv-table:: a title
+   :header: "Código", "Descripcion"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error001", "Error: solo se permiten archivos .png, .jpg o jpeg"
+
+..
+
+
+JSON OUT
+~~~~~~~~
+.. csv-table:: a title
+   :header: "Código", "Descripcion"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error001", "Error: solo se permiten archivos .png, .jpg o jpeg"
+
+..
+
+OFERTA
+------
+
+CREAR OFERTA
+
+
+Esta transacción recibe la petición para crear una oferta , luego se  enruta hacia el microservicio correspondiente y responde en un objeto con formato JSON.
+
+JSON IN
+~~~~~~~
+
+.. code-block:: javascript
+
+   {
+       "detail": [
+     {
+       "objeto": {
+         "ofertaPK": {
+           "ofeid": "",
+           "viaid": "8577325c12d271c28ca1d58e31ae0578",
+           "solid": "sol2"
+         },
+         "ofevalor": 300,
+         "ofetraida": 150,
+         "ofefechaentrega": "2019-08-10",
+         "ofefechacreacion": "2019-07-30"
+        }
+      }
+     ],
+     "usuario": {
+         "usuid": "1",
+         "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+     "usuverificado": 1,
+     "usucodigoverificacion": "SU91L9",
+     "usufechacodigo": "2019-07-08 11:27:36",
+     "usufechacreacion": "2019-07-08 11:27:36",
+     "usuestado": "Activo",
+     "usueliminado": "No",
+     "perid": {
+       "perid": "1",
+       "peridentificacion": "1725101784",
+       "pernombre": "admin",
+       "perapellido": "",
+       "pertelefono": "",
+       "percorreo": "blgomez@engideveloper.com",
+       "perfechanacimiento": "2017-05-23 00:00:00",
+       "perestado": "Activo",
+       "pereliminado": "No",
+       "sexid": 1
+              },
+      "lenid": "es"
+       },
+        "rol": {
+       "rolid": 1,
+       "rolnombre": "Administrador",
+       "roldescripcion": "Rol para administrador",
+       "rolestado": "Activo",
+       "roleliminado": "No",
+       "palid": 1
+     }
+   }
+..
+
+Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
+
+
+ATRIBUTOS
+~~~~~~~~~
+
+.. tabularcolumns:: |p{1cm}|p{7cm}|
+
+.. csv-table:: Fitros
+   :file: archivos/csv/atributos.csv
+   :header-rows: 1
+   :class: longtable
+   :widths: 1 1
+..
+
+JSON OUT
+~~~~~~~~
+
+ACTUALIZAR
+----------
+
+Esta transacción recibe la petición  para actualizar  una oferta , luego se enruta hacia el microservicio correspondiente y responde en un objeto con formato JSON.
+
+Los atributos que se pueden actualizar son :
+
+* Moneda.
+* Valor de la oferta.
+* Fecha de entrega.
+
+JSON IN
+~~~~~~~
+
+.. code-block:: javascript
+
+   {
+       "detail": [
+     {
+       "objeto": {
+         "ofertaPK": {
+           "ofeid": "d27bb8672019709b96f0c9540c09dace",
+           "viaid": "8577325c12d271c28ca1d58e31ae0578",
+           "solid": "sol2"
+         },
+         "ofevalor": 300,
+         "ofetraida": 150,
+         "ofefechaentrega": "2019-08-10",
+         "ofeestado": 4,
+         "ofefechacreacion": "2019-07-30"
+        }
+      }
+     ],
+     "usuario": {
+         "usuid": "1",
+         "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+     "usuverificado": 1,
+     "usucodigoverificacion": "SU91L9",
+     "usufechacodigo": "2019-07-08 11:27:36",
+     "usufechacreacion": "2019-07-08 11:27:36",
+     "usuestado": "Activo",
+     "usueliminado": "No",
+     "perid": {
+       "perid": "1",
+       "peridentificacion": "1725101784",
+       "pernombre": "admin",
+       "perapellido": "",
+       "pertelefono": "",
+       "percorreo": "blgomez@engideveloper.com",
+       "perfechanacimiento": "2017-05-23 00:00:00",
+       "perestado": "Activo",
+       "pereliminado": "No",
+       "sexid": 1
+              },
+      "lenid": "es"
+       },
+        "rol": {
+       "rolid": 1,
+       "rolnombre": "Administrador",
+       "roldescripcion": "Rol para administrador",
+       "rolestado": "Activo",
+       "roleliminado": "No",
+       "palid": 1
+     }
+   }
+..
+
+
+Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
+
+
+ATRIBUTOS
+~~~~~~~~~
+
+.. tabularcolumns:: |p{1cm}|p{7cm}|
+
+.. csv-table:: Fitros
+   :file: archivos/csv/atributos.csv
+   :header-rows: 1
+   :class: longtable
+   :widths: 1 1
+..
+
+JSON OUT
+~~~~~~~~
+
+
+LISTAR
+------
+
+Esta transacción recibe la petición filtrar una oferta
+
+
+
+JSON IN
+~~~~~~~
+
+.. code-block:: javascript
+
+   {
+         {
+
+            "limit":"10",
+            "orderby":"",
+                     "filtro":{
+                            "ofertaPK":{
+                                        "ofeid":"",
+                                        "viaid":"",
+                                        "solid":""
+                                        },
+                             "ofeestado":"Activo"
+       },
+          "usuario":{
+          "usuid":"1",
+          "usuclave":"21232f297a57a5a743894a0e4a801fc3",
+         "usuverificado":1,
+       }
+   }
+ 
+..
+
+
+FILTROS
+-------
+
+.. csv-table:: a title
+   :header: "Filtro", "Descripcion"
+   :widths: 40, 1000, 10
+
+    "Smith", "John", 40
+    "Smith", "John, Junior", 20
+
+JSON OUT
+~~~~~~~~
+
+
+.. csv-table:: a title
+   :header: "Código", "Descripcion"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error001", "Error: solo se permiten archivos .png, .jpg o jpeg"
+
+SOLICITUD
+=========
+
+ El usuario crea la solicitud y puede llevar los siguientes elementos
+
+    • La solicitud lleva foto y el link.
+    • La solicitud lleva foto  
+    • La solicitud lleva el link
+
+JSON IN 
+~~~~~~~
+
+.. code-block:: javascript
+
+  { 
+     "detail": [
+      {
+         "objeto": {
+         "usuid": "db97b24be40c3d68ebec588209e41b36",
+         "catid": "9ca40f9be9423c169f395626f80e3c07",
+         "dirid": "25296619b814452080f7ae451309b545",
+          "arcid": {
+          "arcid": "",
+          "arcnombre": "",
+          "arcruta": "engideveloper/desarrollo/archivos/Categoria/Logo/",
+          "arcextension": "png",
+          "archivob64": "W3j3QHli8OYN"
+         },
+          "sollink": "https://www.ebay.com/itm/NVIDIA-GeForce-GTX....",
+          "soldescripcion": "GPU",
+          "solindicaciones": "Comprar la de 6GB"
+        }
+       }
+      ],
+      "generarid": true,
+      "usuario": {
+     "usuid": "1",
+     "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+     "usuverificado": 1,
+     "usucodigoverificacion": "SU91L9",
+     "usufechacodigo": "2019-07-08 11:27:36",
+     "usufechacreacion": "2019-07-08 11:27:36",
+     "usuestado": "Activo",
+     "usueliminado": "No",
+     "perid": {
+      "perid": "1",
+      "peridentificacion": "1725101784",
+      "pernombre": "admin",
+      "perapellido": "",
+      "pertelefono": "",
+      "percorreo": "blgomez@engideveloper.com",
+      "perfechanacimiento": "2017-05-23 00:00:00",
+      "perestado": "Activo",
+      "pereliminado": "No",
+      "sexid": 1
+     },
+      "lenid": "es"
+      },
+     "rol": {
+    "rolid": 1,
+    "rolnombre": "Administrador",
+    "roldescripcion": "Rol para administrador",
+    "rolestado": "Activo",
+    "roleliminado": "No",
+    "palid": 1
+    }
+  }
+..
+
+
+JSON IN 
+~~~~~~~
+
+Lleva solo la imagen
+
+.. code-block:: javascript
+
+  { 
+     "detail": [
+      {
+         "objeto": {
+         "usuid": "db97b24be40c3d68ebec588209e41b36",
+         "catid": "9ca40f9be9423c169f395626f80e3c07",
+         "dirid": "25296619b814452080f7ae451309b545",
+         "sollink": "https://www.ebay.com/itm/NVIDIA-GeForce-GTX....",
+         "soldescripcion": "GPU",
+         "solindicaciones": "Comprar la de 6GB"
+        }
+       }
+      ],
+      "generarid": true,
+      "usuario": {
+     "usuid": "1",
+     "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+     "usuverificado": 1,
+     "usucodigoverificacion": "SU91L9",
+     "usufechacodigo": "2019-07-08 11:27:36",
+     "usufechacreacion": "2019-07-08 11:27:36",
+     "usuestado": "Activo",
+     "usueliminado": "No",
+     "perid": {
+      "perid": "1",
+      "peridentificacion": "1725101784",
+      "pernombre": "admin",
+      "perapellido": "",
+      "pertelefono": "",
+      "percorreo": "blgomez@engideveloper.com",
+      "perfechanacimiento": "2017-05-23 00:00:00",
+      "perestado": "Activo",
+      "pereliminado": "No",
+      "sexid": 1
+     },
+      "lenid": "es"
+      },
+     "rol": {
+    "rolid": 1,
+    "rolnombre": "Administrador",
+    "roldescripcion": "Rol para administrador",
+    "rolestado": "Activo",
+    "roleliminado": "No",
+    "palid": 1
+    }
+  }
+..
+
+
+Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
+
+
+ATRIBUTOS
+~~~~~~~~~
+
+
+
+JSON OUT
+~~~~~~~~
+
+
+.. csv-table:: a title
+   :header: "Código", "Descripcion"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error001", "Error: solo se permiten archivos .png, .jpg o jpeg"
+    "error002", "Error: Debe ingresar una foto o link para la solicitud"

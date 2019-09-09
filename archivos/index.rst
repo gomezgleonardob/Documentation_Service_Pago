@@ -5,13 +5,11 @@ ENGIDEVELOPER MALETERO
     :hidden:
     
     introduccion
-    oferta
-    pago
-    formapago
-    solicitud
-    categoria
-    interes
-    
+    esb
+    producto
+    persona
+    venta
+      
 .. include:: /archivos/map.rst.inc
 
 
