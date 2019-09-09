@@ -4,3 +4,4 @@
   :doc:`/archivos/pago`
   :doc:`/archivos/solicitud`
   :doc:`/archivos/oferta`
+  :doc:`/archivos/interes`
