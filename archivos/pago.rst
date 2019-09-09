@@ -17,8 +17,8 @@ JSON IN
 
 .. code-block:: javascript
 
-{
-    "detail": [
+ {
+     "detail": [
         {
             "objeto": {
                 "ofertaPK": {
@@ -65,7 +65,7 @@ JSON IN
         "roleliminado": "No",
         "palid": 1
     }
-}
+ }
 
      
 ..
