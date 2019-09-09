@@ -9,7 +9,7 @@ Este servicio es un web service REST el cual recibe la información a través de
 PARÁMETROS DEL MICROSERVICIO
 ----------------------------
 
-.. csv-table:: a title
+.. csv-table:: Parametros
    :header: "Campo", "Descripción"
    :widths: 40, 500
 
@@ -41,12 +41,12 @@ Atributos
    :header: "Código", "Descripción"
    :widths: 40, 500
 
-     "Detail","Se envía un array de objetos sobre los cuales se vaya a realizar una operación".
-     "Limit","Esta propiedad se usa cuando se realiza transacciones para listar y se envía solo el numero ejemplo 100, esto me va a traer un máximo de 100 resultados."
-     "Orderby","Esta propiedad se usa cuando se realiza transacciones para listar y se envia la o las columnas separadas por una sola coma, ejemplo menuid, menunombre"
-     "Filtro","Se envía el objeto sobre el cual se esta realizando una consulta del tipo listar, si se esta listado el listado de usuarios"
-     "Usuario", "Se debe enviar el objeto usuario que esta realizando la transacción, solo en el caso de login este objeto no se debe enviar."
-     "Rol","Se debe enviar el objeto rol con el cual se realiza la transacción, este es usado para validar si un usuario tiene permiso de realizar una acción. Dependiendo la acción se solicitará este valor."
+    "Detail","Se envía un array de objetos sobre los cuales se vaya a realizar una operación".
+    "Limit","Esta propiedad se usa cuando se realiza transacciones para listar y se envía solo el numero ejemplo 100, esto me va a traer un máximo de 100 resultados."
+    "Orderby","Esta propiedad se usa cuando se realiza transacciones para listar y se envia la o las columnas separadas por una sola coma, ejemplo menuid, menunombre"
+    "Filtro","Se envía el objeto sobre el cual se esta realizando una consulta del tipo listar, si se esta listado el listado de usuarios"
+    "Usuario", "Se debe enviar el objeto usuario que esta realizando la transacción, solo en el caso de login este objeto no se debe enviar."
+    "Rol","Se debe enviar el objeto rol con el cual se realiza la transacción, este es usado para validar si un usuario tiene permiso de realizar una acción. Dependiendo la acción se solicitará este valor."
 
 ..
 
