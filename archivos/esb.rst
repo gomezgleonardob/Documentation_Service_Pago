@@ -10,7 +10,7 @@ PARÁMETROS DEL MICROSERVICIO
 ----------------------------
 
 .. csv-table:: Parametros
-   :header: "Campo", "Descripción"
+   :header: "Campo", "Detalle"
    :widths: 40, 500
 
     "Protocolo", "Para pruebas se usa http y para producción https."
@@ -34,45 +34,46 @@ EJECUTAR
 
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encryptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties
 
-Atributos
-~~~~~~~~~
+**Atributos**
 
-.. csv-table:: a title
-   :header: "Código", "Descripción"
+.. csv-table:: Entidad
+   :header: "Atributo", "Detalle"
    :widths: 40, 500
 
-    "Detail","Se envía un array de objetos sobre los cuales se vaya a realizar una operación".
-    "Limit","Esta propiedad se usa cuando se realiza transacciones para listar y se envía solo el numero ejemplo 100, esto me va a traer un máximo de 100 resultados."
-    "Orderby","Esta propiedad se usa cuando se realiza transacciones para listar y se envia la o las columnas separadas por una sola coma, ejemplo menuid, menunombre"
-    "Filtro","Se envía el objeto sobre el cual se esta realizando una consulta del tipo listar, si se esta listado el listado de usuarios"
+    "Detail", "Se envía un array de objetos sobre los cuales se vaya a realizar una operación."
+    "Limit", "Esta propiedad se usa cuando se realiza transacciones para listar y se envía solo el numero ejemplo 100."
+    "Filtro", "Esta propiedad se usa cuando se realiza transacciones para listar y se envia la o las columnas separadas por una sola coma, ejemplo menuid, menunombre."
+    "Orderby", "Se envía un array de objetos sobre los cuales se vaya a realizar una operación."
     "Usuario", "Se debe enviar el objeto usuario que esta realizando la transacción, solo en el caso de login este objeto no se debe enviar."
-    "Rol","Se debe enviar el objeto rol con el cual se realiza la transacción, este es usado para validar si un usuario tiene permiso de realizar una acción. Dependiendo la acción se solicitará este valor."
+    "Rol", "Se debe enviar el objeto rol con el cual se realiza la transacción, este es usado para validar si un usuario tiene permiso de realizar una acción. Dependiendo la acción se solicitará este valor."
+..
 
 ..
+
 
 **JSON IN**
 
 .. code-block:: javascript
 
 
-{
-  "detail": [],
-  "limit": "100",
-  "orderby": "",
-  "filtro": {},
-  "usuario": {
-    "usuid": "1",
-    "usuclave": "21232f297a57a5a743894a0e4a801fc3",
-    "perid": {
-      "perid": "1",
-      "percorreo": "jeisson.millos@hotmail.com",
-      "sexid": 1
-    },
-    "lenid": "es"
-  },
-  "rol": {
-    "rolid": 1
-  }
+ {
+    "detail": [],
+    "limit": "100",
+    "orderby": "",
+    "filtro": {},
+    "usuario": {
+        "usuid": "1",
+        "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+     "perid": {
+        "perid": "1",
+        "percorreo": "jeisson.millos@hotmail.com",
+        "sexid": 1
+              },
+       "lenid": "es"
+     },
+        "rol": {
+         "rolid": 1
+     } 
 }
 
 **URL**
@@ -84,23 +85,24 @@ La siguiente url es la que se usa para codificar y decodificar la trama de json.
 CATALOGO DE RESPUESTA
 ---------------------
 
-.. csv-table:: a title
-   :header: "Código", "Descripción"
+.. csv-table:: Errores
+   :header: "Error", "Detalle"
    :widths: 40, 500
 
-    "success000","Transacción Exitosa"
-    "error001","Error: Error de ingreso de información"
-    "error002","Error: Error al modificar"
-    "error003","Error: Error al activar"
-    "error004","Error: Error al desactivar"
-    "error005","Error: Error al eliminar"
-    "error006",Error: Error al listar"
-    "error007,"Error: Permisos Insuficientes"
-    "error008","Error: Datos no validos"
-    "error009","Error: la clave ingresada no es la correcta"
-    "error010","Error: Código no valido"
-    "error011","Error: Sin archivo de configuración"
-    "error012","Error al subir archivo"
+    "success000", "Transacción Exitosa."
+    "error001", "Para pruebas se usa http y para producción https."
+    "error002", "Ip o Url de producción solicitar a la persona encargada del modulo ESB."
+    "error003", "Error al activar."
+    "error004","Error al desactivar."
+    "error005","Error al eliminar."
+    "error006","Error al listar."
+    "error007","Permisos Insuficientes."
+    "error008","Datos no validos."
+    "error009","La clave ingresada no es la correcta."
+    "error010","Código no valido."
+    "error011","Sin archivo de configuración."
+    "error012","Error al subir archivo."
+    
 ..
 
 
