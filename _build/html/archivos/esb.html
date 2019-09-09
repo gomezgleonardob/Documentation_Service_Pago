@@ -1,0 +1,286 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>MICROSERVICIO ESB &#8212; Engideveloper Maletero 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MALETERO.VENTA" href="producto.html" />
+    <link rel="prev" title="INTRODUCCION" href="introduccion.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="producto.html" title="MALETERO.VENTA"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="introduccion.html" title="INTRODUCCION"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">MALETERO</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="microservicio-esb">
+<span id="index-0"></span><h1>MICROSERVICIO ESB<a class="headerlink" href="#microservicio-esb" title="Permalink to this headline">¶</a></h1>
+<p>Este servicio es un web service REST el cual recibe la información a través de una petición POST,  y  tiene una función “ejecutar”, el cual recibe como parámetro de entrada una cadena string en formato json codificada en 128 bits  y la respuesta es una cadena en formato JSON sin codificar.  Los datos de entrada y salidas son específicos por cada tipo de proceso.</p>
+<div class="section" id="parametros-del-microservicio">
+<h2>PARÁMETROS DEL MICROSERVICIO<a class="headerlink" href="#parametros-del-microservicio" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils" id="id1">
+<caption><span class="caption-text">Parametros</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Campo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Protocolo</td>
+<td>Para pruebas se usa http y para producción https.</td>
+</tr>
+<tr class="row-odd"><td>IpServidor</td>
+<td>Ip o Url de producción solicitar a la persona encargada del modulo ESB.</td>
+</tr>
+<tr class="row-even"><td>ClaveAcceso</td>
+<td>Clave única de acceso.</td>
+</tr>
+<tr class="row-odd"><td>Aplicacion</td>
+<td>Tipo de plataforma desde donde se realiza la transacción ejemplo Chrome, Mozilla, Android, IOS.</td>
+</tr>
+<tr class="row-even"><td>IdAplicacion</td>
+<td>Id del dispositivo desde donde se realiza la transacción ejemplo: “browser-firefox|version-63.0.0|so-Windows10” desde un navegador web..</td>
+</tr>
+<tr class="row-odd"><td>Menu</td>
+<td>El menú hace referencia al microservicio que vamos a llamar y sobre la entidad que vamos a trabajar.</td>
+</tr>
+<tr class="row-even"><td>Abreviatura</td>
+<td>Iniciales de la tabla o entidad sobre las cuales se va a realizar la operación ejemplo si voy a listar persona la abreviatura es per.</td>
+</tr>
+<tr class="row-odd"><td>Nombreclase</td>
+<td>Nombre de la clase sobre la cual se va a realizar la operación por ejemplo GenericDao, este nombre debe estar especificado en la documentación del cada módulo.</td>
+</tr>
+<tr class="row-even"><td>Ip</td>
+<td>Ip del usuario que realiza la petición.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="transacciones">
+<h2>TRANSACCIONES<a class="headerlink" href="#transacciones" title="Permalink to this headline">¶</a></h2>
+<p>Una de las transacciones que se puede realizar con el microservicio es:</p>
+<div class="section" id="ejecutar">
+<h3>EJECUTAR<a class="headerlink" href="#ejecutar" title="Permalink to this headline">¶</a></h3>
+<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encryptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties</p>
+<p><strong>Atributos</strong></p>
+<table border="1" class="colwidths-given docutils" id="id2">
+<caption><span class="caption-text">Entidad</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Detail</td>
+<td>Se envía un array de objetos sobre los cuales se vaya a realizar una operación.</td>
+</tr>
+<tr class="row-odd"><td>Limit</td>
+<td>Esta propiedad se usa cuando se realiza transacciones para listar y se envía solo el numero ejemplo 100.</td>
+</tr>
+<tr class="row-even"><td>Filtro</td>
+<td>Esta propiedad se usa cuando se realiza transacciones para listar y se envia la o las columnas separadas por una sola coma, ejemplo menuid, menunombre.</td>
+</tr>
+<tr class="row-odd"><td>Orderby</td>
+<td>Se envía un array de objetos sobre los cuales se vaya a realizar una operación.</td>
+</tr>
+<tr class="row-even"><td>Usuario</td>
+<td>Se debe enviar el objeto usuario que esta realizando la transacción, solo en el caso de login este objeto no se debe enviar.</td>
+</tr>
+<tr class="row-odd"><td>Rol</td>
+<td>Se debe enviar el objeto rol con el cual se realiza la transacción, este es usado para validar si un usuario tiene permiso de realizar una acción. Dependiendo la acción se solicitará este valor.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>JSON IN</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[],</span>
+   <span class="s2">&quot;limit&quot;</span><span class="o">:</span> <span class="s2">&quot;100&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;orderby&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;filtro&quot;</span><span class="o">:</span> <span class="p">{},</span>
+   <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;jeisson.millos@hotmail.com&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+             <span class="p">},</span>
+      <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+    <span class="p">},</span>
+       <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="p">}</span>
+</pre></div>
+</div>
+<p>}</p>
+<p><strong>URL</strong></p>
+<p>La siguiente url es la que se usa para codificar y decodificar la trama de json.</p>
+<p><a class="reference external" href="https://www.devglan.com/online-tools/aes-encryption-decryption/">Codifación/Decodificación</a></p>
+</div>
+</div>
+<div class="section" id="catalogo-de-respuesta">
+<h2>CATALOGO DE RESPUESTA<a class="headerlink" href="#catalogo-de-respuesta" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="colwidths-given docutils" id="id3">
+<caption><span class="caption-text">Errores</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Error</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>success000</td>
+<td>Transacción Exitosa.</td>
+</tr>
+<tr class="row-odd"><td>error001</td>
+<td>Para pruebas se usa http y para producción https.</td>
+</tr>
+<tr class="row-even"><td>error002</td>
+<td>Ip o Url de producción solicitar a la persona encargada del modulo ESB.</td>
+</tr>
+<tr class="row-odd"><td>error003</td>
+<td>Error al activar.</td>
+</tr>
+<tr class="row-even"><td>error004</td>
+<td>Error al desactivar.</td>
+</tr>
+<tr class="row-odd"><td>error005</td>
+<td>Error al eliminar.</td>
+</tr>
+<tr class="row-even"><td>error006</td>
+<td>Error al listar.</td>
+</tr>
+<tr class="row-odd"><td>error007</td>
+<td>Permisos Insuficientes.</td>
+</tr>
+<tr class="row-even"><td>error008</td>
+<td>Datos no validos.</td>
+</tr>
+<tr class="row-odd"><td>error009</td>
+<td>La clave ingresada no es la correcta.</td>
+</tr>
+<tr class="row-even"><td>error010</td>
+<td>Código no valido.</td>
+</tr>
+<tr class="row-odd"><td>error011</td>
+<td>Sin archivo de configuración.</td>
+</tr>
+<tr class="row-even"><td>error012</td>
+<td>Error al subir archivo.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">MICROSERVICIO ESB</a><ul>
+<li><a class="reference internal" href="#parametros-del-microservicio">PARÁMETROS DEL MICROSERVICIO</a></li>
+<li><a class="reference internal" href="#transacciones">TRANSACCIONES</a><ul>
+<li><a class="reference internal" href="#ejecutar">EJECUTAR</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#catalogo-de-respuesta">CATALOGO DE RESPUESTA</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="introduccion.html"
+                        title="previous chapter">INTRODUCCION</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="producto.html"
+                        title="next chapter">MALETERO.VENTA</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/archivos/esb.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="producto.html" title="MALETERO.VENTA"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="introduccion.html" title="INTRODUCCION"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >MALETERO</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright (u&#39;2019&#39;, &#39;Leonardo Gomez&#39;).
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+.. index::
+   single: persona
+
+
+MICROSERVICIO PERSONA
+=====================
+
+
+
+INSTALACION DEL MODULO
+----------------------
+
+
+
+ENTIDADES
+---------
+
+Dentro del modulo persona tenemos las siguientes entidades.
+
+- DIRECCION
+- VIAJERO

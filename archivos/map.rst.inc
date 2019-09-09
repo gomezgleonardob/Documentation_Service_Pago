@@ -3,4 +3,3 @@
 * :doc:`/archivos/venta`
 * :doc:`/archivos/persona`
 * :doc:`/archivos/producto`
-* :doc:`/archivos/venta`
