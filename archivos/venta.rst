@@ -29,8 +29,8 @@ Las transacciones que se pueden realizar son las siguientes:
 - Crear.
 - Actualizar.
 - Listar.
-- EliminarLogicamente 
-- Listar
+- EliminarLogicamente.
+- Listar.
 
 ENTIDADES
 ---------
@@ -42,13 +42,11 @@ Dentro del modulo producto tenemos los siguientes entidades.
 - **OFERTA**  
 - **SOLICITUD** 
 
-
 PAGO
 ----
 
 ENTIDAD
 ^^^^^^^
-
 
 .. csv-table:: Entidad
    :header: "Atributo", "Detalle"
@@ -63,16 +61,33 @@ ENTIDAD
 ..
 
 
-
 TRANSACCIONES
 ^^^^^^^^^^^^^
+
+CREAR 
+~~~~~
+Esta transacción recibe la petición para crear un pago, cuando el pago es creado puede llevar uno de los siguientes estados.
+
+* 0: El pago va a ser creado ,esta pendiente de verificación.
+* 1 : El pago va a ser creado  y es verificado.
+
+**JSON IN**
+
+
+.. code-block:: javascript
+
+
+
+..
+
+Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
 
 ACTUALIZAR 
 ~~~~~~~~~
 
 Esta transacción recibe la petición  para actualizar  una oferta , luego se enruta hacia el microservicio correspondiente y responde en un objeto con formato JSON.
 
-Los atributos que se pueden actualizar son :
+eL que se pueden actualizar son :
 
 * Moneda.
 * Valor de la oferta.
@@ -87,6 +102,8 @@ Los atributos que se pueden actualizar son :
 
 ..
 
+
+
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
 
 
@@ -98,32 +115,27 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
    :widths: 40, 100
 
     "sucess000", "Transacción Exitosa"
-    "error001", "Error: solo se permiten archivos .png, .jpg o jpeg"
+    "error008", "Datos Inválidos"
 
-..
 
 LISTAR
 ~~~~~~
 
 
+**FILTROS**
 
-ACTUALIZAR 
-~~~~~~~~~
-
-
-**JSON OUT**
-
-.. csv-table:: a title
-   :header: "Código", "Descripción"
+.. csv-table:: 
+   :header: "Campo", "Descripcion"
    :widths: 40, 100
 
-    "sucess000", "Transacción Exitosa"
-    "error008", "Datos Inválidos"
+    "pagid", "Id del Pago"
+    "pagestadp", "Estado del Pago"
+
+**JSON OUT**
 
 
 OFERTA
 ------
-
 
 ENTIDAD
 ^^^^^^^
@@ -132,10 +144,9 @@ ENTIDAD
 .. csv-table:: Entidad
    :header: "Atributo", "Detalle"
    :widths: 40, 
-   :tabularcolumns:: |p{1.5cm}|p{1.5cm}|L|
-
+  
     "Detail", "Se envía un array de objetos sobre los cuales se vaya a realizar una operación."
-    "OfertaPK", "Solid Viaid Ofeid"
+    "OfertaPK", "Solid Viaid Ofeid."
     "Ofevalor" Se envía el valor de la oferta a modificar."
     "Ofetraida"," Se envía el valor del transporte a modificar ."
     "Ofefechaentrega","Se envía la fecha de entrega a modificar."
@@ -167,8 +178,6 @@ Esta transacción recibe la petición para crear una oferta.
          },
          "ofevalor": 300,
          "ofetraida": 150,
-         "ofefechaentrega": "2019-08-10",
-         "ofefechacreacion": "2019-07-30"
         }
       }
      ],
@@ -328,11 +337,12 @@ Esta transacción recibe la petición filtrar una oferta
  
 ..
 
+LISTAR
 
-FILTROS
--------
 
-.. csv-table:: a title
+**FILTROS**
+
+.. csv-table:: 
    :header: "Filtro", "Descripcion"
    :widths: 40, 1000
 
@@ -501,8 +511,12 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
     "error008", "Datos Inválidos"
 
 ACTUALIZAR
-
 ~~~~~~~~~~
+
+
+
+Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
+
 **JSON OUT**
 
 
@@ -516,7 +530,7 @@ ACTUALIZAR
 LISTAR
 ~~~~~~
 
-**JSON OUT**
+**FILTROS**
 
 
 .. csv-table:: a title
