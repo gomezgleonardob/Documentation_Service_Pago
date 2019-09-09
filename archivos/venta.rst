@@ -53,11 +53,7 @@ ENTIDAD
    :widths: 40, 500
 
     "Detail", "Se envía un array de objetos sobre los cuales se vaya a realizar una operación."
-    "Limit", "Esta propiedad se usa cuando se realiza transacciones para listar y se envía solo el numero ejemplo 100."
-    "Filtro", "Esta propiedad se usa cuando se realiza transacciones para listar y se envia la o las columnas separadas por una sola coma, ejemplo menuid, menunombre."
-    "Orderby", "Se envía un array de objetos sobre los cuales se vaya a realizar una operación."
-    "Usuario", "Se debe enviar el objeto usuario que esta realizando la transacción, solo en el caso de login este objeto no se debe enviar."
-    "Rol", "Se debe enviar el objeto rol con el cual se realiza la transacción, este es usado para validar si un usuario tiene permiso de realizar una acción. Dependiendo la acción se solicitará este valor."
+
 ..
 
 
@@ -110,7 +106,7 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 
 **JSON OUT**
 
-.. csv-table:: a title
+.. csv-table:: 
    :header: "Código", "Descripcion"
    :widths: 40, 100
 
@@ -143,19 +139,16 @@ ENTIDAD
 
 .. csv-table:: Entidad
    :header: "Atributo", "Detalle"
-   :widths: 40, 
+   :widths: 40, 100
   
     "Detail", "Se envía un array de objetos sobre los cuales se vaya a realizar una operación."
-    "OfertaPK", "Solid Viaid Ofeid."
-    "Ofevalor" Se envía el valor de la oferta a modificar."
-    "Ofetraida"," Se envía el valor del transporte a modificar ."
-    "Ofefechaentrega","Se envía la fecha de entrega a modificar."
-    "Ofechacreacion" ,"La fecha de creación es insertada por el sistema."
-    "Ofechaestado" ,"El estado de la oferta puede  por un valor numérico."
-
+    "OfertaPk",""
+    "Ofetraida", "Se envía el valor del transporte a modificar."
+    "Ofefechaentrega", "Se envía la fecha de entrega a modificar."
+    "Ofechacreacion", "La fecha de creación es insertada por el sistema."
+    "Ofechaestado", "El estado de la oferta puede  por un valor numérico."
 
 ..
-
 
 CREAR 
 ~~~~~
@@ -221,7 +214,7 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 
 **JSON OUT**
 
-.. csv-table:: a title
+.. csv-table:: 
    :header: "Código", "Descripcion"
    :widths: 40, 100
 
@@ -297,7 +290,7 @@ Esta transacción recibe la petición  para actualizar  una oferta , los atribut
 
 **JSON OUT**
 
-.. csv-table:: a title
+.. csv-table:: 
    :header: "Código", "Descripcion"
    :widths: 40, 100
 
@@ -337,17 +330,17 @@ Esta transacción recibe la petición filtrar una oferta
  
 ..
 
-LISTAR
-
 
 **FILTROS**
 
+Se detalla por los campos que se puede filtrar la solicitud.
+
 .. csv-table:: 
-   :header: "Filtro", "Descripcion"
+   :header: "Campo", "Descripcion"
    :widths: 40, 1000
 
-    "Ofeid", "John", 40
-    "Smith", "John,0
+    "ofertaPK", "John", 40
+    "ofeestado", "John,0
 
 **JSON OUT**
 
@@ -357,7 +350,6 @@ LISTAR
 
 SOLICITUD
 ---------
-
 
 ENTIDAD
 ^^^^^^^
@@ -371,8 +363,7 @@ TRANSACCIONES
 CREAR
 ~~~~~
 
-
- El usuario crea la solicitud y puede llevar los siguientes elementos
+Se recibe una petición para crear una solicitud y puede llevar los siguientes elementos
 
     • La solicitud lleva foto y el link.
     • La solicitud lleva imgaen.
@@ -503,7 +494,7 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 **JSON OUT**
 
 
-.. csv-table:: a title
+.. csv-table:: 
    :header: "Código", "Descripcion"
    :widths: 40, 100
 
@@ -513,14 +504,15 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 ACTUALIZAR
 ~~~~~~~~~~
 
+.. code-block:: javascript
+
 
 
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
 
 **JSON OUT**
 
-
-.. csv-table:: a title
+.. csv-table:: 
    :header: "Código", "Descripcion"
    :widths: 40, 100
 
@@ -530,12 +522,13 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 LISTAR
 ~~~~~~
 
+
+
 **FILTROS**
 
-
-.. csv-table:: a title
+.. csv-table:: 
    :header: "Código", "Descripcion"
    :widths: 40, 100
 
-    "sucess000", "Transacción Exitosa"
-    "error008", "Datos Inválidos"
+    "ofeid", "Id de la Oferta"
+    "ofeestado", "Estado de la oferta"
