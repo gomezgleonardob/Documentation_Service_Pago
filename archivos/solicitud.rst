@@ -4,7 +4,6 @@
 SOLICITUD
 =========
 
-
  El usuario crea la solicitud y puede llevar los siguientes elementos
 
     • La solicitud lleva foto y el link.
@@ -134,11 +133,16 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 ATRIBUTOS
 ~~~~~~~~~
 
-.. tabularcolumns:: |p{1cm}|p{7cm}|
 
-.. csv-table:: Fitros
-   :file: archivos/csv/solicitud.csv
-   :header-rows: 1
-   :class: longtable
-   :widths: 1 1
-..
+
+JSON OUT
+~~~~~~~~
+
+
+.. csv-table:: a title
+   :header: "Código", "Descripcion"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error001", "Error: solo se permiten archivos .png, .jpg o jpeg"
+    "error002", "Error: Debe ingresar una foto o link para la solicitud"

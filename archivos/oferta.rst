@@ -170,7 +170,7 @@ JSON OUT
 
 
 LISTAR
-======
+------
 
 Esta transacción recibe la petición filtrar una oferta
 
@@ -205,15 +205,22 @@ JSON IN
 
 
 FILTROS
-~~~~~~~
-.. tabularcolumns:: |p{1cm}|p{7cm}|
+-------
 
-.. csv-table:: Fitros
-   :file: archivos/csv/atributos.csv
-   :header-rows: 1
-   :class: longtable
-   :widths: 1 
-   
+.. csv-table:: a title
+   :header: "Filtro", "Descripcion"
+   :widths: 40, 1000, 10
+
+    "Smith", "John", 40
+    "Smith", "John, Junior", 20
 
 JSON OUT
 ~~~~~~~~
+
+
+.. csv-table:: a title
+   :header: "Código", "Descripcion"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error001", "Error: solo se permiten archivos .png, .jpg o jpeg"
