@@ -1,5 +1,5 @@
-ENGIDEVELOPER MALETERO
-======================
+MALETERO
+========
 
 .. toctree::
     :hidden:
