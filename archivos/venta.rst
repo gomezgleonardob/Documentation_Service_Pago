@@ -1,23 +1,527 @@
 .. index::
    single: venta
 
+MICROSERVICIO VENTA
+======================
 
-MALETERO.VENTA
-=================
+En este microservicio 
 
-
-INSTALACION DEL MODULO
+CREACIÓN  DEL MODULO
 ----------------------
 
+**Modulo**
+
+- Especificar en el archivo "engiAcceso" la clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo
+- Crear un archivo para la persistencia a la base de datos en este caso "EngiMysql.EngiMaletero.Venta"
+- Agregar la persistencia del modulo en  archivo standalone.full
+
+**Proyecto**
+
+- Crear el nombre de la persistencia con el nombre que se 
+- Agregar los paquetes que deseamos importar en el persistence.xml
 
 
+TRANSACCIONES
+-------------
+
+Las transacciones que se pueden realizar son las siguientes:
+
+- Crear.
+- Actualizar.
+- Listar.
+- EliminarLogicamente 
+- Listar
 
 ENTIDADES
 ---------
 
-Dentro del modulo Producto tenemos los siguientes entidades.
+Dentro del modulo producto tenemos los siguientes entidades.
+ 
+- **PAGO**
+- **FORMA DE PAGO**
+- **OFERTA**  
+- **SOLICITUD** 
 
-- INTERES.
-- CATEGORIA.
+
+PAGO
+----
+
+ENTIDAD
+^^^^^^^
 
 
+.. csv-table:: Entidad
+   :header: "Atributo", "Detalle"
+   :widths: 40, 500
+
+    "Detail", "Se envía un array de objetos sobre los cuales se vaya a realizar una operación."
+    "Limit", "Esta propiedad se usa cuando se realiza transacciones para listar y se envía solo el numero ejemplo 100."
+    "Filtro", "Esta propiedad se usa cuando se realiza transacciones para listar y se envia la o las columnas separadas por una sola coma, ejemplo menuid, menunombre."
+    "Orderby", "Se envía un array de objetos sobre los cuales se vaya a realizar una operación."
+    "Usuario", "Se debe enviar el objeto usuario que esta realizando la transacción, solo en el caso de login este objeto no se debe enviar."
+    "Rol", "Se debe enviar el objeto rol con el cual se realiza la transacción, este es usado para validar si un usuario tiene permiso de realizar una acción. Dependiendo la acción se solicitará este valor."
+..
+
+
+
+TRANSACCIONES
+^^^^^^^^^^^^^
+
+ACTUALIZAR 
+~~~~~~~~~
+
+Esta transacción recibe la petición  para actualizar  una oferta , luego se enruta hacia el microservicio correspondiente y responde en un objeto con formato JSON.
+
+Los atributos que se pueden actualizar son :
+
+* Moneda.
+* Valor de la oferta.
+* Fecha de entrega.
+
+**JSON IN**
+
+
+.. code-block:: javascript
+
+
+
+..
+
+Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
+
+
+
+**JSON OUT**
+
+.. csv-table:: a title
+   :header: "Código", "Descripcion"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error001", "Error: solo se permiten archivos .png, .jpg o jpeg"
+
+..
+
+LISTAR
+~~~~~~
+
+
+
+ACTUALIZAR 
+~~~~~~~~~
+
+
+**JSON OUT**
+
+.. csv-table:: a title
+   :header: "Código", "Descripción"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error008", "Datos Inválidos"
+
+
+OFERTA
+------
+
+
+ENTIDAD
+^^^^^^^
+
+
+.. csv-table:: Entidad
+   :header: "Atributo", "Detalle"
+   :widths: 40, 
+   :tabularcolumns:: |p{1.5cm}|p{1.5cm}|L|
+
+    "Detail", "Se envía un array de objetos sobre los cuales se vaya a realizar una operación."
+    "OfertaPK", "Solid Viaid Ofeid"
+    "Ofevalor" Se envía el valor de la oferta a modificar."
+    "Ofetraida"," Se envía el valor del transporte a modificar ."
+    "Ofefechaentrega","Se envía la fecha de entrega a modificar."
+    "Ofechacreacion" ,"La fecha de creación es insertada por el sistema."
+    "Ofechaestado" ,"El estado de la oferta puede  por un valor numérico."
+
+
+..
+
+
+CREAR 
+~~~~~
+
+Esta transacción recibe la petición para crear una oferta.
+
+**JSON IN**
+
+
+.. code-block:: javascript
+
+   {
+       "detail": [
+     {
+       "objeto": {
+         "ofertaPK": {
+           "ofeid": "",
+           "viaid": "8577325c12d271c28ca1d58e31ae0578",
+           "solid": "sol2"
+         },
+         "ofevalor": 300,
+         "ofetraida": 150,
+         "ofefechaentrega": "2019-08-10",
+         "ofefechacreacion": "2019-07-30"
+        }
+      }
+     ],
+     "usuario": {
+         "usuid": "1",
+         "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+     "usuverificado": 1,
+     "usucodigoverificacion": "SU91L9",
+     "usufechacodigo": "2019-07-08 11:27:36",
+     "usufechacreacion": "2019-07-08 11:27:36",
+     "usuestado": "Activo",
+     "usueliminado": "No",
+     "perid": {
+       "perid": "1",
+       "peridentificacion": "1725101784",
+       "pernombre": "admin",
+       "perapellido": "",
+       "pertelefono": "",
+       "percorreo": "blgomez@engideveloper.com",
+       "perfechanacimiento": "2017-05-23 00:00:00",
+       "perestado": "Activo",
+       "pereliminado": "No",
+       "sexid": 1
+              },
+      "lenid": "es"
+       },
+        "rol": {
+       "rolid": 1,
+       "rolnombre": "Administrador",
+       "roldescripcion": "Rol para administrador",
+       "rolestado": "Activo",
+       "roleliminado": "No",
+       "palid": 1
+     }
+   }
+..
+
+Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
+
+
+
+**JSON OUT**
+
+.. csv-table:: a title
+   :header: "Código", "Descripcion"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error008", "Datos Inválidos"
+
+
+ACTUALIZAR
+~~~~~~~~~~
+
+Esta transacción recibe la petición  para actualizar  una oferta , los atributos que se pueden actualizar son:
+
+* Moneda.
+* Valor de la oferta.
+* Fecha de entrega.
+
+**JSON IN**
+
+.. code-block:: javascript
+
+   {
+       "detail": [
+     {
+       "objeto": {
+         "ofertaPK": {
+           "ofeid": "d27bb8672019709b96f0c9540c09dace",
+           "viaid": "8577325c12d271c28ca1d58e31ae0578",
+           "solid": "sol2"
+         },
+         "ofevalor": 300,
+         "ofetraida": 150,
+         "ofefechaentrega": "2019-08-10",
+         "ofeestado": 4,
+         "ofefechacreacion": "2019-07-30"
+        }
+      }
+     ],
+     "usuario": {
+         "usuid": "1",
+         "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+     "usuverificado": 1,
+     "usucodigoverificacion": "SU91L9",
+     "usufechacodigo": "2019-07-08 11:27:36",
+     "usufechacreacion": "2019-07-08 11:27:36",
+     "usuestado": "Activo",
+     "usueliminado": "No",
+     "perid": {
+       "perid": "1",
+       "peridentificacion": "1725101784",
+       "pernombre": "admin",
+       "perapellido": "",
+       "pertelefono": "",
+       "percorreo": "blgomez@engideveloper.com",
+       "perfechanacimiento": "2017-05-23 00:00:00",
+       "perestado": "Activo",
+       "pereliminado": "No",
+       "sexid": 1
+              },
+      "lenid": "es"
+       },
+        "rol": {
+       "rolid": 1,
+       "rolnombre": "Administrador",
+       "roldescripcion": "Rol para administrador",
+       "rolestado": "Activo",
+       "roleliminado": "No",
+       "palid": 1
+     }
+   }
+..
+
+
+
+**JSON OUT**
+
+.. csv-table:: a title
+   :header: "Código", "Descripcion"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error008", "Datos Inválidos"
+
+LISTAR
+~~~~~~
+
+Esta transacción recibe la petición filtrar una oferta
+
+
+**JSON IN**
+
+
+.. code-block:: javascript
+
+   {
+         {
+
+            "limit":"10",
+            "orderby":"",
+                     "filtro":{
+                            "ofertaPK":{
+                                        "ofeid":"",
+                                        "viaid":"",
+                                        "solid":""
+                                        },
+                             "ofeestado":"Activo"
+       },
+          "usuario":{
+          "usuid":"1",
+          "usuclave":"21232f297a57a5a743894a0e4a801fc3",
+         "usuverificado":1,
+       }
+   }
+ 
+..
+
+
+FILTROS
+-------
+
+.. csv-table:: a title
+   :header: "Filtro", "Descripcion"
+   :widths: 40, 1000
+
+    "Ofeid", "John", 40
+    "Smith", "John,0
+
+**JSON OUT**
+
+
+
+
+
+SOLICITUD
+---------
+
+
+ENTIDAD
+^^^^^^^
+
+Campos de la entidad Solicitud
+
+
+TRANSACCIONES
+^^^^^^^^^^^^^
+
+CREAR
+~~~~~
+
+
+ El usuario crea la solicitud y puede llevar los siguientes elementos
+
+    • La solicitud lleva foto y el link.
+    • La solicitud lleva imgaen.
+    • La solicitud lleva el link.
+
+**JSON IN** 
+
+
+- Solicitud creada con link e imagen 
+
+.. code-block:: javascript
+
+  { 
+     "detail": [
+      {
+         "objeto": {
+         "usuid": "db97b24be40c3d68ebec588209e41b36",
+         "catid": "9ca40f9be9423c169f395626f80e3c07",
+         "dirid": "25296619b814452080f7ae451309b545",
+          "arcid": {
+          "arcid": "",
+          "arcnombre": "",
+          "arcruta": "engideveloper/desarrollo/archivos/Categoria/Logo/",
+          "arcextension": "png",
+          "archivob64": "W3j3QHli8OYN"
+         },
+          "sollink": "https://www.ebay.com/itm/NVIDIA-GeForce-GTX....",
+          "soldescripcion": "GPU",
+          "solindicaciones": "Comprar la de 6GB"
+        }
+       }
+      ],
+      "generarid": true,
+      "usuario": {
+     "usuid": "1",
+     "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+     "usuverificado": 1,
+     "usucodigoverificacion": "SU91L9",
+     "usufechacodigo": "2019-07-08 11:27:36",
+     "usufechacreacion": "2019-07-08 11:27:36",
+     "usuestado": "Activo",
+     "usueliminado": "No",
+     "perid": {
+      "perid": "1",
+      "peridentificacion": "1725101784",
+      "pernombre": "admin",
+      "perapellido": "",
+      "pertelefono": "",
+      "percorreo": "blgomez@engideveloper.com",
+      "perfechanacimiento": "2017-05-23 00:00:00",
+      "perestado": "Activo",
+      "pereliminado": "No",
+      "sexid": 1
+     },
+      "lenid": "es"
+      },
+     "rol": {
+    "rolid": 1,
+    "rolnombre": "Administrador",
+    "roldescripcion": "Rol para administrador",
+    "rolestado": "Activo",
+    "roleliminado": "No",
+    "palid": 1
+    }
+  }
+..
+
+
+**JSON IN** 
+
+
+- Solicitud creada lleva solo la imagen
+
+.. code-block:: javascript
+
+  { 
+     "detail": [
+      {
+         "objeto": {
+         "usuid": "db97b24be40c3d68ebec588209e41b36",
+         "catid": "9ca40f9be9423c169f395626f80e3c07",
+         "dirid": "25296619b814452080f7ae451309b545",
+         "sollink": "https://www.ebay.com/itm/NVIDIA-GeForce-GTX....",
+         "soldescripcion": "GPU",
+         "solindicaciones": "Comprar la de 6GB"
+        }
+       }
+      ],
+      "generarid": true,
+      "usuario": {
+     "usuid": "1",
+     "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+     "usuverificado": 1,
+     "usucodigoverificacion": "SU91L9",
+     "usufechacodigo": "2019-07-08 11:27:36",
+     "usufechacreacion": "2019-07-08 11:27:36",
+     "usuestado": "Activo",
+     "usueliminado": "No",
+     "perid": {
+      "perid": "1",
+      "peridentificacion": "1725101784",
+      "pernombre": "admin",
+      "perapellido": "",
+      "pertelefono": "",
+      "percorreo": "blgomez@engideveloper.com",
+      "perfechanacimiento": "2017-05-23 00:00:00",
+      "perestado": "Activo",
+      "pereliminado": "No",
+      "sexid": 1
+     },
+      "lenid": "es"
+      },
+     "rol": {
+    "rolid": 1,
+    "rolnombre": "Administrador",
+    "roldescripcion": "Rol para administrador",
+    "rolestado": "Activo",
+    "roleliminado": "No",
+    "palid": 1
+    }
+  }
+..
+
+
+Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
+
+
+**JSON OUT**
+
+
+.. csv-table:: a title
+   :header: "Código", "Descripcion"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error008", "Datos Inválidos"
+
+ACTUALIZAR
+
+~~~~~~~~~~
+**JSON OUT**
+
+
+.. csv-table:: a title
+   :header: "Código", "Descripcion"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error008", "Datos Inválidos"
+
+LISTAR
+~~~~~~
+
+**JSON OUT**
+
+
+.. csv-table:: a title
+   :header: "Código", "Descripcion"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error008", "Datos Inválidos"
