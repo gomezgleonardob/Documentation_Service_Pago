@@ -17,8 +17,7 @@
     <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="MICROSERVICIO PERSONA" href="persona.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,11 +25,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="persona.html" title="MICROSERVICIO PERSONA"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">MALETERO</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -41,20 +36,106 @@
             
   <div class="section" id="microservicio-venta">
 <span id="index-0"></span><h1>MICROSERVICIO VENTA<a class="headerlink" href="#microservicio-venta" title="Permalink to this headline">¶</a></h1>
-<p>En este microservicio</p>
-<div class="section" id="creacion-del-modulo">
-<h2>CREACIÓN  DEL MODULO<a class="headerlink" href="#creacion-del-modulo" title="Permalink to this headline">¶</a></h2>
-<p><strong>Modulo</strong></p>
+<div class="section" id="configuraciones">
+<h2>CONFIGURACIONES<a class="headerlink" href="#configuraciones" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="modulo">
+<h3>MÓDULO<a class="headerlink" href="#modulo" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Especificar en el archivo “engiAcceso” la clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo</li>
+<li>Especificar en el archivo “engiAcceso” la clave del módulo.</li>
 <li>Crear un archivo para la persistencia a la base de datos en este caso “EngiMysql.EngiMaletero.Venta”</li>
-<li>Agregar la persistencia del modulo en  archivo standalone.full</li>
+<li>Agregar la persistencia de JBOSS para el modulo en  archivo standalone-full.xml</li>
 </ul>
-<p><strong>Proyecto</strong></p>
+</div>
+<div class="section" id="proyecto">
+<h3>PROYECTO<a class="headerlink" href="#proyecto" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Crear el nombre de la persistencia con el nombre que se</li>
+<li>Crear el nombre de la persistencia y agregar al archivo persistence.xml</li>
 <li>Agregar los paquetes que deseamos importar en el persistence.xml</li>
 </ul>
+</div>
+<div class="section" id="variables-de-configuracion">
+<h3>VARIABLES DE CONFIGURACIÓN<a class="headerlink" href="#variables-de-configuracion" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="generales">
+<h4>GENERALES<a class="headerlink" href="#generales" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="colwidths-given docutils" id="id12">
+<caption><span class="caption-text">Configuración</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Seguridad</td>
+<td>La clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo.</td>
+</tr>
+<tr class="row-odd"><td>Persistencia</td>
+<td>Para la conexión a la base de datos debe esta compuesto de la siguiente manera : EngiMysql.NombredelProyecto.NombredelModulo</td>
+</tr>
+<tr class="row-even"><td>Parametros</td>
+<td>Para la conexión a la base de datos debe esta compuesto de la siguiente manera : EngiParametros.NombredelProyecto.NombredelModulo</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="persistencia">
+<h4>PERSISTENCIA<a class="headerlink" href="#persistencia" title="Permalink to this headline">¶</a></h4>
+<p>Nombre del Archivo: EngiMysql.Maletero.Ventas.properties” ,este archivo debe ser agregado en la carpeta configuraciones del servidor Wildfly.</p>
+<table border="1" class="colwidths-given docutils" id="id13">
+<caption><span class="caption-text">Persistencia de Datos</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>persistence.nombre</td>
+<td>Nombre de la persistencia para la conexión a la base.</td>
+</tr>
+<tr class="row-odd"><td>jdbc.url</td>
+<td>URL de la base de datos</td>
+</tr>
+<tr class="row-even"><td>jdbc.user</td>
+<td>Usuario</td>
+</tr>
+<tr class="row-odd"><td>jdbc.password</td>
+<td>Clave</td>
+</tr>
+<tr class="row-even"><td>jdbc.driver</td>
+<td>Nombre del driver para la conexión</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="parametros">
+<h4>PARÁMETROS<a class="headerlink" href="#parametros" title="Permalink to this headline">¶</a></h4>
+<p>Nombre del Archivo: EngiParametros.Maletero.Ventas.properties” ,este archivo debe ser agregado en la carpeta configuraciones del servidor Wildfly.</p>
+<table border="1" class="colwidths-given docutils" id="id14">
+<caption><span class="caption-text">Parametros</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Nombre del parámetro</td>
+<td>Valor que se le va asignar</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div class="section" id="transacciones">
 <h2>TRANSACCIONES<a class="headerlink" href="#transacciones" title="Permalink to this headline">¶</a></h2>
@@ -81,8 +162,8 @@
 <h2>PAGO<a class="headerlink" href="#pago" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="entidad">
 <h3>ENTIDAD<a class="headerlink" href="#entidad" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="colwidths-given docutils" id="id11">
-<caption><span class="caption-text">Entidad</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given docutils" id="id15">
+<caption><span class="caption-text">Entidad</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="7%" />
 <col width="93%" />
@@ -179,8 +260,8 @@
 <h2>OFERTA<a class="headerlink" href="#oferta" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
 <h3>ENTIDAD<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="colwidths-given docutils" id="id12">
-<caption><span class="caption-text">Entidad</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given docutils" id="id16">
+<caption><span class="caption-text">Entidad</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="29%" />
 <col width="71%" />
@@ -191,28 +272,28 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Detail</td>
-<td>Se envía un array de objetos sobre los cuales se vaya a realizar una operación.</td>
-</tr>
-<tr class="row-odd"><td>OfertaPk</td>
+<tr class="row-even"><td>OfertaPk</td>
 <td>&#160;</td>
 </tr>
-<tr class="row-even"><td>Ofetraida</td>
+<tr class="row-odd"><td>Ofetraida</td>
 <td>Se envía el valor del transporte a modificar.</td>
 </tr>
-<tr class="row-odd"><td>Ofefechaentrega</td>
+<tr class="row-even"><td>Ofefechaentrega</td>
 <td>Se envía la fecha de entrega a modificar.</td>
 </tr>
-<tr class="row-even"><td>Ofechacreacion</td>
+<tr class="row-odd"><td>Ofechacreacion</td>
 <td>La fecha de creación es insertada por el sistema.</td>
 </tr>
-<tr class="row-odd"><td>Ofechaestado</td>
+<tr class="row-even"><td>Ofechaestado</td>
 <td>El estado de la oferta puede  por un valor numérico.</td>
 </tr>
 </tbody>
 </table>
+</div>
 <div class="section" id="id3">
-<h4>CREAR<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<h3>TRANSACCIONES<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h4>CREAR<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p>Esta transacción recibe la petición para crear una oferta.</p>
 <p><strong>JSON IN</strong></p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -285,8 +366,8 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="id4">
-<h4>ACTUALIZAR<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id5">
+<h4>ACTUALIZAR<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p>Esta transacción recibe la petición  para actualizar  una oferta , los atributos que se pueden actualizar son:</p>
 <ul class="simple">
 <li>Moneda.</li>
@@ -366,8 +447,8 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="id5">
-<h4>LISTAR<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id6">
+<h4>LISTAR<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p>Esta transacción recibe la petición filtrar una oferta</p>
 <p><strong>JSON IN</strong></p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
@@ -399,14 +480,14 @@
 </div>
 <div class="section" id="solicitud">
 <h2>SOLICITUD<a class="headerlink" href="#solicitud" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id6">
-<h3>ENTIDAD<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id7">
+<h3>ENTIDAD<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>Campos de la entidad Solicitud</p>
 </div>
-<div class="section" id="id7">
-<h3>TRANSACCIONES<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id8">
-<h4>CREAR<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<h3>TRANSACCIONES<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h4>CREAR<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <p>Se recibe una petición para crear una solicitud y puede llevar los siguientes elementos</p>
 <blockquote>
 <div><ul class="simple">
@@ -548,8 +629,8 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="id9">
-<h4>ACTUALIZAR<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id10">
+<h4>ACTUALIZAR<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
@@ -575,8 +656,8 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="id10">
-<h4>LISTAR<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id11">
+<h4>LISTAR<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
 <p><strong>FILTROS</strong></p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
@@ -611,7 +692,17 @@
   <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">MICROSERVICIO VENTA</a><ul>
-<li><a class="reference internal" href="#creacion-del-modulo">CREACIÓN  DEL MODULO</a></li>
+<li><a class="reference internal" href="#configuraciones">CONFIGURACIONES</a><ul>
+<li><a class="reference internal" href="#modulo">MÓDULO</a></li>
+<li><a class="reference internal" href="#proyecto">PROYECTO</a></li>
+<li><a class="reference internal" href="#variables-de-configuracion">VARIABLES DE CONFIGURACIÓN</a><ul>
+<li><a class="reference internal" href="#generales">GENERALES</a></li>
+<li><a class="reference internal" href="#persistencia">PERSISTENCIA</a></li>
+<li><a class="reference internal" href="#parametros">PARÁMETROS</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#transacciones">TRANSACCIONES</a></li>
 <li><a class="reference internal" href="#entidades">ENTIDADES</a></li>
 <li><a class="reference internal" href="#pago">PAGO</a><ul>
@@ -625,20 +716,21 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#oferta">OFERTA</a><ul>
-<li><a class="reference internal" href="#id2">ENTIDAD</a><ul>
-<li><a class="reference internal" href="#id3">CREAR</a></li>
-<li><a class="reference internal" href="#id4">ACTUALIZAR</a></li>
-<li><a class="reference internal" href="#id5">LISTAR</a></li>
+<li><a class="reference internal" href="#id2">ENTIDAD</a></li>
+<li><a class="reference internal" href="#id3">TRANSACCIONES</a><ul>
+<li><a class="reference internal" href="#id4">CREAR</a></li>
+<li><a class="reference internal" href="#id5">ACTUALIZAR</a></li>
+<li><a class="reference internal" href="#id6">LISTAR</a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li><a class="reference internal" href="#solicitud">SOLICITUD</a><ul>
-<li><a class="reference internal" href="#id6">ENTIDAD</a></li>
-<li><a class="reference internal" href="#id7">TRANSACCIONES</a><ul>
-<li><a class="reference internal" href="#id8">CREAR</a></li>
-<li><a class="reference internal" href="#id9">ACTUALIZAR</a></li>
-<li><a class="reference internal" href="#id10">LISTAR</a></li>
+<li><a class="reference internal" href="#id7">ENTIDAD</a></li>
+<li><a class="reference internal" href="#id8">TRANSACCIONES</a><ul>
+<li><a class="reference internal" href="#id9">CREAR</a></li>
+<li><a class="reference internal" href="#id10">ACTUALIZAR</a></li>
+<li><a class="reference internal" href="#id11">LISTAR</a></li>
 </ul>
 </li>
 </ul>
@@ -647,9 +739,6 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="persona.html"
-                        title="previous chapter">MICROSERVICIO PERSONA</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -679,15 +768,11 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="persona.html" title="MICROSERVICIO PERSONA"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >MALETERO</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright (u&#39;2019&#39;, &#39;Leonardo Gomez&#39;).
+        &#169; Copyright (&#39;2019&#39;, &#39;Leonardo Gomez&#39;).
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
     </div>
   </body>

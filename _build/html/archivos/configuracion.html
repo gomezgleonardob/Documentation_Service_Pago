@@ -1,0 +1,209 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>CONFIGURACIÓN &#8212; Engideveloper Maletero 0.1 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="configuracion">
+<span id="index-0"></span><h1>CONFIGURACIÓN<a class="headerlink" href="#configuracion" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="modulo">
+<h2>MÓDULO<a class="headerlink" href="#modulo" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Especificar en el archivo “engiAcceso” la clave del módulo.</li>
+<li>Crear un archivo para la persistencia a la base de datos en este caso “EngiMysql.EngiMaletero.Venta”</li>
+<li>Agregar la persistencia de JBOSS para el modulo en  archivo standalone-full.xml</li>
+</ul>
+</div>
+<div class="section" id="proyecto">
+<h2>PROYECTO<a class="headerlink" href="#proyecto" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Crear el nombre de la persistencia y agregar al archivo persistence.xml</li>
+<li>Agregar los paquetes que deseamos importar en el persistence.xml</li>
+</ul>
+</div>
+<div class="section" id="variables-de-configuracion">
+<h2>VARIABLES DE CONFIGURACIÓN<a class="headerlink" href="#variables-de-configuracion" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="generales">
+<h3>GENERALES<a class="headerlink" href="#generales" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils" id="id1">
+<caption><span class="caption-text">Configuración</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Seguridad</td>
+<td>La clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo.</td>
+</tr>
+<tr class="row-odd"><td>Persistencia</td>
+<td>Para la conexión a la base de datos debe esta compuesto de la siguiente manera : EngiMysql.NombredelProyecto.NombredelModulo</td>
+</tr>
+<tr class="row-even"><td>Parametros</td>
+<td>Para la conexión a la base de datos debe esta compuesto de la siguiente manera : EngiParametros.NombredelProyecto.NombredelModulo</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="persistencia">
+<h3>PERSISTENCIA<a class="headerlink" href="#persistencia" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils" id="id2">
+<caption><span class="caption-text">Persistencia de Datos</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>persistence.nombre</td>
+<td>Nombre de la persistencia para la conexión a la base.</td>
+</tr>
+<tr class="row-odd"><td>jdbc.url</td>
+<td>URL de la base de datos</td>
+</tr>
+<tr class="row-even"><td>jdbc.user</td>
+<td>Usuario</td>
+</tr>
+<tr class="row-odd"><td>jdbc.password</td>
+<td>Clave</td>
+</tr>
+<tr class="row-even"><td>jdbc.driver</td>
+<td>Nombre del driver para la conexión</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="parametros">
+<h3>PARAMETROS<a class="headerlink" href="#parametros" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils" id="id3">
+<caption><span class="caption-text">Parametros</span><a class="headerlink" href="#id3" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Nombre del parámetro</td>
+<td>Valor que se le va asignar</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">widths:</th><td class="field-body"><p class="first">40, 500</p>
+<p class="last">“persistence.nombre”, “Nombre de la persistencia para la conexión a la base.”
+“jdbc.url”, “URL”
+“Parametros”, “Para la conexión a la base de datos debe esta compuesto de la siguiente manera : EngiMysql.NombredelProyecto.NombredelModulo”</p>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">CONFIGURACIÓN</a><ul>
+<li><a class="reference internal" href="#modulo">MÓDULO</a></li>
+<li><a class="reference internal" href="#proyecto">PROYECTO</a></li>
+<li><a class="reference internal" href="#variables-de-configuracion">VARIABLES DE CONFIGURACIÓN</a><ul>
+<li><a class="reference internal" href="#generales">GENERALES</a></li>
+<li><a class="reference internal" href="#persistencia">PERSISTENCIA</a></li>
+<li><a class="reference internal" href="#parametros">PARAMETROS</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/archivos/configuracion.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright (&#39;2019&#39;, &#39;Leonardo Gomez&#39;).
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

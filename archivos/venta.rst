@@ -2,24 +2,64 @@
    single: venta
 
 MICROSERVICIO VENTA
-======================
+===================
 
-En este microservicio 
+CONFIGURACIONES
+---------------
 
-CREACIÓN  DEL MODULO
-----------------------
 
-**Modulo**
-
-- Especificar en el archivo "engiAcceso" la clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo
+MÓDULO
+^^^^^^
+- Especificar en el archivo "engiAcceso" la clave del módulo.
 - Crear un archivo para la persistencia a la base de datos en este caso "EngiMysql.EngiMaletero.Venta"
-- Agregar la persistencia del modulo en  archivo standalone.full
+- Agregar la persistencia de JBOSS para el modulo en  archivo standalone-full.xml
 
-**Proyecto**
-
-- Crear el nombre de la persistencia con el nombre que se 
+PROYECTO
+^^^^^^^^
+- Crear el nombre de la persistencia y agregar al archivo persistence.xml
 - Agregar los paquetes que deseamos importar en el persistence.xml
 
+
+VARIABLES DE CONFIGURACIÓN
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+GENERALES
+~~~~~~~~~
+.. csv-table:: Configuración
+   :header: "Atributo", "Detalle"
+   :widths: 40, 500
+
+    "Seguridad", "La clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo."
+    "Persistencia", "Para la conexión a la base de datos debe esta compuesto de la siguiente manera : EngiMysql.NombredelProyecto.NombredelModulo"
+    "Parametros", "Para la conexión a la base de datos debe esta compuesto de la siguiente manera : EngiParametros.NombredelProyecto.NombredelModulo"
+..
+
+
+PERSISTENCIA
+~~~~~~~~~~~~
+Nombre del Archivo: EngiMysql.Maletero.Ventas.properties" ,este archivo debe ser agregado en la carpeta configuraciones del servidor Wildfly. 
+
+.. csv-table:: Persistencia de Datos
+   :header: "Atributo", "Detalle"
+   :widths: 40, 500
+
+    "persistence.nombre", "Nombre de la persistencia para la conexión a la base."
+    "jdbc.url", "URL de la base de datos"
+    "jdbc.user", "Usuario"
+    "jdbc.password", "Clave"
+    "jdbc.driver", "Nombre del driver para la conexión"
+
+..
+
+PARÁMETROS
+~~~~~~~~~~
+Nombre del Archivo: EngiParametros.Maletero.Ventas.properties" ,este archivo debe ser agregado en la carpeta configuraciones del servidor Wildfly.
+
+.. csv-table:: Parametros
+   :header: "Atributo", "Detalle"
+   :widths: 40, 500
+
+    "Nombre del parámetro ", "Valor que se le va asignar"
+..
 
 TRANSACCIONES
 -------------
@@ -141,7 +181,7 @@ ENTIDAD
    :header: "Atributo", "Detalle"
    :widths: 40, 100
   
-    "Detail", "Se envía un array de objetos sobre los cuales se vaya a realizar una operación."
+   
     "OfertaPk",""
     "Ofetraida", "Se envía el valor del transporte a modificar."
     "Ofefechaentrega", "Se envía la fecha de entrega a modificar."
@@ -149,6 +189,9 @@ ENTIDAD
     "Ofechaestado", "El estado de la oferta puede  por un valor numérico."
 
 ..
+
+TRANSACCIONES
+^^^^^^^^^^^^^
 
 CREAR 
 ~~~~~

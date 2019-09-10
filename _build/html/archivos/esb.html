@@ -17,9 +17,7 @@
     <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="MALETERO.VENTA" href="producto.html" />
-    <link rel="prev" title="INTRODUCCION" href="introduccion.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -27,14 +25,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="producto.html" title="MALETERO.VENTA"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="introduccion.html" title="INTRODUCCION"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">MALETERO</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -95,7 +86,7 @@
 <p>Una de las transacciones que se puede realizar con el microservicio es:</p>
 <div class="section" id="ejecutar">
 <h3>EJECUTAR<a class="headerlink" href="#ejecutar" title="Permalink to this headline">¶</a></h3>
-<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encryptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties</p>
+<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties</p>
 <p><strong>Atributos</strong></p>
 <table border="1" class="colwidths-given docutils" id="id2">
 <caption><span class="caption-text">Entidad</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
@@ -129,28 +120,36 @@
 </tr>
 </tbody>
 </table>
+<p><strong>AES  CODIFICADO</strong></p>
+<p><strong>WlPKT2bewO6E2ndYHHsUyC4GOteiSuxpEoucv8iK7PfUTGH+AtnCpFqSG03llqhp2YxHJfE9cpOzWv
+SqKBVPPVDj2nNTVNGCHrPLVCQmvnPgZ7hNCePqy/igSZslbutM39YEr9h3dDDjoj9atMlMRnhUdx+
++M171plQ9N9h1fWqL8Y+2Zkh6/zdL5ceYH0mTvaiOyMUKN6WJqRRU/wqWfPvEL/ZvmK4OZZC8WSoJ
+S6xKbhbkAn1+Eqktj8XRhyX9+JKiVfgamYZhe744jIqSlS4GlwUiIBUXxZ8GkPqJcPlntsV3XUhn
+swNyp2fRVANAaQ/HWCszxYDvbt6JhkD+A+H4EFmLaW0RUBWZZiVGRSrF2JzYmRxkpCeRn1bJoYdSO
+4zuYN3hWq4PQ1Ts2GZLhvclnfpzw+1y7TWQ8cRNIIV34wQ0/CF5FDZxzjBoIrt/mqpR08M2NSOgDQ9X
+Y/KEcCWJwnjbI/jV7+</strong></p>
 <p><strong>JSON IN</strong></p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[],</span>
-   <span class="s2">&quot;limit&quot;</span><span class="o">:</span> <span class="s2">&quot;100&quot;</span><span class="p">,</span>
-   <span class="s2">&quot;orderby&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-   <span class="s2">&quot;filtro&quot;</span><span class="o">:</span> <span class="p">{},</span>
-   <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
-       <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
-       <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;jeisson.millos@hotmail.com&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
-             <span class="p">},</span>
-      <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
-    <span class="p">},</span>
-       <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span>
-    <span class="p">}</span>
+  <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[],</span>
+  <span class="s2">&quot;limit&quot;</span><span class="o">:</span> <span class="s2">&quot;100&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;orderby&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;filtro&quot;</span><span class="o">:</span> <span class="p">{},</span>
+  <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;jeisson.millos@hotmail.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+            <span class="p">},</span>
+     <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+   <span class="p">},</span>
+      <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+   <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>}</p>
 <p><strong>URL</strong></p>
 <p>La siguiente url es la que se usa para codificar y decodificar la trama de json.</p>
 <p><a class="reference external" href="https://www.devglan.com/online-tools/aes-encryption-decryption/">Codifación/Decodificación</a></p>
@@ -233,12 +232,6 @@
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="introduccion.html"
-                        title="previous chapter">INTRODUCCION</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="producto.html"
-                        title="next chapter">MALETERO.VENTA</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -268,18 +261,11 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="producto.html" title="MALETERO.VENTA"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="introduccion.html" title="INTRODUCCION"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >MALETERO</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright (u&#39;2019&#39;, &#39;Leonardo Gomez&#39;).
+        &#169; Copyright (&#39;2019&#39;, &#39;Leonardo Gomez&#39;).
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
     </div>
   </body>

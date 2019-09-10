@@ -17,9 +17,7 @@
     <script type="text/javascript" src="../_static/language_data.js"></script>
     
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="MICROSERVICIO VENTA" href="venta.html" />
-    <link rel="prev" title="MALETERO.VENTA" href="producto.html" /> 
+    <link rel="search" title="Search" href="../search.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -27,14 +25,7 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="right" >
-          <a href="venta.html" title="MICROSERVICIO VENTA"
-             accesskey="N">next</a> |</li>
-        <li class="right" >
-          <a href="producto.html" title="MALETERO.VENTA"
-             accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">MALETERO</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li> 
       </ul>
     </div>  
 
@@ -45,8 +36,30 @@
             
   <div class="section" id="microservicio-persona">
 <span id="index-0"></span><h1>MICROSERVICIO PERSONA<a class="headerlink" href="#microservicio-persona" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="instalacion-del-modulo">
-<h2>INSTALACION DEL MODULO<a class="headerlink" href="#instalacion-del-modulo" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="creacion-del-modulo">
+<h2>CREACIÓN  DEL MODULO<a class="headerlink" href="#creacion-del-modulo" title="Permalink to this headline">¶</a></h2>
+<p><strong>Modulo</strong></p>
+<ul class="simple">
+<li>Especificar en el archivo “engiAcceso” la clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo</li>
+<li>Crear un archivo para la persistencia a la base de datos en este caso “EngiMysql.EngiMaletero.Persona”</li>
+<li>Agregar la persistencia del modulo en  archivo standalone.full</li>
+</ul>
+<p><strong>Proyecto</strong></p>
+<ul class="simple">
+<li>Crear el nombre de la persistencia con el nombre que se</li>
+<li>Agregar los paquetes que deseamos importar en el persistence.xml</li>
+</ul>
+</div>
+<div class="section" id="transacciones">
+<h2>TRANSACCIONES<a class="headerlink" href="#transacciones" title="Permalink to this headline">¶</a></h2>
+<p>Las transacciones que se pueden realizar son las siguientes:</p>
+<ul class="simple">
+<li>Crear.</li>
+<li>Actualizar.</li>
+<li>Listar.</li>
+<li>EliminarLogicamente.</li>
+<li>Listar.</li>
+</ul>
 </div>
 <div class="section" id="entidades">
 <h2>ENTIDADES<a class="headerlink" href="#entidades" title="Permalink to this headline">¶</a></h2>
@@ -55,6 +68,268 @@
 <li>DIRECCION</li>
 <li>VIAJERO</li>
 </ul>
+</div>
+<div class="section" id="direccion">
+<h2>DIRECCION<a class="headerlink" href="#direccion" title="Permalink to this headline">¶</a></h2>
+<p>ENTIDAD</p>
+<table border="1" class="colwidths-given docutils" id="id6">
+<caption><span class="caption-text">Entidad</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Detail</td>
+<td>Se envía un array de objetos sobre los cuales se vaya a realizar una operación.</td>
+</tr>
+<tr class="row-odd"><td>OfertaPk</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Ofetraida</td>
+<td>Se envía el valor del transporte a modificar.</td>
+</tr>
+<tr class="row-odd"><td>Ofefechaentrega</td>
+<td>Se envía la fecha de entrega a modificar.</td>
+</tr>
+<tr class="row-even"><td>Ofechacreacion</td>
+<td>La fecha de creación es insertada por el sistema.</td>
+</tr>
+<tr class="row-odd"><td>Ofechaestado</td>
+<td>El estado de la oferta puede  por un valor numérico.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="id1">
+<h3>TRANSACCIONES<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="crear">
+<h4>CREAR<a class="headerlink" href="#crear" title="Permalink to this headline">¶</a></h4>
+<p><strong>JSON IN</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[</span>
+     <span class="p">{</span>
+       <span class="s2">&quot;objeto&quot;</span><span class="o">:</span> <span class="p">{</span>
+         <span class="s2">&quot;ciuid&quot;</span><span class="o">:</span> <span class="mi">99</span><span class="p">,</span>
+         <span class="s2">&quot;estid&quot;</span><span class="o">:</span> <span class="mi">3</span><span class="p">,</span>
+         <span class="s2">&quot;paisid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;2&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;dirdireccion&quot;</span><span class="o">:</span> <span class="s2">&quot;Av de las Americas&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;dirlatitud&quot;</span><span class="o">:</span> <span class="s2">&quot;-2.78921&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;dirlongitud&quot;</span><span class="o">:</span> <span class="s2">&quot;-79.735758&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;dircodigopostal&quot;</span><span class="o">:</span> <span class="s2">&quot;010111&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;dirtelefono&quot;</span><span class="o">:</span> <span class="s2">&quot;98499568710&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;direstado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;direliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span>
+     <span class="p">}</span>
+        <span class="p">}</span>
+     <span class="p">],</span>
+  <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;perestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+           <span class="p">},</span>
+   <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+    <span class="p">},</span>
+     <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
+<p><strong>JSON OUT</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Código</th>
+<th class="head">Descripcion</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>sucess000</td>
+<td>Transacción Exitosa</td>
+</tr>
+<tr class="row-odd"><td>error008</td>
+<td>Datos Inválidos</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="actualizar">
+<h4>ACTUALIZAR<a class="headerlink" href="#actualizar" title="Permalink to this headline">¶</a></h4>
+<p><strong>JSON IN</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
+<p><strong>JSON OUT</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Código</th>
+<th class="head">Descripcion</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>sucess000</td>
+<td>Transacción Exitosa</td>
+</tr>
+<tr class="row-odd"><td>error008</td>
+<td>Datos Inválidos</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="listar">
+<h4>LISTAR<a class="headerlink" href="#listar" title="Permalink to this headline">¶</a></h4>
+<p><strong>JSON IN</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
+<p><strong>JSON OUT</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Código</th>
+<th class="head">Descripcion</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>sucess000</td>
+<td>Transacción Exitosa</td>
+</tr>
+<tr class="row-odd"><td>error008</td>
+<td>Datos Inválidos</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="viajero">
+<h2>VIAJERO<a class="headerlink" href="#viajero" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>TRANSACCIONES<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h4>CREAR<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<p><strong>JSON IN</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
+<p><strong>JSON OUT</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Código</th>
+<th class="head">Descripcion</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>sucess000</td>
+<td>Transacción Exitosa</td>
+</tr>
+<tr class="row-odd"><td>error008</td>
+<td>Datos Inválidos</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h4>ACTUALIZAR<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p><strong>JSON IN</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
+<p><strong>JSON OUT</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Código</th>
+<th class="head">Descripcion</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>sucess000</td>
+<td>Transacción Exitosa</td>
+</tr>
+<tr class="row-odd"><td>error008</td>
+<td>Datos Inválidos</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id5">
+<h4>LISTAR<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p><strong>JSON IN</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
+<p><strong>JSON OUT</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Código</th>
+<th class="head">Descripcion</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>sucess000</td>
+<td>Transacción Exitosa</td>
+</tr>
+<tr class="row-odd"><td>error008</td>
+<td>Datos Inválidos</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 
@@ -67,18 +342,31 @@
   <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">MICROSERVICIO PERSONA</a><ul>
-<li><a class="reference internal" href="#instalacion-del-modulo">INSTALACION DEL MODULO</a></li>
+<li><a class="reference internal" href="#creacion-del-modulo">CREACIÓN  DEL MODULO</a></li>
+<li><a class="reference internal" href="#transacciones">TRANSACCIONES</a></li>
 <li><a class="reference internal" href="#entidades">ENTIDADES</a></li>
+<li><a class="reference internal" href="#direccion">DIRECCION</a><ul>
+<li><a class="reference internal" href="#id1">TRANSACCIONES</a><ul>
+<li><a class="reference internal" href="#crear">CREAR</a></li>
+<li><a class="reference internal" href="#actualizar">ACTUALIZAR</a></li>
+<li><a class="reference internal" href="#listar">LISTAR</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#viajero">VIAJERO</a><ul>
+<li><a class="reference internal" href="#id2">TRANSACCIONES</a><ul>
+<li><a class="reference internal" href="#id3">CREAR</a></li>
+<li><a class="reference internal" href="#id4">ACTUALIZAR</a></li>
+<li><a class="reference internal" href="#id5">LISTAR</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="producto.html"
-                        title="previous chapter">MALETERO.VENTA</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="venta.html"
-                        title="next chapter">MICROSERVICIO VENTA</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -108,18 +396,11 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
-        <li class="right" >
-          <a href="venta.html" title="MICROSERVICIO VENTA"
-             >next</a> |</li>
-        <li class="right" >
-          <a href="producto.html" title="MALETERO.VENTA"
-             >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li>
-          <li class="nav-item nav-item-1"><a href="index.html" >MALETERO</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper Maletero 0.1 documentation</a> &#187;</li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright (u&#39;2019&#39;, &#39;Leonardo Gomez&#39;).
+        &#169; Copyright (&#39;2019&#39;, &#39;Leonardo Gomez&#39;).
       Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
     </div>
   </body>

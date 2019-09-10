@@ -32,7 +32,7 @@ Una de las transacciones que se puede realizar con el microservicio es:
 EJECUTAR
 ^^^^^^^^
 
-Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encryptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties
+Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties
 
 **Atributos**
 
@@ -47,8 +47,16 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
     "Usuario", "Se debe enviar el objeto usuario que esta realizando la transacción, solo en el caso de login este objeto no se debe enviar."
     "Rol", "Se debe enviar el objeto rol con el cual se realiza la transacción, este es usado para validar si un usuario tiene permiso de realizar una acción. Dependiendo la acción se solicitará este valor."
 ..
+**AES  CODIFICADO**
 
-..
+
+**WlPKT2bewO6E2ndYHHsUyC4GOteiSuxpEoucv8iK7PfUTGH+AtnCpFqSG03llqhp2YxHJfE9cpOzWv
+SqKBVPPVDj2nNTVNGCHrPLVCQmvnPgZ7hNCePqy/igSZslbutM39YEr9h3dDDjoj9atMlMRnhUdx+
++M171plQ9N9h1fWqL8Y+2Zkh6/zdL5ceYH0mTvaiOyMUKN6WJqRRU/wqWfPvEL/ZvmK4OZZC8WSoJ
+S6xKbhbkAn1+Eqktj8XRhyX9+JKiVfgamYZhe744jIqSlS4GlwUiIBUXxZ8GkPqJcPlntsV3XUhn
+swNyp2fRVANAaQ/HWCszxYDvbt6JhkD+A+H4EFmLaW0RUBWZZiVGRSrF2JzYmRxkpCeRn1bJoYdSO
+4zuYN3hWq4PQ1Ts2GZLhvclnfpzw+1y7TWQ8cRNIIV34wQ0/CF5FDZxzjBoIrt/mqpR08M2NSOgDQ9X
+Y/KEcCWJwnjbI/jV7+**
 
 
 **JSON IN**
@@ -56,7 +64,7 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 .. code-block:: javascript
 
 
- {
+  {
     "detail": [],
     "limit": "100",
     "orderby": "",
@@ -74,7 +82,7 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
         "rol": {
          "rolid": 1
      } 
-}
+  }
 
 **URL**
 
