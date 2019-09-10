@@ -36,19 +36,88 @@
             
   <div class="section" id="microservicio-persona">
 <span id="index-0"></span><h1>MICROSERVICIO PERSONA<a class="headerlink" href="#microservicio-persona" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="creacion-del-modulo">
-<h2>CREACIÓN  DEL MODULO<a class="headerlink" href="#creacion-del-modulo" title="Permalink to this headline">¶</a></h2>
-<p><strong>Modulo</strong></p>
+</div>
+<div class="section" id="microservicio-venta">
+<h1>MICROSERVICIO VENTA<a class="headerlink" href="#microservicio-venta" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="configuraciones">
+<h2>CONFIGURACIONES<a class="headerlink" href="#configuraciones" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="modulo">
+<h3>MÓDULO<a class="headerlink" href="#modulo" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Especificar en el archivo “engiAcceso” la clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo</li>
+<li>Especificar en el archivo “engiAcceso” la clave del módulo.</li>
 <li>Crear un archivo para la persistencia a la base de datos en este caso “EngiMysql.EngiMaletero.Persona”</li>
-<li>Agregar la persistencia del modulo en  archivo standalone.full</li>
+<li>Agregar la persistencia de JBOSS para el modulo en  archivo standalone-full.xml</li>
 </ul>
-<p><strong>Proyecto</strong></p>
+</div>
+<div class="section" id="proyecto">
+<h3>PROYECTO<a class="headerlink" href="#proyecto" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
-<li>Crear el nombre de la persistencia con el nombre que se</li>
+<li>Crear el nombre de la persistencia y agregar al archivo persistence.xml</li>
 <li>Agregar los paquetes que deseamos importar en el persistence.xml</li>
 </ul>
+</div>
+<div class="section" id="variables-de-configuracion">
+<h3>VARIABLES DE CONFIGURACIÓN<a class="headerlink" href="#variables-de-configuracion" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="generales">
+<h4>GENERALES<a class="headerlink" href="#generales" title="Permalink to this headline">¶</a></h4>
+<table border="1" class="colwidths-given docutils" id="id6">
+<caption><span class="caption-text">Configuración</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Seguridad</td>
+<td>La clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo.</td>
+</tr>
+<tr class="row-odd"><td>Persistencia</td>
+<td>Para la conexión a la base de datos debe esta compuesto de la siguiente manera : EngiMysql.NombredelProyecto.NombredelModulo</td>
+</tr>
+<tr class="row-even"><td>Parametros</td>
+<td>Para la conexión a la base de datos debe esta compuesto de la siguiente manera : EngiParametros.NombredelProyecto.NombredelModulo</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="persistencia">
+<h4>PERSISTENCIA<a class="headerlink" href="#persistencia" title="Permalink to this headline">¶</a></h4>
+<p>Nombre del Archivo: EngiMysql.Maletero.Ventas.properties” ,este archivo debe ser agregado en la carpeta configuraciones del servidor Wildfly.</p>
+<table border="1" class="colwidths-given docutils" id="id7">
+<caption><span class="caption-text">Persistencia de Datos</span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>persistence.nombre</td>
+<td>Nombre de la persistencia para la conexión a la base.</td>
+</tr>
+<tr class="row-odd"><td>jdbc.url</td>
+<td>URL de la base de datos</td>
+</tr>
+<tr class="row-even"><td>jdbc.user</td>
+<td>Usuario</td>
+</tr>
+<tr class="row-odd"><td>jdbc.password</td>
+<td>Clave</td>
+</tr>
+<tr class="row-even"><td>jdbc.driver</td>
+<td>Nombre del driver para la conexión</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 <div class="section" id="transacciones">
 <h2>TRANSACCIONES<a class="headerlink" href="#transacciones" title="Permalink to this headline">¶</a></h2>
@@ -72,8 +141,7 @@
 <div class="section" id="direccion">
 <h2>DIRECCION<a class="headerlink" href="#direccion" title="Permalink to this headline">¶</a></h2>
 <p>ENTIDAD</p>
-<table border="1" class="colwidths-given docutils" id="id6">
-<caption><span class="caption-text">Entidad</span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="29%" />
 <col width="71%" />
@@ -84,23 +152,38 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Detail</td>
-<td>Se envía un array de objetos sobre los cuales se vaya a realizar una operación.</td>
+<tr class="row-even"><td>dirid</td>
+<td>Id de la direccion</td>
 </tr>
-<tr class="row-odd"><td>OfertaPk</td>
-<td>&#160;</td>
-</tr>
-<tr class="row-even"><td>Ofetraida</td>
+<tr class="row-odd"><td>ciuid</td>
 <td>Se envía el valor del transporte a modificar.</td>
 </tr>
-<tr class="row-odd"><td>Ofefechaentrega</td>
+<tr class="row-even"><td>estid</td>
 <td>Se envía la fecha de entrega a modificar.</td>
 </tr>
-<tr class="row-even"><td>Ofechacreacion</td>
-<td>La fecha de creación es insertada por el sistema.</td>
+<tr class="row-odd"><td>paisid</td>
+<td>Id del país</td>
 </tr>
-<tr class="row-odd"><td>Ofechaestado</td>
-<td>El estado de la oferta puede  por un valor numérico.</td>
+<tr class="row-even"><td>usuid</td>
+<td>Id del usuario</td>
+</tr>
+<tr class="row-odd"><td>dirdireccion</td>
+<td>Dirección</td>
+</tr>
+<tr class="row-even"><td>dirlatitud</td>
+<td>Coordenada de latitud</td>
+</tr>
+<tr class="row-odd"><td>dirlatitud</td>
+<td>Coordenada de longitud</td>
+</tr>
+<tr class="row-even"><td>dircodigopostal</td>
+<td>Código postal</td>
+</tr>
+<tr class="row-odd"><td>dirtelefono</td>
+<td>Número de teléfono</td>
+</tr>
+<tr class="row-even"><td>direstado</td>
+<td>Estado de la dirección</td>
 </tr>
 </tbody>
 </table>
@@ -243,6 +326,77 @@
 </div>
 <div class="section" id="viajero">
 <h2>VIAJERO<a class="headerlink" href="#viajero" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributos</th>
+<th class="head">Campos</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>viad</td>
+<td>Id del viajero.</td>
+</tr>
+<tr class="row-odd"><td>arcid</td>
+<td><blockquote class="first">
+<div>Objeto Archivo:</div></blockquote>
+<ul class="last simple">
+<li>arcid: Id del archivo.</li>
+<li>arcnombre: Nombre del archivo.</li>
+<li>arcruta: Ruta donde se almacena el archivo.</li>
+<li>arcextension: Extensión del archivo.</li>
+<li>arcestado: Ruta donde se almacena el archivo.</li>
+<li>arcextension: Extensión del archivo.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>usuid</td>
+<td><blockquote class="first">
+<div>Objeto Usuario:</div></blockquote>
+<ul class="last simple">
+<li>usuid: Id del usuario.</li>
+<li><dl class="first docutils">
+<dt>perid: Objeto Persona:</dt>
+<dd><ul class="first last">
+<li>perid:Id de la Persona.</li>
+<li>sexid:Id del sexo.</li>
+<li>peridentificacion:Identificacion</li>
+<li>pernombre:Nombre de la persona</li>
+<li>perapellido:Apellido de la Persona</li>
+<li>pertelefono:Apellido de la Persona</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>arcextension: Extensión del archivo.</li>
+<li>arcestado: Ruta donde se almacena el archivo.</li>
+<li>arcextension: Extensión del archivo.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td>monid</td>
+<td>Id de la moneda.</td>
+</tr>
+<tr class="row-even"><td>ofefechaentrega</td>
+<td>Fecha de entrega de la compra.</td>
+</tr>
+<tr class="row-odd"><td>ofechacreacion</td>
+<td>La fecha de creación es insertada por el sistema.”</td>
+</tr>
+<tr class="row-even"><td>ofevalor</td>
+<td>Valor de la oferta.</td>
+</tr>
+<tr class="row-odd"><td>ofetraida</td>
+<td>Valor de traída de la compra.</td>
+</tr>
+<tr class="row-even"><td>ofeestado</td>
+<td>Estado del  oferta.</td>
+</tr>
+</tbody>
+</table>
 <div class="section" id="id2">
 <h3>TRANSACCIONES<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id3">
@@ -341,8 +495,18 @@
         <div class="sphinxsidebarwrapper">
   <h3><a href="../index.html">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">MICROSERVICIO PERSONA</a><ul>
-<li><a class="reference internal" href="#creacion-del-modulo">CREACIÓN  DEL MODULO</a></li>
+<li><a class="reference internal" href="#">MICROSERVICIO PERSONA</a></li>
+<li><a class="reference internal" href="#microservicio-venta">MICROSERVICIO VENTA</a><ul>
+<li><a class="reference internal" href="#configuraciones">CONFIGURACIONES</a><ul>
+<li><a class="reference internal" href="#modulo">MÓDULO</a></li>
+<li><a class="reference internal" href="#proyecto">PROYECTO</a></li>
+<li><a class="reference internal" href="#variables-de-configuracion">VARIABLES DE CONFIGURACIÓN</a><ul>
+<li><a class="reference internal" href="#generales">GENERALES</a></li>
+<li><a class="reference internal" href="#persistencia">PERSISTENCIA</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a class="reference internal" href="#transacciones">TRANSACCIONES</a></li>
 <li><a class="reference internal" href="#entidades">ENTIDADES</a></li>
 <li><a class="reference internal" href="#direccion">DIRECCION</a><ul>

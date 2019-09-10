@@ -6,19 +6,54 @@ MICROSERVICIO PERSONA
 =====================
 
 
-CREACIÓN  DEL MODULO
-----------------------
+MICROSERVICIO VENTA
+===================
 
-**Modulo**
+CONFIGURACIONES
+---------------
 
-- Especificar en el archivo "engiAcceso" la clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo
+
+MÓDULO
+^^^^^^
+- Especificar en el archivo "engiAcceso" la clave del módulo.
 - Crear un archivo para la persistencia a la base de datos en este caso "EngiMysql.EngiMaletero.Persona"
-- Agregar la persistencia del modulo en  archivo standalone.full
+- Agregar la persistencia de JBOSS para el modulo en  archivo standalone-full.xml
 
-**Proyecto**
-
-- Crear el nombre de la persistencia con el nombre que se 
+PROYECTO
+^^^^^^^^
+- Crear el nombre de la persistencia y agregar al archivo persistence.xml
 - Agregar los paquetes que deseamos importar en el persistence.xml
+
+
+VARIABLES DE CONFIGURACIÓN
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+GENERALES
+~~~~~~~~~
+.. csv-table:: Configuración
+   :header: "Atributo", "Detalle"
+   :widths: 40, 500
+
+    "Seguridad", "La clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo."
+    "Persistencia", "Para la conexión a la base de datos debe esta compuesto de la siguiente manera : EngiMysql.NombredelProyecto.NombredelModulo"
+    "Parametros", "Para la conexión a la base de datos debe esta compuesto de la siguiente manera : EngiParametros.NombredelProyecto.NombredelModulo"
+..
+
+
+PERSISTENCIA
+~~~~~~~~~~~~
+Nombre del Archivo: EngiMysql.Maletero.Ventas.properties" ,este archivo debe ser agregado en la carpeta configuraciones del servidor Wildfly. 
+
+.. csv-table:: Persistencia de Datos
+   :header: "Atributo", "Detalle"
+   :widths: 40, 500
+
+    "persistence.nombre", "Nombre de la persistencia para la conexión a la base."
+    "jdbc.url", "URL de la base de datos"
+    "jdbc.user", "Usuario"
+    "jdbc.password", "Clave"
+    "jdbc.driver", "Nombre del driver para la conexión"
+
+..
 
 
 TRANSACCIONES
@@ -46,16 +81,21 @@ DIRECCION
 
 ENTIDAD
 
-.. csv-table:: Entidad
+.. csv-table:: 
    :header: "Atributo", "Detalle"
    :widths: 40, 100
-  
-    "Detail", "Se envía un array de objetos sobre los cuales se vaya a realizar una operación."
-    "OfertaPk",""
-    "Ofetraida", "Se envía el valor del transporte a modificar."
-    "Ofefechaentrega", "Se envía la fecha de entrega a modificar."
-    "Ofechacreacion", "La fecha de creación es insertada por el sistema."
-    "Ofechaestado", "El estado de la oferta puede  por un valor numérico."
+ 
+    "dirid","Id de la direccion"
+    "ciuid", "Se envía el valor del transporte a modificar."
+    "estid", "Se envía la fecha de entrega a modificar."
+    "paisid", "Id del país"
+    "usuid", "Id del usuario"
+    "dirdireccion","Dirección"
+    "dirlatitud","Coordenada de latitud"
+    "dirlatitud","Coordenada de longitud"
+    "dircodigopostal","Código postal"
+    "dirtelefono","Número de teléfono"
+    "direstado","Estado de la dirección"
 
 ..
 
@@ -196,6 +236,50 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 
 VIAJERO
 -------
+
+
+
+
+
++-------------------+--------------------------------------------------------+
+|     Atributos     |         Campos                                         |
++===================+========================================================+
+| viad              |   Id del viajero.                                      |
++-------------------+--------------------------------------------------------+
+| arcid             |    Objeto Archivo:                                     |
+|                   |  - arcid: Id del archivo.                              | 
+|                   |  - arcnombre: Nombre del archivo.                      |
+|                   |  - arcruta: Ruta donde se almacena el archivo.         | 
+|                   |  - arcextension: Extensión del archivo.                |
+|                   |  - arcestado: Ruta donde se almacena el archivo.       | 
+|                   |  - arcextension: Extensión del archivo.                |
++-------------------+--------------------------------------------------------+
+| usuid             |    Objeto Usuario:                                     |
+|                   |  - usuid: Id del usuario.                              | 
+|                   |                                                        | 
+|                   |  - perid: Objeto Persona:                              |
+|                   |           - perid:Id de la Persona.                    |                    
+|                   |           - sexid:Id del sexo.                         | 
+|                   |           - peridentificacion:Identificacion           | 
+|                   |           - pernombre:Nombre de la persona             | 
+|                   |           - perapellido:Apellido de la Persona         |
+|                   |           - pertelefono:Apellido de la Persona         | 
+|                   |  - arcextension: Extensión del archivo.                |
+|                   |  - arcestado: Ruta donde se almacena el archivo.       | 
+|                   |  - arcextension: Extensión del archivo.                |
++-------------------+--------------------------------------------------------+
+| monid             |  Id de la moneda.                                      |
++-------------------+--------------------------------------------------------+
+| ofefechaentrega   |  Fecha de entrega de la compra.                        |
++-------------------+--------------------------------------------------------+
+| ofechacreacion    |  La fecha de creación es insertada por el sistema."    |
++-------------------+--------------------------------------------------------+
+| ofevalor          |  Valor de la oferta.                                   |
++-------------------+--------------------------------------------------------+
+| ofetraida         |  Valor de traída de la compra.                         |
++-------------------+--------------------------------------------------------+
+| ofeestado         |  Estado del  oferta.                                   |
++-------------------+--------------------------------------------------------+
 
 TRANSACCIONES
 ^^^^^^^^^^^^^

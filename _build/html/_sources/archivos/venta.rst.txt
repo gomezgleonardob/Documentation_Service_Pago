@@ -7,7 +7,6 @@ MICROSERVICIO VENTA
 CONFIGURACIONES
 ---------------
 
-
 MÓDULO
 ^^^^^^
 - Especificar en el archivo "engiAcceso" la clave del módulo.
@@ -61,6 +60,17 @@ Nombre del Archivo: EngiParametros.Maletero.Ventas.properties" ,este archivo deb
     "Nombre del parámetro ", "Valor que se le va asignar"
 ..
 
+EMAIL
+~~~~~
+Nombre del Archivo: Engimail.properties" ,este archivo se especifican las variables del asunto y el cuerpo del email.
+
+.. csv-table:: Parametros
+   :header: "Atributo", "Detalle"
+   :widths: 40, 500
+
+    "Nombre del parámetro ", "Valor que se le va asignar"
+..
+
 TRANSACCIONES
 -------------
 
@@ -88,12 +98,8 @@ PAGO
 ENTIDAD
 ^^^^^^^
 
-.. csv-table:: Entidad
-   :header: "Atributo", "Detalle"
-   :widths: 40, 500
 
-    "Detail", "Se envía un array de objetos sobre los cuales se vaya a realizar una operación."
-
+  
 ..
 
 
@@ -147,7 +153,7 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 **JSON OUT**
 
 .. csv-table:: 
-   :header: "Código", "Descripcion"
+   :header: "Código", "Descripción"
    :widths: 40, 100
 
     "sucess000", "Transacción Exitosa"
@@ -161,11 +167,26 @@ LISTAR
 **FILTROS**
 
 .. csv-table:: 
-   :header: "Campo", "Descripcion"
+   :header: "Campo", "Descripción"
    :widths: 40, 100
 
     "pagid", "Id del Pago"
-    "pagestadp", "Estado del Pago"
+    "pagestado", "Estado del Pago"
+    "pagid", "Id del Pago"
+    "pagestado", "Estado del Pago"
+    "forid","Id de la Forma de Pago"
+    "viaid","Id del Viajero"
+    "solid","Id  de la Solicitud"
+    "usuid","Id del Usuario"
+    "monid","Id de la Moneda"
+    "pagcomprobante","Nombre del Comprobante"
+    "pagfechacreacion","Fecha de Creación del Pago"
+    "pagfechapago","Fecha de Creación del Pago"
+    "pagfechaenviado","Fecha de Envío"
+    "pagfechaentregado","Fecha de Envío"
+    "pagfechacancelado","Fecha de Cancelación del Pago"
+    "pagestado","Estado del Pago"
+  
 
 **JSON OUT**
 
@@ -176,19 +197,32 @@ OFERTA
 ENTIDAD
 ^^^^^^^
 
++-------------------+--------------------------------------------------------+
+|     Atributos     |         Campos                                         |
++===================+========================================================+
+| ofertaPK          |  - ofeid: Id de la oferta generada por el sistema      | 
+|                   |  - solid: Id de la solicitud de compra.                | 
+|                   |  - viaid: Id del viajero que realiza la oferta.        | 
++-------------------+--------------------------------------------------------+
+| monid             |  Id de la moneda.                                      |
++-------------------+--------------------------------------------------------+
+| ofefechaentrega   |  Fecha de entrega de la compra.                        |
++-------------------+--------------------------------------------------------+
+| ofechacreacion    |  La fecha de creación es insertada por el sistema."    |
++-------------------+--------------------------------------------------------+
+| ofevalor          |  Valor de la oferta.                                   |
++-------------------+--------------------------------------------------------+
+| ofetraida         |  Valor de traída de la compra.                         |
++-------------------+--------------------------------------------------------+
+| ofeestado         |  Estado del  oferta.                                   |
++-------------------+--------------------------------------------------------+
 
-.. csv-table:: Entidad
-   :header: "Atributo", "Detalle"
-   :widths: 40, 100
-  
+
+.. note::
+
+   La primary key ``OfertaPK`` esta compuesta  de tres campos:
+   ``ofeid`` ,  ``solid``,  ``viaid``
    
-    "OfertaPk",""
-    "Ofetraida", "Se envía el valor del transporte a modificar."
-    "Ofefechaentrega", "Se envía la fecha de entrega a modificar."
-    "Ofechacreacion", "La fecha de creación es insertada por el sistema."
-    "Ofechaestado", "El estado de la oferta puede  por un valor numérico."
-
-..
 
 TRANSACCIONES
 ^^^^^^^^^^^^^
@@ -390,7 +424,6 @@ Se detalla por los campos que se puede filtrar la solicitud.
 
 
 
-
 SOLICITUD
 ---------
 
@@ -399,6 +432,23 @@ ENTIDAD
 
 Campos de la entidad Solicitud
 
+.. csv-table::
+   :header: "Campo", "Detalle"
+   :widths: 40,200
+   
+    "solid", "Id de la solicitud "
+    "usuid","Id de usuario"
+    "catid","Id de la categoría"
+    "dirid","Id  de la dirección"
+    "arcid","Id del archivo"
+    "monid","Id de la moneda"
+    "arcid","Id de archivo del comprobante de pago"
+    "solfechacreacion","Fecha de creación de la solicitud"
+    "sollink","Link de la compra"
+    "soldescripcion","Breve descripción de la compra"
+    "solindicaciones","Fecha de recepción del producto"
+    "solestado","Estado de la solicitud"  
+..
 
 TRANSACCIONES
 ^^^^^^^^^^^^^
@@ -406,16 +456,21 @@ TRANSACCIONES
 CREAR
 ~~~~~
 
-Se recibe una petición para crear una solicitud y puede llevar los siguientes elementos
+Se recibe una petición para crear una solicitud y puede llevar los siguientes elementos.
 
     • La solicitud lleva foto y el link.
     • La solicitud lleva imgaen.
     • La solicitud lleva el link.
 
+.. note::
+
+   Cuando se crea la solicitu la imagen adjunta debe ir codificada en ``Base64`` y solo se archivos ``PNG``.
+   La codificación la puede realizar en el siguiente enlace: `Codifación Base 64 <https://base64.guru/converter/encode/image/png>`_
+
 **JSON IN** 
 
 
-- Solicitud creada con link e imagen 
+Solicitud creada que lleva link e imagen. 
 
 .. code-block:: javascript
 
@@ -478,7 +533,7 @@ Se recibe una petición para crear una solicitud y puede llevar los siguientes e
 **JSON IN** 
 
 
-- Solicitud creada lleva solo la imagen
+- Solicitud creada que lleva solo el link
 
 .. code-block:: javascript
 
@@ -492,6 +547,69 @@ Se recibe una petición para crear una solicitud y puede llevar los siguientes e
          "sollink": "https://www.ebay.com/itm/NVIDIA-GeForce-GTX....",
          "soldescripcion": "GPU",
          "solindicaciones": "Comprar la de 6GB"
+        }
+       }
+      ],
+      "generarid": true,
+      "usuario": {
+     "usuid": "1",
+     "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+     "usuverificado": 1,
+     "usucodigoverificacion": "SU91L9",
+     "usufechacodigo": "2019-07-08 11:27:36",
+     "usufechacreacion": "2019-07-08 11:27:36",
+     "usuestado": "Activo",
+     "usueliminado": "No",
+     "perid": {
+      "perid": "1",
+      "peridentificacion": "1725101784",
+      "pernombre": "admin",
+      "perapellido": "",
+      "pertelefono": "",
+      "percorreo": "blgomez@engideveloper.com",
+      "perfechanacimiento": "2017-05-23 00:00:00",
+      "perestado": "Activo",
+      "pereliminado": "No",
+      "sexid": 1
+     },
+      "lenid": "es"
+      },
+     "rol": {
+    "rolid": 1,
+    "rolnombre": "Administrador",
+    "roldescripcion": "Rol para administrador",
+    "rolestado": "Activo",
+    "roleliminado": "No",
+    "palid": 1
+    }
+  }
+..
+
+
+**JSON IN** 
+
+
+- Solicitud creada que lleva solo la imagen.
+
+.. code-block:: javascript
+
+  { 
+     "detail": [
+      {
+         "objeto": {
+         "usuid": "db97b24be40c3d68ebec588209e41b36",
+         "catid": "9ca40f9be9423c169f395626f80e3c07",
+         "dirid": "25296619b814452080f7ae451309b545",
+          "arcid": {
+          "arcid": "",
+          "arcnombre": "",
+          "arcruta": "engideveloper/desarrollo/archivos/Categoria/Logo/",
+          "arcextension": "png",
+          "archivob64": "W3j3QHli8OYN"
+         },
+          "sollink": "",
+          "soldescripcion": "GPU",
+          "solindicaciones": "Comprar la de 6GB"
         }
        }
       ],
@@ -546,7 +664,7 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 
 ACTUALIZAR
 ~~~~~~~~~~
-
+En el caso
 .. code-block:: javascript
 
 
@@ -566,7 +684,6 @@ LISTAR
 ~~~~~~
 
 
-
 **FILTROS**
 
 .. csv-table:: 
@@ -575,3 +692,26 @@ LISTAR
 
     "ofeid", "Id de la Oferta"
     "ofeestado", "Estado de la oferta"
+
+FORMA DE PAG0
+-------------
+
+ENTIDAD
+^^^^^^^
+
+Campos de la entidad Forma de Pago.
+
+
+.. csv-table:: 
+   :header: "Código", "Descripcion"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error008", "Datos Inválidos"
+
+
+TRANSACCIONES
+^^^^^^^^^^^^^
+
+CREAR
+~~~~~

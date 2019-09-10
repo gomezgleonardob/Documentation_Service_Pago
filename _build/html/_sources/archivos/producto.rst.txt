@@ -10,14 +10,14 @@ CREACIÓN  DEL MODULO
 
 **Modulo**
 
-- Especificar en el archivo "engiAcceso" la clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo
-- Crear un archivo para la persistencia a la base de datos en este caso "EngiMysql.EngiMaletero.Persona"
-- Agregar la persistencia del modulo en  archivo standalone.full
+- Especificar en el archivo "engiAcceso" la clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo.
+- Crear un archivo para la persistencia a la base de datos en este caso "EngiMysql.EngiMaletero.Persona".
+- Agregar la persistencia del modulo en  archivo standalone.
 
 **Proyecto**
 
-- Crear el nombre de la persistencia con el nombre que se 
-- Agregar los paquetes que deseamos importar en el persistence.xml
+- Crear el nombre de la persistencia con el nombre que se .
+- Agregar los paquetes que deseamos importar en el persistence.xml.
 
 
 TRANSACCIONES

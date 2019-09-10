@@ -57,8 +57,8 @@
 <h3>VARIABLES DE CONFIGURACIÓN<a class="headerlink" href="#variables-de-configuracion" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="generales">
 <h4>GENERALES<a class="headerlink" href="#generales" title="Permalink to this headline">¶</a></h4>
-<table border="1" class="colwidths-given docutils" id="id12">
-<caption><span class="caption-text">Configuración</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given docutils" id="id15">
+<caption><span class="caption-text">Configuración</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="7%" />
 <col width="93%" />
@@ -84,8 +84,8 @@
 <div class="section" id="persistencia">
 <h4>PERSISTENCIA<a class="headerlink" href="#persistencia" title="Permalink to this headline">¶</a></h4>
 <p>Nombre del Archivo: EngiMysql.Maletero.Ventas.properties” ,este archivo debe ser agregado en la carpeta configuraciones del servidor Wildfly.</p>
-<table border="1" class="colwidths-given docutils" id="id13">
-<caption><span class="caption-text">Persistencia de Datos</span><a class="headerlink" href="#id13" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given docutils" id="id16">
+<caption><span class="caption-text">Persistencia de Datos</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="7%" />
 <col width="93%" />
@@ -117,8 +117,29 @@
 <div class="section" id="parametros">
 <h4>PARÁMETROS<a class="headerlink" href="#parametros" title="Permalink to this headline">¶</a></h4>
 <p>Nombre del Archivo: EngiParametros.Maletero.Ventas.properties” ,este archivo debe ser agregado en la carpeta configuraciones del servidor Wildfly.</p>
-<table border="1" class="colwidths-given docutils" id="id14">
-<caption><span class="caption-text">Parametros</span><a class="headerlink" href="#id14" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given docutils" id="id17">
+<caption><span class="caption-text">Parametros</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Nombre del parámetro</td>
+<td>Valor que se le va asignar</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="email">
+<h4>EMAIL<a class="headerlink" href="#email" title="Permalink to this headline">¶</a></h4>
+<p>Nombre del Archivo: Engimail.properties” ,este archivo se especifican las variables del asunto y el cuerpo del email.</p>
+<table border="1" class="colwidths-given docutils" id="id18">
+<caption><span class="caption-text">Parametros</span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="7%" />
 <col width="93%" />
@@ -162,23 +183,6 @@
 <h2>PAGO<a class="headerlink" href="#pago" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="entidad">
 <h3>ENTIDAD<a class="headerlink" href="#entidad" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="colwidths-given docutils" id="id15">
-<caption><span class="caption-text">Entidad</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
-<colgroup>
-<col width="7%" />
-<col width="93%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Atributo</th>
-<th class="head">Detalle</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>Detail</td>
-<td>Se envía un array de objetos sobre los cuales se vaya a realizar una operación.</td>
-</tr>
-</tbody>
-</table>
 </div>
 <div class="section" id="id1">
 <h3>TRANSACCIONES<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
@@ -217,7 +221,7 @@
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Código</th>
-<th class="head">Descripcion</th>
+<th class="head">Descripción</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -240,14 +244,56 @@
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Campo</th>
-<th class="head">Descripcion</th>
+<th class="head">Descripción</th>
 </tr>
 </thead>
 <tbody valign="top">
 <tr class="row-even"><td>pagid</td>
 <td>Id del Pago</td>
 </tr>
-<tr class="row-odd"><td>pagestadp</td>
+<tr class="row-odd"><td>pagestado</td>
+<td>Estado del Pago</td>
+</tr>
+<tr class="row-even"><td>pagid</td>
+<td>Id del Pago</td>
+</tr>
+<tr class="row-odd"><td>pagestado</td>
+<td>Estado del Pago</td>
+</tr>
+<tr class="row-even"><td>forid</td>
+<td>Id de la Forma de Pago</td>
+</tr>
+<tr class="row-odd"><td>viaid</td>
+<td>Id del Viajero</td>
+</tr>
+<tr class="row-even"><td>solid</td>
+<td>Id  de la Solicitud</td>
+</tr>
+<tr class="row-odd"><td>usuid</td>
+<td>Id del Usuario</td>
+</tr>
+<tr class="row-even"><td>monid</td>
+<td>Id de la Moneda</td>
+</tr>
+<tr class="row-odd"><td>pagcomprobante</td>
+<td>Nombre del Comprobante</td>
+</tr>
+<tr class="row-even"><td>pagfechacreacion</td>
+<td>Fecha de Creación del Pago</td>
+</tr>
+<tr class="row-odd"><td>pagfechapago</td>
+<td>Fecha de Creación del Pago</td>
+</tr>
+<tr class="row-even"><td>pagfechaenviado</td>
+<td>Fecha de Envío</td>
+</tr>
+<tr class="row-odd"><td>pagfechaentregado</td>
+<td>Fecha de Envío</td>
+</tr>
+<tr class="row-even"><td>pagfechacancelado</td>
+<td>Fecha de Cancelación del Pago</td>
+</tr>
+<tr class="row-odd"><td>pagestado</td>
 <td>Estado del Pago</td>
 </tr>
 </tbody>
@@ -260,35 +306,50 @@
 <h2>OFERTA<a class="headerlink" href="#oferta" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id2">
 <h3>ENTIDAD<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<table border="1" class="colwidths-given docutils" id="id16">
-<caption><span class="caption-text">Entidad</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+<table border="1" class="docutils">
 <colgroup>
-<col width="29%" />
-<col width="71%" />
+<col width="25%" />
+<col width="75%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Atributo</th>
-<th class="head">Detalle</th>
+<tr class="row-odd"><th class="head">Atributos</th>
+<th class="head">Campos</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>OfertaPk</td>
-<td>&#160;</td>
+<tr class="row-even"><td>ofertaPK</td>
+<td><ul class="first last simple">
+<li>ofeid: Id de la oferta generada por el sistema</li>
+<li>solid: Id de la solicitud de compra.</li>
+<li>viaid: Id del viajero que realiza la oferta.</li>
+</ul>
+</td>
 </tr>
-<tr class="row-odd"><td>Ofetraida</td>
-<td>Se envía el valor del transporte a modificar.</td>
+<tr class="row-odd"><td>monid</td>
+<td>Id de la moneda.</td>
 </tr>
-<tr class="row-even"><td>Ofefechaentrega</td>
-<td>Se envía la fecha de entrega a modificar.</td>
+<tr class="row-even"><td>ofefechaentrega</td>
+<td>Fecha de entrega de la compra.</td>
 </tr>
-<tr class="row-odd"><td>Ofechacreacion</td>
-<td>La fecha de creación es insertada por el sistema.</td>
+<tr class="row-odd"><td>ofechacreacion</td>
+<td>La fecha de creación es insertada por el sistema.”</td>
 </tr>
-<tr class="row-even"><td>Ofechaestado</td>
-<td>El estado de la oferta puede  por un valor numérico.</td>
+<tr class="row-even"><td>ofevalor</td>
+<td>Valor de la oferta.</td>
+</tr>
+<tr class="row-odd"><td>ofetraida</td>
+<td>Valor de traída de la compra.</td>
+</tr>
+<tr class="row-even"><td>ofeestado</td>
+<td>Estado del  oferta.</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">La primary key <code class="docutils literal notranslate"><span class="pre">OfertaPK</span></code> esta compuesta  de tres campos:
+<code class="docutils literal notranslate"><span class="pre">ofeid</span></code> ,  <code class="docutils literal notranslate"><span class="pre">solid</span></code>,  <code class="docutils literal notranslate"><span class="pre">viaid</span></code></p>
+</div>
 </div>
 <div class="section" id="id3">
 <h3>TRANSACCIONES<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
@@ -483,12 +544,61 @@
 <div class="section" id="id7">
 <h3>ENTIDAD<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>Campos de la entidad Solicitud</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Campo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>solid</td>
+<td>Id de la solicitud</td>
+</tr>
+<tr class="row-odd"><td>usuid</td>
+<td>Id de usuario</td>
+</tr>
+<tr class="row-even"><td>catid</td>
+<td>Id de la categoría</td>
+</tr>
+<tr class="row-odd"><td>dirid</td>
+<td>Id  de la dirección</td>
+</tr>
+<tr class="row-even"><td>arcid</td>
+<td>Id del archivo</td>
+</tr>
+<tr class="row-odd"><td>monid</td>
+<td>Id de la moneda</td>
+</tr>
+<tr class="row-even"><td>arcid</td>
+<td>Id de archivo del comprobante de pago</td>
+</tr>
+<tr class="row-odd"><td>solfechacreacion</td>
+<td>Fecha de creación de la solicitud</td>
+</tr>
+<tr class="row-even"><td>sollink</td>
+<td>Link de la compra</td>
+</tr>
+<tr class="row-odd"><td>soldescripcion</td>
+<td>Breve descripción de la compra</td>
+</tr>
+<tr class="row-even"><td>solindicaciones</td>
+<td>Fecha de recepción del producto</td>
+</tr>
+<tr class="row-odd"><td>solestado</td>
+<td>Estado de la solicitud</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="id8">
 <h3>TRANSACCIONES<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id9">
 <h4>CREAR<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
-<p>Se recibe una petición para crear una solicitud y puede llevar los siguientes elementos</p>
+<p>Se recibe una petición para crear una solicitud y puede llevar los siguientes elementos.</p>
 <blockquote>
 <div><ul class="simple">
 <li>La solicitud lleva foto y el link.</li>
@@ -496,10 +606,13 @@
 <li>La solicitud lleva el link.</li>
 </ul>
 </div></blockquote>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Cuando se crea la solicitu la imagen adjunta debe ir codificada en <code class="docutils literal notranslate"><span class="pre">Base64</span></code> y solo se archivos <code class="docutils literal notranslate"><span class="pre">PNG</span></code>.
+La codificación la puede realizar en el siguiente enlace: <a class="reference external" href="https://base64.guru/converter/encode/image/png">Codifación Base 64</a></p>
+</div>
 <p><strong>JSON IN</strong></p>
-<ul class="simple">
-<li>Solicitud creada con link e imagen</li>
-</ul>
+<p>Solicitud creada que lleva link e imagen.</p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[</span>
     <span class="p">{</span>
@@ -557,7 +670,7 @@
 </div>
 <p><strong>JSON IN</strong></p>
 <ul class="simple">
-<li>Solicitud creada lleva solo la imagen</li>
+<li>Solicitud creada que lleva solo el link</li>
 </ul>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[</span>
@@ -569,6 +682,65 @@
        <span class="s2">&quot;sollink&quot;</span><span class="o">:</span> <span class="s2">&quot;https://www.ebay.com/itm/NVIDIA-GeForce-GTX....&quot;</span><span class="p">,</span>
        <span class="s2">&quot;soldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;GPU&quot;</span><span class="p">,</span>
        <span class="s2">&quot;solindicaciones&quot;</span><span class="o">:</span> <span class="s2">&quot;Comprar la de 6GB&quot;</span>
+      <span class="p">}</span>
+     <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;generarid&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+   <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+   <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;perestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+   <span class="p">},</span>
+    <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+    <span class="p">},</span>
+   <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
+  <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>JSON IN</strong></p>
+<ul class="simple">
+<li>Solicitud creada que lleva solo la imagen.</li>
+</ul>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+       <span class="s2">&quot;objeto&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;db97b24be40c3d68ebec588209e41b36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;catid&quot;</span><span class="o">:</span> <span class="s2">&quot;9ca40f9be9423c169f395626f80e3c07&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;dirid&quot;</span><span class="o">:</span> <span class="s2">&quot;25296619b814452080f7ae451309b545&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;arcnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;arcruta&quot;</span><span class="o">:</span> <span class="s2">&quot;engideveloper/desarrollo/archivos/Categoria/Logo/&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;arcextension&quot;</span><span class="o">:</span> <span class="s2">&quot;png&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;archivob64&quot;</span><span class="o">:</span> <span class="s2">&quot;W3j3QHli8OYN&quot;</span>
+       <span class="p">},</span>
+        <span class="s2">&quot;sollink&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;soldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;GPU&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;solindicaciones&quot;</span><span class="o">:</span> <span class="s2">&quot;Comprar la de 6GB&quot;</span>
       <span class="p">}</span>
      <span class="p">}</span>
     <span class="p">],</span>
@@ -631,9 +803,8 @@
 </div>
 <div class="section" id="id10">
 <h4>ACTUALIZAR<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
+<p>En el caso
+.. code-block:: javascript</p>
 <p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
 <p><strong>JSON OUT</strong></p>
 <table border="1" class="colwidths-given docutils">
@@ -681,6 +852,38 @@
 </div>
 </div>
 </div>
+<div class="section" id="forma-de-pag0">
+<h2>FORMA DE PAG0<a class="headerlink" href="#forma-de-pag0" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>ENTIDAD<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<p>Campos de la entidad Forma de Pago.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Código</th>
+<th class="head">Descripcion</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>sucess000</td>
+<td>Transacción Exitosa</td>
+</tr>
+<tr class="row-odd"><td>error008</td>
+<td>Datos Inválidos</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id13">
+<h3>TRANSACCIONES<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h4>CREAR<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+</div>
 </div>
 
 
@@ -699,6 +902,7 @@
 <li><a class="reference internal" href="#generales">GENERALES</a></li>
 <li><a class="reference internal" href="#persistencia">PERSISTENCIA</a></li>
 <li><a class="reference internal" href="#parametros">PARÁMETROS</a></li>
+<li><a class="reference internal" href="#email">EMAIL</a></li>
 </ul>
 </li>
 </ul>
@@ -731,6 +935,14 @@
 <li><a class="reference internal" href="#id9">CREAR</a></li>
 <li><a class="reference internal" href="#id10">ACTUALIZAR</a></li>
 <li><a class="reference internal" href="#id11">LISTAR</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#forma-de-pag0">FORMA DE PAG0</a><ul>
+<li><a class="reference internal" href="#id12">ENTIDAD</a></li>
+<li><a class="reference internal" href="#id13">TRANSACCIONES</a><ul>
+<li><a class="reference internal" href="#id14">CREAR</a></li>
 </ul>
 </li>
 </ul>
