@@ -98,7 +98,7 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+html_theme = 'sphinx'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -196,8 +196,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'EngideveloperMaletero.tex', u'EngideveloperMaletero',
-   u'', 'manual'),
+    (master_doc, 'edx-sphinx-theme.tex', 'edx-sphinx-theme Documentation',
+     author, Leonardo Gomez),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

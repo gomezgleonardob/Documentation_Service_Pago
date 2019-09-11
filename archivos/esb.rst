@@ -9,7 +9,7 @@ Este servicio es un web service REST el cual recibe la información a través de
 PARÁMETROS DEL MICROSERVICIO
 ----------------------------
 
-.. csv-table:: Parametros
+.. csv-table:: 
    :header: "Campo", "Detalle"
    :widths: 40, 500
 
@@ -46,8 +46,8 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
     "Orderby", "Se envía un array de objetos sobre los cuales se vaya a realizar una operación."
     "Usuario", "Se debe enviar el objeto usuario que esta realizando la transacción, solo en el caso de login este objeto no se debe enviar."
     "Rol", "Se debe enviar el objeto rol con el cual se realiza la transacción, este es usado para validar si un usuario tiene permiso de realizar una acción. Dependiendo la acción se solicitará este valor."
-..
-**AES  CODIFICADO**
+
+**JSON CODIFICADO**
 
 
 **WlPKT2bewO6E2ndYHHsUyC4GOteiSuxpEoucv8iK7PfUTGH+AtnCpFqSG03llqhp2YxHJfE9cpOzWv
@@ -81,7 +81,7 @@ Y/KEcCWJwnjbI/jV7+**
      },
         "rol": {
          "rolid": 1
-     } 
+      } 
   }
 
 **URL**
@@ -110,7 +110,6 @@ CATALOGO DE RESPUESTA
     "error010","Código no valido."
     "error011","Sin archivo de configuración."
     "error012","Error al subir archivo."
-    
-..
+
 
 
