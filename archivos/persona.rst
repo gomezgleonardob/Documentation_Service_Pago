@@ -101,7 +101,6 @@ TRANSACCIONES
 CREAR
 ~~~~~
 
-
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
 
 
@@ -517,7 +516,6 @@ LISTAR
 
 **JSON IN**
 
-
 .. code-block:: javascript
 
 
@@ -533,7 +531,7 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 **JSON OUT**
 
 .. csv-table:: 
-   :header: "Código", "Descripcion"
+   :header: "Código", "Descripción"
    :widths: 40, 100
 
     "sucess000", "Transacción Exitosa"

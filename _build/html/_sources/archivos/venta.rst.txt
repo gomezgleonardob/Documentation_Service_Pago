@@ -703,15 +703,82 @@ Campos de la entidad Forma de Pago.
 
 
 .. csv-table:: 
-   :header: "Código", "Descripcion"
+   :header: "Atributos", "Campos"
    :widths: 40, 100
 
-    "sucess000", "Transacción Exitosa"
-    "error008", "Datos Inválidos"
-
+    "forid", "Id de forma de pago."
+    "palid", "Id de la palabra."
+    "pal_palid", "Id de forma de pago"
+    "forreferencia", "Nombre de la forma de pago"
+    "fortipo", Tipo de pago"
+    "formetodo", "Metodo de pago"
+    "forestado", Estado de la forma de pago"
+    "foreliminado", "Eliminacion de la forma de pago"
 
 TRANSACCIONES
 ^^^^^^^^^^^^^
 
 CREAR
 ~~~~~
+
+
+.. code-block:: javascript
+
+   {
+     "detail": [
+       {
+         "objeto": {
+           "palid": 39,
+           "pal_palid": 39,
+           "forreferencia": "Deposito",
+           "fortipo": 1,
+           "formetodo": 1,
+           "forestado": "Activo",
+           "foreliminado": "no"
+         }
+       }
+     ],
+     "generarid": true,
+     "usuario": {
+       "usuid": "1",
+       "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+       "usuverificado": 1,
+       "usucodigoverificacion": "SU91L9",
+       "usufechacodigo": "2019-07-08 11:27:36",
+       "usufechacreacion": "2019-07-08 11:27:36",
+       "usuestado": "Activo",
+       "usueliminado": "No",
+     "perid": {
+        "perid": "1",
+        "peridentificacion": "1725101784",
+        "pernombre": "admin",
+        "perapellido": "",
+        "pertelefono": "",
+        "percorreo": "blgomez@engideveloper.com",
+        "perfechanacimiento": "2017-05-23 00:00:00",
+        "perestado": "Activo",
+        "pereliminado": "No",
+        "sexid": 1
+        },
+      "lenid": "es"
+     },
+    "rol": {
+      "rolid": 1,
+      "rolnombre": "Administrador",
+      "roldescripcion": "Rol para administrador",
+      "rolestado": "Activo",
+      "roleliminado": "No",
+      "palid": 1
+     } 
+  }
+
+Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
+
+**JSON OUT**
+
+.. csv-table:: 
+   :header: "Código", "Descripcion"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error008", "Datos Inválidos"

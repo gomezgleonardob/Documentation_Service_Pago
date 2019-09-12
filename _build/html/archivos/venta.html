@@ -863,6 +863,99 @@ La codificación la puede realizar en el siguiente enlace: <a class="reference e
 <col width="71%" />
 </colgroup>
 <thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributos</th>
+<th class="head">Campos</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>forid</td>
+<td>Id de forma de pago.</td>
+</tr>
+<tr class="row-odd"><td>palid</td>
+<td>Id de la palabra.</td>
+</tr>
+<tr class="row-even"><td>pal_palid</td>
+<td>Id de forma de pago</td>
+</tr>
+<tr class="row-odd"><td>forreferencia</td>
+<td>Nombre de la forma de pago</td>
+</tr>
+<tr class="row-even"><td>fortipo</td>
+<td>Tipo de pago”</td>
+</tr>
+<tr class="row-odd"><td>formetodo</td>
+<td>Metodo de pago</td>
+</tr>
+<tr class="row-even"><td>forestado</td>
+<td>Estado de la forma de pago”</td>
+</tr>
+<tr class="row-odd"><td>foreliminado</td>
+<td>Eliminacion de la forma de pago</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id13">
+<h3>TRANSACCIONES<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id14">
+<h4>CREAR<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span> <span class="p">{</span>
+   <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[</span>
+     <span class="p">{</span>
+       <span class="s2">&quot;objeto&quot;</span><span class="o">:</span> <span class="p">{</span>
+         <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">39</span><span class="p">,</span>
+         <span class="s2">&quot;pal_palid&quot;</span><span class="o">:</span> <span class="mi">39</span><span class="p">,</span>
+         <span class="s2">&quot;forreferencia&quot;</span><span class="o">:</span> <span class="s2">&quot;Deposito&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;fortipo&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="s2">&quot;formetodo&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="s2">&quot;forestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;foreliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;no&quot;</span>
+       <span class="p">}</span>
+     <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;generarid&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+     <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;perestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+    <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+   <span class="p">},</span>
+  <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
+<p><strong>JSON OUT</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
 <tr class="row-odd"><th class="head">Código</th>
 <th class="head">Descripcion</th>
 </tr>
@@ -876,11 +969,6 @@ La codificación la puede realizar en el siguiente enlace: <a class="reference e
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="id13">
-<h3>TRANSACCIONES<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id14">
-<h4>CREAR<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
 </div>
 </div>
 </div>

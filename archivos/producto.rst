@@ -11,8 +11,8 @@ CREACIÓN  DEL MODULO
 **Modulo**
 
 - Especificar en el archivo "engiAcceso" la clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo.
-- Crear un archivo para la persistencia a la base de datos en este caso "EngiMysql.EngiMaletero.Persona".
-- Agregar la persistencia del modulo en  archivo standalone.
+- Crear un archivo para la persistencia a la base de datos en este caso "EngiMysql.EngiMaletero.Producto".
+- Agregar la persistencia del modulo en  archivo standalone.xml.
 
 **Proyecto**
 
@@ -43,56 +43,148 @@ Dentro del modulo persona tenemos las siguientes entidades.
 INTERES
 -------
 
+MODELO
+^^^^^^
+
+.. csv-table:: 
+   :header: "Código", "Descripción"
+   :widths: 40, 100
+
+    "intid", "Id del interés."
+    "viaid", "Id del viajero."
+    "catid", "Id de la categoría."
+    "viaid", "Id del viajero."
+    "inestado", "Estado del interés."
+    "ineliminado", "Eliminación del interés."
+
 TRANSACCIONES
 ^^^^^^^^^^^^^
 
 CREAR
 ~~~~~
-
-
 **JSON IN**
 
 
 .. code-block:: javascript
 
-
+  {
+     "detail": [
+      {
+        "objeto": {
+          "intid": "",
+          "viaid": "via1",
+          "catid": "b12223334444"
+        }
+      }
+    ],
+    "generarid": true,
+     "usuario": {
+      "usuid": "1",
+      "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+      "usuverificado": 1,
+      "usucodigoverificacion": "SU91L9",
+      "usufechacodigo": "2019-07-08 11:27:36",
+      "usufechacreacion": "2019-07-08 11:27:36",
+      "usuestado": "Activo",
+      "usueliminado": "No",
+    "perid": {
+       "perid": "1",
+       "peridentificacion": "1725101784",
+       "pernombre": "admin",
+       "perapellido": "",
+       "pertelefono": "",
+       "percorreo": "blgomez@engideveloper.com",
+       "perfechanacimiento": "2017-05-23 00:00:00",
+       "perestado": "Activo",
+        "pereliminado": "No",
+       "sexid": 1
+      },
+       "lenid": "es"
+      },
+      "rol": {
+      "rolid": 1,
+      "rolnombre": "Administrador",
+      "roldescripcion": "Rol para administrador",
+      "rolestado": "Activo",
+      "roleliminado": "No",
+      "palid": 1
+     }
+  }
 
 ..
 
-
-
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
-
-
 
 **JSON OUT**
 
 .. csv-table:: 
-   :header: "Código", "Descripcion"
+   :header: "Código", "Descripción"
    :widths: 40, 100
 
     "sucess000", "Transacción Exitosa"
     "error008", "Datos Inválidos"
 
-
-
 ACTUALIZAR
 ~~~~~~~~~~
+Los campos que se pueden actualizar del interés son:
+
+- Viajero.
+- Categoría.
+- Estado.
 
 **JSON IN**
 
-
 .. code-block:: javascript
 
-
+   {
+      "detail": [
+       {
+         "objeto": {
+           "intid": "A59IFU8Q6cCAoIC1qu",
+           "viaid": "via1",
+           "catid": "3ODk00CpEpqTJsPZDKcQ5",
+           "inestado": "Activo",
+           "inteliminado": "No"
+          }
+       }
+     ],
+     "generarid": "false",
+      "usuario": {
+        "usuid": "1",
+        "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+        "usuverificado": 1,
+        "usucodigoverificacion": "SU91L9",
+        "usufechacodigo": "2019-07-08 11:27:36",
+        "usufechacreacion": "2019-07-08 11:27:36",
+        "usuestado": "Activo",
+        "usueliminado": "No",
+       "perid": {
+         "perid": "1",
+         "peridentificacion": "1725101784",
+         "pernombre": "admin",
+         "perapellido": "",
+         "pertelefono": "",
+         "percorreo": "blgomez@engideveloper.com",
+         "perfechanacimiento": "2017-05-23 00:00:00",
+         "perestado": "Activo",
+         "pereliminado": "No",
+         "sexid": 1
+         },
+       "lenid": "es"
+      },
+     "rol": {
+       "rolid": 1,
+       "rolnombre": "Administrador",
+       "roldescripcion": "Rol para administrador",
+       "rolestado": "Activo",
+       "roleliminado": "No",
+       "palid": 1
+      }
+    }
 
 ..
 
-
-
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
-
-
 
 **JSON OUT**
 
@@ -107,15 +199,63 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 LISTAR
 ~~~~~~
 
-**JSON IN**
+**FILTROS**
 
+.. csv-table:: 
+   :header: "Código", "Descripción"
+   :widths: 40, 100
+
+    "intid", "Id del interés."
+    "viaid", "Id del viajero."
+    "catid", "Id de la categoría."
+    "viaid", "Id del viajero."
+    "inestado", "Estado del interés."
+
+**JSON IN**
 
 .. code-block:: javascript
 
-
+   {
+      "limit": "10",
+      "orderby": "",
+      "filtro": {
+        "intid": "",
+        "inestado": "Activo"
+      },
+     "usuario": {
+       "usuid": "1",
+       "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+       "usuverificado": 1,
+       "usucodigoverificacion": "SU91L9",
+       "usufechacodigo": "2019-07-08 11:27:36",
+       "usufechacreacion": "2019-07-08 11:27:36",
+       "usuestado": "Activo",
+       "usueliminado": "No",
+      "perid": {
+        "perid": "1",
+        "peridentificacion": "1725101784",
+        "pernombre": "admin",
+        "perapellido": "",
+        "pertelefono": "",
+        "percorreo": "blgomez@engideveloper.com",
+        "perfechanacimiento": "2017-05-23 00:00:00",
+        "perestado": "Activo",
+        "pereliminado": "No",
+        "sexid": 1
+        },
+      "lenid": "es"
+     },
+     "rol": {
+       "rolid": 1,
+       "rolnombre": "Administrador",
+       "roldescripcion": "Rol para administrador",
+       "rolestado": "Activo",
+       "roleliminado": "No",
+       "palid": 1
+      }
+   }
 
 ..
-
 
 
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
@@ -134,15 +274,44 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 CATEGORIA
 ---------
 
+MODELO
+^^^^^^
+.. csv-table:: 
+   :header: "Atributo", "Descripción"
+   :widths: 40, 100
++-------------------+--------------------------------------------------------+
+|     Atributos     |         Campos                                         |
++===================+========================================================+
+| catid             |   Id de la categoría.                                  |
++-------------------+--------------------------------------------------------+
+| arcid             |    Objeto Archivo:                                     |
+|                   |  - arcid: Id del archivo.                              | 
+|                   |  - arcnombre: Nombre del archivo.                      |
+|                   |  - arcruta: Ruta donde se almacena el archivo.         | 
+|                   |  - arcextension: Extensión del archivo.                |
+|                   |  - arcestado: Ruta donde se almacena el archivo.       | 
+|                   |  - arceliminado: Eliminación del archivo.              |
++-------------------+--------------------------------------------------------+
+| palid             |  Id de la palabra.                                     |
++-------------------+--------------------------------------------------------+
+| catreferencia     |  Descripción de la categoría.                          |
++-------------------+--------------------------------------------------------+
+| catnivel          |  Nivel de la categoría.                                |
++-------------------+--------------------------------------------------------+
+| catpadre          |  Categoría Padre.                                      |
++-------------------+--------------------------------------------------------+
+| catestado         |  Estado de la categoría.                               |
++-------------------+--------------------------------------------------------+
+| cateliminado      |  Eliminación de la categoría                           |
++-------------------+--------------------------------------------------------+
+
 TRANSACCIONES
 ^^^^^^^^^^^^^
 
 CREAR
 ~~~~~
 
-
 **JSON IN**
-
 
 .. code-block:: javascript
 
@@ -261,40 +430,96 @@ CREAR
 
 ..
 
-
-
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
-
-
 
 **JSON OUT**
 
 .. csv-table:: 
-   :header: "Código", "Descripcion"
+   :header: "Código", "Descripción"
    :widths: 40, 100
 
     "sucess000", "Transacción Exitosa"
     "error008", "Datos Inválidos"
-
-
 
 ACTUALIZAR
 ~~~~~~~~~~
 
 **JSON IN**
 
-
 .. code-block:: javascript
 
-
-
+    {
+      "detail": [
+         {
+           "objeto": {
+              "catid": "d41894808ec78f3d028fc06b22f2a85f",
+              "catnombre": "Motores",
+              "catdescripcion": "mot",
+              "catnivel": 0,
+              "catpadre": "null",
+              "catestado": "Activo",
+              "cateliminado": "No",
+              "arcid": {
+                "arcid": "2acdcb0e49419ff0509a10ad909eda24",
+                "arcruta": "/archivos/Categoria/Logo/",
+                "arcextension": "png",
+                "arcestado": "Activo",
+                "arceliminado": "No",
+                "archivob64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAABGdBTUEAAL
+                 GPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAm
+                 JLR0QAAKqNIzIAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAHdElNRQfjCQsOKDIZAfTcAAAB2E
+                 lEQVRo3u2ZQStEURTHf40phLGQmlCzUNTY2EhJKCkLK6YkDclCVhYWs2Mr2RtlbGTHF5BENj
+                 6AjSYLSVnMgiw0k4zFzDQJ993zuuOk3nmr9+7/nPt753/ffa8eVGOR4h8di9VJQyiHOkD4h2
+                 u3PAEwSAOQ59rZbFF6TcOVNbBUPr+jSJEHh7e7FKyB7xH2lTVFn4Vqj+faAITYpctC90Lapp
+                 g8xq2mh6Td3cjDqjAwZH7oSiG3oJlpAF5J8PGLZppVAObZcA8wQxMAJ5z+qsmyQghYYJOiuZ
+                 zcgooBhwbNPVcAxBj2KicF6GQMgEcujboKnud6kVqQpK4M8m6ln2WNN5cdSAj1ESbMAilARK
+                 iHVvOwv604X15kpuggblPKH0DOq7HAMvs2pdTfhuoA/ixoIeWpGaglQIQtVx1Qt0AdwO9jOO
+                 epmWS9dgB5zjw1MbtS6haoA0gt6LFWZsj8iw6oA0gt6KdRmJEl5xLgmG5hxoLx81XfAnUAqQ
+                 Vp2oQZN24Bdlx3QN0CdQCpBQd0CDO2OXcJMCLeB47Mw+oWqANILYiLkQtuAQpCvWeoWxAABA
+                 ABQAAQAAQAP70NU+X/eqWPr3YunM0WtQPo/fKrpZ7RWnZA3QJ1gE8Ja3VeRqLkhQAAACV0RV
+                 h0ZGF0ZTpjcmVhdGUAMjAxOS0wOS0xMVQxNDo0MDo1MCswMDowMIYQLAYAAAAldEVYdGRhdG
+                 U6bW9kaWZ5ADIwMTktMDktMTFUMTQ6NDA6NTArMDA6MDD3TZS6AAAAGXRFWHRTb2Z0d2FyZQ
+                 B3d3cuaW5rc2NhcGUub3Jnm+48GgAAAABJRU5ErkJggg=="
+                }
+              }
+            }
+          ],
+        "generarid": "false",
+        "usuario": {
+          "usuid": "1",
+          "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+          "usuverificado": 1,
+          "usucodigoverificacion": "SU91L9",
+          "usufechacodigo": "2019-07-08 11:27:36",
+          "usufechacreacion": "2019-07-08 11:27:36",
+          "usuestado": "Activo",
+          "usueliminado": "No",
+         "perid": {
+          "perid": "1",
+          "peridentificacion": "1725101784",
+          "pernombre": "admin",
+          "perapellido": "",
+          "pertelefono": "",
+          "percorreo": "blgomez@engideveloper.com",
+          "perfechanacimiento": "2017-05-23 00:00:00",
+          "perestado": "Activo",
+          "pereliminado": "No",
+          "sexid": 1
+          },
+        "lenid": "es"
+       },
+      "rol": {
+       "rolid":1,
+       "rolnombre": "Administrador",
+       "roldescripcion": "Rol para administrador",
+       "rolestado": "Activo",
+       "roleliminado": "No",
+       "palid": 1
+     }
+  }
 ..
 
-
-
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
-
-
 
 **JSON OUT**
 
@@ -304,7 +529,6 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 
     "sucess000", "Transacción Exitosa"
     "error008", "Datos Inválidos"
-
 
 LISTAR
 ~~~~~~
@@ -354,13 +578,7 @@ LISTAR
      }
    }
 
-
-
-
-
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
-
-
 
 **JSON OUT**
 
