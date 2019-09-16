@@ -1,23 +1,28 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!doctype html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>MICROSERVICIO VENTA &#8212; Engideveloper-Maletero 0.1 documentation</title>
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/language_data.js"></script>
-    
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -27,7 +32,92 @@
              accesskey="I">index</a></li>
         <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper-Maletero 0.1 documentation</a> &#187;</li> 
       </ul>
-    </div>  
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">MICROSERVICIO VENTA</a><ul>
+<li><a class="reference internal" href="#configuraciones">CONFIGURACIONES</a><ul>
+<li><a class="reference internal" href="#modulo">MÓDULO</a></li>
+<li><a class="reference internal" href="#proyecto">PROYECTO</a></li>
+<li><a class="reference internal" href="#variables-de-configuracion">VARIABLES DE CONFIGURACIÓN</a><ul>
+<li><a class="reference internal" href="#generales">GENERALES</a></li>
+<li><a class="reference internal" href="#persistencia">PERSISTENCIA</a></li>
+<li><a class="reference internal" href="#parametros">PARÁMETROS</a></li>
+<li><a class="reference internal" href="#email">EMAIL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#transacciones">TRANSACCIONES</a></li>
+<li><a class="reference internal" href="#entidades">ENTIDADES</a></li>
+<li><a class="reference internal" href="#pago">PAGO</a><ul>
+<li><a class="reference internal" href="#entidad">ENTIDAD</a></li>
+<li><a class="reference internal" href="#id1">TRANSACCIONES</a><ul>
+<li><a class="reference internal" href="#crear">CREAR</a></li>
+<li><a class="reference internal" href="#actualizar">ACTUALIZAR</a></li>
+<li><a class="reference internal" href="#cancelar">CANCELAR</a></li>
+<li><a class="reference internal" href="#listar">LISTAR</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#oferta">OFERTA</a><ul>
+<li><a class="reference internal" href="#id2">ENTIDAD</a></li>
+<li><a class="reference internal" href="#id3">TRANSACCIONES</a><ul>
+<li><a class="reference internal" href="#id4">CREAR</a></li>
+<li><a class="reference internal" href="#id5">ACTUALIZAR</a></li>
+<li><a class="reference internal" href="#id6">LISTAR</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#solicitud">SOLICITUD</a><ul>
+<li><a class="reference internal" href="#id7">ENTIDAD</a></li>
+<li><a class="reference internal" href="#id8">TRANSACCIONES</a><ul>
+<li><a class="reference internal" href="#id9">CREAR</a></li>
+<li><a class="reference internal" href="#id10">ACTUALIZAR</a></li>
+<li><a class="reference internal" href="#id11">LISTAR</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#forma-de-pag0">FORMA DE PAG0</a><ul>
+<li><a class="reference internal" href="#id12">ENTIDAD</a></li>
+<li><a class="reference internal" href="#id13">TRANSACCIONES</a><ul>
+<li><a class="reference internal" href="#id14">CREAR</a></li>
+<li><a class="reference internal" href="#id15">ACTUALIZAR</a></li>
+<li><a class="reference internal" href="#id16">LISTAR</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/archivos/venta.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
 
     <div class="document">
       <div class="documentwrapper">
@@ -57,8 +147,8 @@
 <h3>VARIABLES DE CONFIGURACIÓN<a class="headerlink" href="#variables-de-configuracion" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="generales">
 <h4>GENERALES<a class="headerlink" href="#generales" title="Permalink to this headline">¶</a></h4>
-<table border="1" class="colwidths-given docutils" id="id15">
-<caption><span class="caption-text">Configuración</span><a class="headerlink" href="#id15" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given docutils" id="id17">
+<caption><span class="caption-text">Configuración</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="7%" />
 <col width="93%" />
@@ -78,14 +168,17 @@
 <tr class="row-even"><td>Parametros</td>
 <td>Para la conexión a la base de datos debe esta compuesto de la siguiente manera : EngiParametros.NombredelProyecto.NombredelModulo</td>
 </tr>
+<tr class="row-odd"><td>Email</td>
+<td>Se configura las variables de Asunto y Cuerpo para el envío de emails</td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="persistencia">
 <h4>PERSISTENCIA<a class="headerlink" href="#persistencia" title="Permalink to this headline">¶</a></h4>
 <p>Nombre del Archivo: EngiMysql.Maletero.Ventas.properties” ,este archivo debe ser agregado en la carpeta configuraciones del servidor Wildfly.</p>
-<table border="1" class="colwidths-given docutils" id="id16">
-<caption><span class="caption-text">Persistencia de Datos</span><a class="headerlink" href="#id16" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given docutils" id="id18">
+<caption><span class="caption-text">Persistencia de Datos</span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="7%" />
 <col width="93%" />
@@ -117,8 +210,8 @@
 <div class="section" id="parametros">
 <h4>PARÁMETROS<a class="headerlink" href="#parametros" title="Permalink to this headline">¶</a></h4>
 <p>Nombre del Archivo: EngiParametros.Maletero.Ventas.properties” ,este archivo debe ser agregado en la carpeta configuraciones del servidor Wildfly.</p>
-<table border="1" class="colwidths-given docutils" id="id17">
-<caption><span class="caption-text">Parametros</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given docutils" id="id19">
+<caption><span class="caption-text">Parametros</span><a class="headerlink" href="#id19" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="7%" />
 <col width="93%" />
@@ -138,8 +231,8 @@
 <div class="section" id="email">
 <h4>EMAIL<a class="headerlink" href="#email" title="Permalink to this headline">¶</a></h4>
 <p>Nombre del Archivo: Engimail.properties” ,este archivo se especifican las variables del asunto y el cuerpo del email.</p>
-<table border="1" class="colwidths-given docutils" id="id18">
-<caption><span class="caption-text">Parametros</span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
+<table border="1" class="colwidths-given docutils" id="id20">
+<caption><span class="caption-text">Parametros</span><a class="headerlink" href="#id20" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="7%" />
 <col width="93%" />
@@ -165,8 +258,6 @@
 <li>Crear.</li>
 <li>Actualizar.</li>
 <li>Listar.</li>
-<li>EliminarLogicamente.</li>
-<li>Listar.</li>
 </ul>
 </div>
 <div class="section" id="entidades">
@@ -183,6 +274,92 @@
 <h2>PAGO<a class="headerlink" href="#pago" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="entidad">
 <h3>ENTIDAD<a class="headerlink" href="#entidad" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributos</th>
+<th class="head">Campos</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>pagid</td>
+<td>Id del pago.</td>
+</tr>
+<tr class="row-odd"><td>arcid</td>
+<td><blockquote class="first">
+<div>Objeto Archivo:</div></blockquote>
+<ul class="last simple">
+<li>arcid: Id del archivo.</li>
+<li>arcnombre: Nombre del archivo.</li>
+<li>arcruta: Ruta donde se almacena el archivo.</li>
+<li>arcextension: Extensión del archivo.</li>
+<li>arcestado: Estado del archivo.</li>
+<li>arceliminado: Eliminación del archivo.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>monid</td>
+<td>Id de la moneda.</td>
+</tr>
+<tr class="row-odd"><td>forid</td>
+<td>Id de la forma de pago.</td>
+</tr>
+<tr class="row-even"><td>solid</td>
+<td>Id de la solicitud.</td>
+</tr>
+<tr class="row-odd"><td>viaid</td>
+<td>Id del viajero.</td>
+</tr>
+<tr class="row-even"><td>ofeid</td>
+<td>Id de la oferta.</td>
+</tr>
+<tr class="row-odd"><td>usuid</td>
+<td>Id del usuario.</td>
+</tr>
+<tr class="row-even"><td>pagcomprobante</td>
+<td>Nombre del comprobante de pago.</td>
+</tr>
+<tr class="row-odd"><td>pagfechacreacion</td>
+<td>Fecha de creación del pago.</td>
+</tr>
+<tr class="row-even"><td>pagfechapago</td>
+<td>Fecha de validación   del pago.</td>
+</tr>
+<tr class="row-odd"><td>pagfechaenviado</td>
+<td>Fecha de envío de la compra.</td>
+</tr>
+<tr class="row-even"><td>pagfechaentregado</td>
+<td>Fecha de recepción de la compra.</td>
+</tr>
+<tr class="row-odd"><td>pagfechaentregado</td>
+<td>Fecha de recepción de la compra.</td>
+</tr>
+<tr class="row-even"><td>pagfechaenviado</td>
+<td>Fecha de envío de la compra.</td>
+</tr>
+<tr class="row-odd"><td>pagfechaenviado</td>
+<td>Fecha de envío de la compra.</td>
+</tr>
+<tr class="row-even"><td>pagfechacancelado</td>
+<td>Fecha de cancelación del pago.</td>
+</tr>
+<tr class="row-odd"><td>pagvalor</td>
+<td>Valor del pago.</td>
+</tr>
+<tr class="row-even"><td>pagtraida</td>
+<td>Valor de la importación.</td>
+</tr>
+<tr class="row-odd"><td>pagcomision</td>
+<td>Valor de la comisión.</td>
+</tr>
+<tr class="row-even"><td>pagestado</td>
+<td>Estado del pago.</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="id1">
 <h3>TRANSACCIONES<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
@@ -194,22 +371,283 @@
 <li>1 : El pago va a ser creado  y es verificado.</li>
 </ul>
 <p><strong>JSON IN</strong></p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[</span>
+     <span class="p">{</span>
+       <span class="s2">&quot;objeto&quot;</span><span class="o">:</span> <span class="p">{</span>
+         <span class="s2">&quot;pagid&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="s2">&quot;forid&quot;</span><span class="o">:</span> <span class="mi">12345</span><span class="p">,</span>
+         <span class="s2">&quot;monid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="s2">&quot;ofeid&quot;</span><span class="o">:</span> <span class="s2">&quot;05706ef0823560c689dd64dd84b32814&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;solid&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;viaid&quot;</span><span class="o">:</span> <span class="s2">&quot;992ea990dafb4f59a926ed80be51491b&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;pagvalor&quot;</span><span class="o">:</span> <span class="mi">300</span><span class="p">,</span>
+         <span class="s2">&quot;pagestado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="s2">&quot;pagtraida&quot;</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+         <span class="s2">&quot;pagcomision&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="s2">&quot;pagfechapago&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="s2">&quot;pagcomprobante&quot;</span><span class="o">:</span> <span class="s2">&quot;Cheque Certificado&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;pagfechaenviado&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+         <span class="s2">&quot;pagfechacreacion&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-08-14 09:15:20.000000&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;pagfechacancelado&quot;</span><span class="o">:</span> <span class="kc">null</span>
+        <span class="p">}</span>
+      <span class="p">}</span>
+    <span class="p">],</span>
+   <span class="s2">&quot;generarid&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+     <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
+     <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;perestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+     <span class="p">},</span>
+   <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+   <span class="p">},</span>
+  <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>JSON IN</strong></p>
+<p>Creación del pago con validación.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>   <span class="p">{</span>
+      <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+         <span class="s2">&quot;objeto&quot;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">&quot;pagid&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="p">{</span>
+             <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;arcnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;arcruta&quot;</span><span class="o">:</span> <span class="s2">&quot;engideveloper/desarrollo/archivos/Categoria/Logo/&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;arcextension&quot;</span><span class="o">:</span> <span class="s2">&quot;png&quot;</span><span class="p">,</span>
+             <span class="s2">&quot;archivob64&quot;</span><span class="o">:</span> <span class="s2">&quot;iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAB</span>
+<span class="s2">              LFBMVEX///9Pwvb+tk1CQkL+mAACWJs/vvXf8/3+piZ4Rxk0O0L/uE0yMjL+lg</span>
+<span class="s2">              D/vE7Hx8c9P0K3iUj+skP/mwDe3t7rqkxqWUT0sEz+oAAqKiopNkFwQBUAVp4A</span>
+<span class="s2">              UZY9PT05PUL+rzQAUqImJiZqOhIATpRHR0fPkDz/+PEJXZ/v+f6YmJjs7Ow2Nj</span>
+<span class="s2">              a+vr6nbyz/7NaD0fgtisQXa6rG6fxzc3NVVVXR0dFra2v/7Nj/4sT/qyS3fTOg</span>
+<span class="s2">              aSr/3ryjbCv/167+yIr+xHb+wnH+pzDwkxLY4u1GYouz4vtsa3zWizlnyfd/cH</span>
+<span class="s2">              TPiUCie2CzgFY8otkmgLw7n9eBgYFfX1+UlJRwWDuKZTjaki1TTEOIa0WKVyH+</span>
+<span class="s2">              ulrC0OGAps+TrMs1bqcARZK6gk+Rdmug2/rE1bViAAAIc0lEQVR4nO2aaVfaTB</span>
+<span class="s2">              SAAQ2mAupLpAKCgkZEccWlbm1dqFZstXaze237///DOyEhZJtsTLiXc+b50OUY</span>
+<span class="s2">              5twn986dBWMxDofD4XA4HA6Hw+FwOJygNBrTZhrQETFjen11d69ASJsojEAHxo</span>
+<span class="s2">              TG+m46vbY2NzdiJ70OHV3fNFaXCmtObhpL0AH2yf4zV72hT+LkXsFdb8iTuL+X9</span>
+<span class="s2">              vYb5iS+95G/YU7ipK/8DXES3xf8+g1nEht7awEER+Y+rE5ChxyMaf8VqimupRee</span>
+<span class="s2">              rQ/PBm5/IZhf13Jhdx86dH+shxLsSKb3hqFaJ0MLqo7T0AJehCtRg+PCR2gFdxrp</span>
+<span class="s2">              /gQJa0uoW85SwC7qmMYC4o6zG2gdpLKAdpez3n+N4lZsBNmqeSjiLNQPDCZhlwLG</span>
+<span class="s2">              dsOsRhXm9qB1HGApSBaNVWgfGx/Z9FGdBWy7m0afmxkbcx+glSywTiFpNrj6KfMU</span>
+<span class="s2">              okviaugUTo0X551/giuJIQWJ3tP/ZnLzU04/nHsPbWVgMsxSoepNpBIpimIBWsvA</span>
+<span class="s2">              s8DbGV1PgaK4hmd7GnRHatKjK849gxbTWQ8yDW16dEU8Zeq/SB31qIppNDdTPouU</span>
+<span class="s2">              qkdTXMNyaeOrk7rqURTRnDC8l3tPPYoilom45z4Nfek5K6aRHDDcpqFvPUdFJCvi</span>
+<span class="s2">              NHUaBtJzUkRyDqashoH1HBSRbE2dGk0oPbsikhPUrrXRhNZzUISW67DETs+miGO5</span>
+<span class="s2">              SDPUsyriuDfVFwsWepoiKkP96DTPRE9VHNfGRLHk68vh+AQTPYUJ3RDDXc2+bsgm</span>
+<span class="s2">              gQopbjhQJiM1xHAG5obckBvCww25ITeEhxtyQ1fDAgLDg4tP45EZFj8fHUALHkri</span>
+<span class="s2">              0ediRIbFjSNROoQVPMiLonh0XHQ2TBG8bRweUg2LtSMyeh42i1lR4ahWdDBMJWob</span>
+<span class="s2">              xzmvg/9E7nijlrB+dFy51Xo46oyehRQ8zIuqYm5qymqYys0SFk88vnA6WVQey1k+</span>
+<span class="s2">              Oz4yPzKjji3mIev0TAtCzM58mbcYziw+UZjdcMvixMZs56nFGYvh+JdEtjv4GaCh</span>
+<span class="s2">              qBumUk+LJsOUFrs1eDPaayDvwfzh4qdUSjcUAQ3zuiFJx1dzdp5ozNZcvvetzXYf</span>
+<span class="s2">              M2f6K/mvbphHYpgwx9ifofI/FIai0dDMxEm3SnNUwUQi163SE/tsRVGl53TDlBa8</span>
+<span class="s2">              U+z297CYsydaNzwHNHyepxqSClycfTK7+M3FT+Fb5ymnSu4a5p8DGsboOSSKM8cnL</span>
+<span class="s2">              2qeK37txcnxjNNU1XMIKRjblOiGxHHCz29g0B7SDKVNUMPYS8nFsD9UQ+klrKAyFf</span>
+<span class="s2">              MRGuZhJ6HK8mk+n69EYFgh454uQ+upHByesk9i9vQQ/PRr4CACQ0x+pFTZl2kFSYF</span>
+<span class="s2">              2iSCH0EoWzthd0qikIE+FTrxkncQs+DpoYZO5IfBWxg7rVlOBFrJxxjaJWWzTMBY7</span>
+<span class="s2">              ZGwIfBHsBFvDCrSOA0w3btlTaB0HDlj2GmwbGpVzhoaQVzN0GCaxgmvXrXPOSjCFM</span>
+<span class="s2">              4UMk4g1hczaKcpGqsHIEFrDhUMWdVpBuJ3pwaBOMdeowve+Db9DK3iw3G8Ssyh3M0</span>
+<span class="s2">              b6XDLwLhQ9+uo2uLtMlz4Uh0OwD8VhEYzFNsMpVtBdPtFZTgRvqdkE+i5q4ixoGiv4</span>
+<span class="s2">              rp48eB4si1kE3xMGRQqimJWgww1BJiP6FhQzGehwQ5AhXPjyu1AehQ43BJnM6CjJo1</span>
+<span class="s2">              etZkX1QehwQ6AEroQuuSXyQuo+Bh1uCNTQNUmnTGa7ekNv2BHISOJFNquKkr8vRGJn</span>
+<span class="s2">              egA63BAYBTRLI9YfQocbAquEK9wQJdyQG+KHGw6/4Wggw1HocIOy8uNnK4Dg6Gjr5w/</span>
+<span class="s2">              omAPw6tfvR7l6KwUQlG6r8uPvX6+gQ/fDq1/Co1wWhNJlIMPLkiAI8mMdu+TKVftRFl</span>
+<span class="s2">              SqDwEMH6rap+TH9hW0BZ2xrWQy3tRCFUo3/pMovS51P9aMJ5P/xqBVHNlpJ+OE7XI31</span>
+<span class="s2">              mrLt2Grm0KhvE3GSCbb+Bx34h2/ePxO1pP42m8SDSmUtWGS7R1oJRO6H6Eu6Em89ml4</span>
+<span class="s2">              radQqOvjYMrjWLvnZyxToe4viVLvpXSKVHfcWoFWU/ln9CPoZeqz2Ug3eo0Ksnmo5D9</span>
+<span class="s2">              oOcJO0iIYf9dLYvWPt6L0p+qcwo5iHLxUt6x+hJ4hmYpeipJhElpTqJYqqN+YLYGWmSi</span>
+<span class="s2">              UHtwVpYdeidpTCJ5G6wzs0uscRPGNm6L0xiBoaKRmR7BdTpsiaFgTlUJ9S1eU3hpKVJD</span>
+<span class="s2">              vKOMBVepKnCZorlOhetlydpRal0ZBxxrVFNsA68YY3Y/QNCqWqn9H7Y7S6N+qsUTLTbc</span>
+<span class="s2">              BkwNX3HEVNE9FxfHmWpJ6luTf1zcmP+ok1BUH3G+8BONJQbA41m9ur1uSQuv69qZu8RME</span>
+<span class="s2">              zxEHqugpaFckkqVqVZl35M+SVc9bcLCKPgRJQPWyTYNG2aNEB63o3mR6NGVvN1XQtckYF</span>
+<span class="s2">              AfUblZ8Csbj9/4UZfoyYWUwhr7DIS/dRxrlpu83Fo+3ByHotNemc+cxG8t12kbG+ZUNYH</span>
+<span class="s2">              dzFUhQcWzKNMmy3AzkpyhGfrnhfxIaotquy2WrZbks17fDDBZ1t2kHj6kT1/27Zploasj</span>
+<span class="s2">              l5rv7EHoKEU9F2nnJn+bd3b3C3V1fo0R6lgpTo8yJtE63oO0UouynfjczERPh7i1km2FO</span>
+<span class="s2">              ZM3G14Z7EESWRCwpjCyJSGahQkRJRNFINSJppyjWwi6RrIl9bWdYE8nGBlrKAntBRH1GI</span>
+<span class="s2">              YJeg6pII/lmEVrJBmtBVJ1UgXk3DXx5ETXMrzMwLfcqrBd9aB8H2Aqim4bMJyKag1MPxh</span>
+<span class="s2">              MRXaNhvnELdtE9EBhf1+A5/PZgewzGl0KSRG4YBISLBePlAtnRSYXpAQrhcsh4QeSGIHD</span>
+<span class="s2">              DQFwlMcJy27YyhhEkv+fO4XA4HA6Hw+FwOBwOZyD8D7l5SgQCAxgLAAAAAElFTkSuQmCC&quot;</span>
+            <span class="p">},</span>
+           <span class="s2">&quot;forid&quot;</span><span class="o">:</span> <span class="mi">12345</span><span class="p">,</span>
+           <span class="s2">&quot;monid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+           <span class="s2">&quot;ofeid&quot;</span><span class="o">:</span> <span class="s2">&quot;05706ef0823560c689dd64dd84b32814&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;solid&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;viaid&quot;</span><span class="o">:</span> <span class="s2">&quot;992ea990dafb4f59a926ed80be51491b&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;pagvalor&quot;</span><span class="o">:</span> <span class="mi">300</span><span class="p">,</span>
+           <span class="s2">&quot;pagestado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+           <span class="s2">&quot;pagtraida&quot;</span><span class="o">:</span> <span class="mi">150</span><span class="p">,</span>
+           <span class="s2">&quot;pagcomision&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+           <span class="s2">&quot;pagfechapago&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+           <span class="s2">&quot;pagcomprobante&quot;</span><span class="o">:</span> <span class="s2">&quot;Cheque Certificado&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;pagfechaenviado&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+           <span class="s2">&quot;pagfechacreacion&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-08-14 09:15:20.000000&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;pagfechacancelado&quot;</span><span class="o">:</span> <span class="kc">null</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+     <span class="s2">&quot;generarid&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+     <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+       <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+    <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
+     <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+  <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
 </div>
 <div class="section" id="actualizar">
 <h4>ACTUALIZAR<a class="headerlink" href="#actualizar" title="Permalink to this headline">¶</a></h4>
-<p>Esta transacción recibe la petición  para actualizar  una oferta , luego se enruta hacia el microservicio correspondiente y responde en un objeto con formato JSON.</p>
+<p>Esta transacción recibe la petición  para actualizar un pago , luego se enruta hacia el microservicio correspondiente y responde en un objeto con formato JSON.</p>
 <p>eL que se pueden actualizar son :</p>
 <ul class="simple">
-<li>Moneda.</li>
-<li>Valor de la oferta.</li>
-<li>Fecha de entrega.</li>
+<li>Estados del Pago que se describen en el siguiente recuadro:</li>
 </ul>
+<p><strong>ESTADOS DEL PAG0</strong></p>
+<p>Esta transacción recibe la petición para crear un pago, cuando el pago es creado puede llevar uno de los siguientes estados.</p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>O</td>
+<td>Pendiente de verificación.</td>
+</tr>
+<tr class="row-odd"><td>1</td>
+<td>Verificado</td>
+</tr>
+<tr class="row-even"><td>2</td>
+<td>Enviado</td>
+</tr>
+<tr class="row-odd"><td>3</td>
+<td>Receptado</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>Cancelado</td>
+</tr>
+</tbody>
+</table>
 <p><strong>JSON IN</strong></p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span> <span class="p">{</span>
+
+   <span class="s2">&quot;detail&quot;</span><span class="o">:</span><span class="p">[</span>
+       <span class="p">{</span>
+           <span class="s2">&quot;objeto&quot;</span><span class="o">:</span><span class="p">{</span>
+               <span class="s2">&quot;pagid&quot;</span><span class="o">:</span><span class="s2">&quot;f8968d3df4aa94f4b0d6c6624ae878c4&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;forid&quot;</span><span class="o">:</span><span class="mi">12345</span><span class="p">,</span>
+               <span class="s2">&quot;arcid&quot;</span><span class="o">:</span><span class="kc">null</span><span class="p">,</span>
+               <span class="s2">&quot;monid&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+               <span class="s2">&quot;ofeid&quot;</span><span class="o">:</span><span class="s2">&quot;05706ef0823560c689dd64dd84b32814&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;solid&quot;</span><span class="o">:</span><span class="s2">&quot;21232f297a57a5a743894a0&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;usuid&quot;</span><span class="o">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;viaid&quot;</span><span class="o">:</span><span class="s2">&quot;992ea990dafb4f59a926ed80be51491b&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;pagvalor&quot;</span><span class="o">:</span><span class="mi">300</span><span class="p">,</span>
+               <span class="s2">&quot;pagtraida&quot;</span><span class="o">:</span><span class="mi">100</span><span class="p">,</span>
+               <span class="s2">&quot;pagcomision&quot;</span><span class="o">:</span><span class="mi">30</span><span class="p">,</span>
+               <span class="s2">&quot;pagfechapago&quot;</span><span class="o">:</span><span class="kc">null</span><span class="p">,</span>
+               <span class="s2">&quot;pagcomprobante&quot;</span><span class="o">:</span><span class="s2">&quot;Transferencia&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;pagfechaenviado&quot;</span><span class="o">:</span><span class="s2">&quot;2019-08-16&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;pagfechaentregado&quot;</span><span class="o">:</span><span class="kc">null</span><span class="p">,</span>
+               <span class="s2">&quot;pagfechacreacion&quot;</span><span class="o">:</span><span class="s2">&quot;2019-08-14 09:15:20.000000&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;pagfechacancelado&quot;</span><span class="o">:</span><span class="kc">null</span><span class="p">,</span>
+               <span class="s2">&quot;pagestado&quot;</span><span class="o">:</span> <span class="mi">2</span>
+           <span class="p">}</span>
+       <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;generarid&quot;</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
+   <span class="s2">&quot;usuario&quot;</span><span class="o">:</span><span class="p">{</span>
+       <span class="s2">&quot;usuid&quot;</span><span class="o">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span><span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+       <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span><span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span><span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span><span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span><span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span><span class="s2">&quot;No&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perid&quot;</span><span class="o">:</span><span class="p">{</span>
+           <span class="s2">&quot;perid&quot;</span><span class="o">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span><span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span><span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span><span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span><span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;perestado&quot;</span><span class="o">:</span><span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span><span class="s2">&quot;No&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;sexid&quot;</span><span class="o">:</span><span class="mi">1</span>
+       <span class="p">},</span>
+       <span class="s2">&quot;lenid&quot;</span><span class="o">:</span><span class="s2">&quot;es&quot;</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;rol&quot;</span><span class="o">:</span><span class="p">{</span>
+       <span class="s2">&quot;rolid&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+       <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span><span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span><span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span><span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span><span class="s2">&quot;No&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;palid&quot;</span><span class="o">:</span><span class="mi">1</span>
+   <span class="p">}</span>
+
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
@@ -234,8 +672,85 @@
 </tbody>
 </table>
 </div>
+<div class="section" id="cancelar">
+<h4>CANCELAR<a class="headerlink" href="#cancelar" title="Permalink to this headline">¶</a></h4>
+<p>Está transacción  recibe la petición para cancelar un pago, tomar en cuenta cancelado el pago automáticamente se anula la oferta.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">El pago cuando tiene estado <code class="docutils literal notranslate"><span class="pre">Cancelado</span></code> automáticamente se cancela la <code class="docutils literal notranslate"><span class="pre">Oferta</span></code> y  <code class="docutils literal notranslate"><span class="pre">Solicitud</span></code> relacionada al pago.
+El archivo del comprobante pasa a un estado  <code class="docutils literal notranslate"><span class="pre">Inactivo</span></code></p>
+</div>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+
+   <span class="s2">&quot;detail&quot;</span><span class="o">:</span><span class="p">[</span>
+       <span class="p">{</span>
+           <span class="s2">&quot;objeto&quot;</span><span class="o">:</span><span class="p">{</span>
+               <span class="s2">&quot;pagid&quot;</span><span class="o">:</span><span class="s2">&quot;59e57062ef43bb171dbf199fa8cdb9ce&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;arcid&quot;</span><span class="o">:</span><span class="p">{</span>
+                   <span class="s2">&quot;arcid&quot;</span><span class="o">:</span><span class="s2">&quot;79acdccf7e3cca359f83ae693cca1bfd&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;arcnombre&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;arcruta&quot;</span><span class="o">:</span><span class="s2">&quot;engideveloper/desarrollo/archivos/Categoria/Logo/&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;arcextension&quot;</span><span class="o">:</span><span class="s2">&quot;png&quot;</span>
+                   <span class="s2">&quot;arcestado:&quot;</span><span class="nx">Inactivo</span><span class="s2">&quot;</span>
+<span class="s2">                   &quot;</span><span class="nx">arceliminado</span><span class="o">:</span><span class="s2">&quot;No&quot;</span>
+               <span class="p">},</span>
+               <span class="s2">&quot;forid&quot;</span><span class="o">:</span><span class="mi">12345</span><span class="p">,</span>
+               <span class="s2">&quot;monid&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+               <span class="s2">&quot;ofeid&quot;</span><span class="o">:</span><span class="s2">&quot;05706ef0823560c689dd64dd84b32814&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;solid&quot;</span><span class="o">:</span><span class="s2">&quot;21232f297a57a5a743894a0&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;usuid&quot;</span><span class="o">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;viaid&quot;</span><span class="o">:</span><span class="s2">&quot;992ea990dafb4f59a926ed80be51491b&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;pagvalor&quot;</span><span class="o">:</span><span class="mi">300</span><span class="p">,</span>
+               <span class="s2">&quot;pagestado&quot;</span><span class="o">:</span><span class="mi">5</span><span class="p">,</span>
+               <span class="s2">&quot;pagtraida&quot;</span><span class="o">:</span><span class="mi">100</span><span class="p">,</span>
+               <span class="s2">&quot;pagcomision&quot;</span><span class="o">:</span><span class="mi">30</span><span class="p">,</span>
+               <span class="s2">&quot;pagfechapago&quot;</span><span class="o">:</span><span class="s2">&quot;2018-08-27&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;pagcomprobante&quot;</span><span class="o">:</span><span class="s2">&quot;Cheque Certificado&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;pagfechaenviado&quot;</span><span class="o">:</span><span class="s2">&quot;2019-08-30&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;pagfechacreacion&quot;</span><span class="o">:</span><span class="s2">&quot;2019-08-14 09:15:20.000000&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;pagfechacancelado&quot;</span><span class="o">:</span><span class="s2">&quot;2019-08-30&quot;</span>
+           <span class="p">}</span>
+       <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;generarid&quot;</span><span class="o">:</span><span class="kc">false</span><span class="p">,</span>
+   <span class="s2">&quot;usuario&quot;</span><span class="o">:</span><span class="p">{</span>
+       <span class="s2">&quot;usuid&quot;</span><span class="o">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span><span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+       <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span><span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span><span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span><span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span><span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span><span class="s2">&quot;No&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perid&quot;</span><span class="o">:</span><span class="p">{</span>
+           <span class="s2">&quot;perid&quot;</span><span class="o">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span><span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span><span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span><span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span><span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;perestado&quot;</span><span class="o">:</span><span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span><span class="s2">&quot;No&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;sexid&quot;</span><span class="o">:</span><span class="mi">1</span>
+       <span class="p">},</span>
+       <span class="s2">&quot;lenid&quot;</span><span class="o">:</span><span class="s2">&quot;es&quot;</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;rol&quot;</span><span class="o">:</span><span class="p">{</span>
+       <span class="s2">&quot;rolid&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+       <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span><span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span><span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span><span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span><span class="s2">&quot;No&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;palid&quot;</span><span class="o">:</span><span class="mi">1</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="listar">
 <h4>LISTAR<a class="headerlink" href="#listar" title="Permalink to this headline">¶</a></h4>
+<p>Está transacción  recibe la petición para listar un pago, los filtros pueden ser los siguientes.</p>
 <p><strong>FILTROS</strong></p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
@@ -298,7 +813,73 @@
 </tr>
 </tbody>
 </table>
+<p><strong>JSON IN</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>      <span class="p">{</span>
+      <span class="s2">&quot;limit&quot;</span><span class="o">:</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;orderby&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;filtro&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;pagid&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;pagestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+       <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+   <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <p><strong>JSON OUT</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+     <span class="s2">&quot;pagid&quot;</span><span class="o">:</span><span class="s2">&quot;f8968d3df4aa94f4b0d6c6624ae878c4&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;forid&quot;</span><span class="o">:</span><span class="mi">12345</span><span class="p">,</span>
+     <span class="s2">&quot;arcid&quot;</span><span class="o">:</span><span class="kc">null</span><span class="p">,</span>
+     <span class="s2">&quot;monid&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+     <span class="s2">&quot;ofeid&quot;</span><span class="o">:</span><span class="s2">&quot;05706ef0823560c689dd64dd84b32814&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;solid&quot;</span><span class="o">:</span><span class="s2">&quot;21232f297a57a5a743894a0&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usuid&quot;</span><span class="o">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;viaid&quot;</span><span class="o">:</span><span class="s2">&quot;992ea990dafb4f59a926ed80be51491b&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;pagvalor&quot;</span><span class="o">:</span><span class="mi">300</span><span class="p">,</span>
+     <span class="s2">&quot;pagtraida&quot;</span><span class="o">:</span><span class="mi">100</span><span class="p">,</span>
+     <span class="s2">&quot;pagcomision&quot;</span><span class="o">:</span><span class="mi">30</span><span class="p">,</span>
+     <span class="s2">&quot;pagfechapago&quot;</span><span class="o">:</span><span class="kc">null</span><span class="p">,</span>
+     <span class="s2">&quot;pagcomprobante&quot;</span><span class="o">:</span><span class="s2">&quot;Cheque Certificado&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;pagfechaenviado&quot;</span><span class="o">:</span><span class="s2">&quot;2019-08-16&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;pagfechaentregado&quot;</span><span class="o">:</span><span class="mi">2019</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">18</span><span class="p">,</span>
+     <span class="s2">&quot;pagfechacreacion&quot;</span><span class="o">:</span><span class="s2">&quot;2019-08-14 09:15:20.000000&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;pagfechacancelado&quot;</span><span class="o">:</span><span class="kc">null</span><span class="p">,</span>
+     <span class="s2">&quot;pagestado&quot;</span><span class="o">:</span> <span class="mi">3</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -495,7 +1076,7 @@
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Código</th>
-<th class="head">Descripcion</th>
+<th class="head">Descripción</th>
 </tr>
 </thead>
 <tbody valign="top">
@@ -512,25 +1093,7 @@
 <h4>LISTAR<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p>Esta transacción recibe la petición filtrar una oferta</p>
 <p><strong>JSON IN</strong></p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-      <span class="p">{</span>
-
-         <span class="s2">&quot;limit&quot;</span><span class="o">:</span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;orderby&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-                  <span class="s2">&quot;filtro&quot;</span><span class="o">:</span><span class="p">{</span>
-                         <span class="s2">&quot;ofertaPK&quot;</span><span class="o">:</span><span class="p">{</span>
-                                     <span class="s2">&quot;ofeid&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                     <span class="s2">&quot;viaid&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-                                     <span class="s2">&quot;solid&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span>
-                                     <span class="p">},</span>
-                          <span class="s2">&quot;ofeestado&quot;</span><span class="o">:</span><span class="s2">&quot;Activo&quot;</span>
-    <span class="p">},</span>
-       <span class="s2">&quot;usuario&quot;</span><span class="o">:</span><span class="p">{</span>
-       <span class="s2">&quot;usuid&quot;</span><span class="o">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span><span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 <p><strong>FILTROS</strong></p>
@@ -731,16 +1294,16 @@ La codificación la puede realizar en el siguiente enlace: <a class="reference e
        <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;db97b24be40c3d68ebec588209e41b36&quot;</span><span class="p">,</span>
        <span class="s2">&quot;catid&quot;</span><span class="o">:</span> <span class="s2">&quot;9ca40f9be9423c169f395626f80e3c07&quot;</span><span class="p">,</span>
        <span class="s2">&quot;dirid&quot;</span><span class="o">:</span> <span class="s2">&quot;25296619b814452080f7ae451309b545&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;arcnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;arcruta&quot;</span><span class="o">:</span> <span class="s2">&quot;engideveloper/desarrollo/archivos/Categoria/Logo/&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;arcextension&quot;</span><span class="o">:</span> <span class="s2">&quot;png&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;archivob64&quot;</span><span class="o">:</span> <span class="s2">&quot;W3j3QHli8OYN&quot;</span>
-       <span class="p">},</span>
-        <span class="s2">&quot;sollink&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;soldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;GPU&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;solindicaciones&quot;</span><span class="o">:</span> <span class="s2">&quot;Comprar la de 6GB&quot;</span>
+       <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;arcnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;arcruta&quot;</span><span class="o">:</span> <span class="s2">&quot;engideveloper/desarrollo/archivos/Categoria/Logo/&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;arcextension&quot;</span><span class="o">:</span> <span class="s2">&quot;png&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;archivob64&quot;</span><span class="o">:</span> <span class="s2">&quot;W3j3QHli8OYN&quot;</span>
+         <span class="p">},</span>
+       <span class="s2">&quot;sollink&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;soldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;GPU&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;solindicaciones&quot;</span><span class="o">:</span> <span class="s2">&quot;Comprar la de 6GB&quot;</span>
       <span class="p">}</span>
      <span class="p">}</span>
     <span class="p">],</span>
@@ -798,13 +1361,77 @@ La codificación la puede realizar en el siguiente enlace: <a class="reference e
 <tr class="row-odd"><td>error008</td>
 <td>Datos Inválidos</td>
 </tr>
+<tr class="row-even"><td>errorVentas001</td>
+<td>Error: solo se permiten archivos .png, .jpg o jpeg</td>
+</tr>
+<tr class="row-odd"><td>errorVentas002</td>
+<td>Error: Debe ingresar una foto o link para la solicitud</td>
+</tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="id10">
 <h4>ACTUALIZAR<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
-<p>En el caso
-.. code-block:: javascript</p>
+<p><strong>JSON IN</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;detail&quot;</span><span class="o">:</span><span class="p">[</span>
+       <span class="p">{</span>
+           <span class="s2">&quot;objeto&quot;</span><span class="o">:</span><span class="p">{</span>
+               <span class="s2">&quot;solid&quot;</span><span class="o">:</span><span class="s2">&quot;10ea061a148e904e72f793926614e8e4&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;usuid&quot;</span><span class="o">:</span><span class="s2">&quot;db97b24be40c3d68ebec588209e41b36&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;catid&quot;</span><span class="o">:</span><span class="s2">&quot;9ca40f9be9423c169f395626f80e3c07&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;dirid&quot;</span><span class="o">:</span><span class="s2">&quot;25296619b814452080f7ae451309b545&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;arcid&quot;</span><span class="o">:</span><span class="p">{</span>
+                   <span class="s2">&quot;arcid&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;arcnombre&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;arcruta&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;arcextension&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                   <span class="s2">&quot;archivob64&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span>
+               <span class="p">},</span>
+               <span class="s2">&quot;solfechacreacion&quot;</span><span class="o">:</span><span class="s2">&quot;2019-07-31 13:04:35&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;sollink&quot;</span><span class="o">:</span><span class="s2">&quot;https://articulo.mercadolibre.com.ec/MEC-420895304-memoria-ram-ddr3-2gb4gb-8gb-laptoppc-mayor-detal-nuevas-_JM?quantity=1&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;soldescripcion&quot;</span><span class="o">:</span><span class="s2">&quot;RAM&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;solindicaciones&quot;</span><span class="o">:</span><span class="s2">&quot;Comprar la ddr3 1333&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;solestado&quot;</span><span class="o">:</span><span class="mi">1</span>
+           <span class="p">}</span>
+       <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;generarid&quot;</span><span class="o">:</span><span class="kc">true</span><span class="p">,</span>
+   <span class="s2">&quot;usuario&quot;</span><span class="o">:</span><span class="p">{</span>
+       <span class="s2">&quot;usuid&quot;</span><span class="o">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span><span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+       <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span><span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span><span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span><span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span><span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span><span class="s2">&quot;No&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perid&quot;</span><span class="o">:</span><span class="p">{</span>
+           <span class="s2">&quot;perid&quot;</span><span class="o">:</span><span class="s2">&quot;1&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span><span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span><span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span><span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span><span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;perestado&quot;</span><span class="o">:</span><span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span><span class="s2">&quot;No&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;sexid&quot;</span><span class="o">:</span><span class="mi">1</span>
+       <span class="p">},</span>
+       <span class="s2">&quot;lenid&quot;</span><span class="o">:</span><span class="s2">&quot;es&quot;</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;rol&quot;</span><span class="o">:</span><span class="p">{</span>
+       <span class="s2">&quot;rolid&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+       <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span><span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span><span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span><span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span><span class="s2">&quot;No&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;palid&quot;</span><span class="o">:</span><span class="mi">1</span>
+   <span class="p">}</span>
+
+<span class="p">}</span>
+</pre></div>
+</div>
 <p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
 <p><strong>JSON OUT</strong></p>
 <table border="1" class="colwidths-given docutils">
@@ -836,19 +1463,104 @@ La codificación la puede realizar en el siguiente enlace: <a class="reference e
 <col width="71%" />
 </colgroup>
 <thead valign="bottom">
-<tr class="row-odd"><th class="head">Código</th>
+<tr class="row-odd"><th class="head">Filtro</th>
 <th class="head">Descripcion</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>ofeid</td>
-<td>Id de la Oferta</td>
+<tr class="row-even"><td>solid</td>
+<td>Id de la solicitud</td>
 </tr>
-<tr class="row-odd"><td>ofeestado</td>
-<td>Estado de la oferta</td>
+<tr class="row-odd"><td>usuid</td>
+<td>Id de usuario</td>
+</tr>
+<tr class="row-even"><td>catid</td>
+<td>Id de la categoría</td>
+</tr>
+<tr class="row-odd"><td>dirid</td>
+<td>Id  de la dirección</td>
+</tr>
+<tr class="row-even"><td>monid</td>
+<td>Id de la moneda</td>
+</tr>
+<tr class="row-odd"><td>solfechacreacion</td>
+<td>Fecha de creación de la solicitud</td>
+</tr>
+<tr class="row-even"><td>soldescripcion</td>
+<td>Breve descripción de la compra</td>
+</tr>
+<tr class="row-odd"><td>solestado</td>
+<td>Estado de la solicitud.</td>
 </tr>
 </tbody>
 </table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">El atributo catid  <strong>Categoría</strong> puede tener hasta un nivel 23,para filtrar podemos enviar los filtros en cascada para filtrar por distintos niveles de categoría.</p>
+</div>
+<p><strong>JSON IN</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>      <span class="p">{</span>
+      <span class="s2">&quot;limit&quot;</span><span class="o">:</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;orderby&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;filtro&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;solid&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;solestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+       <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+   <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>JSON OUT</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+       <span class="s2">&quot;solid&quot;</span><span class="o">:</span><span class="s2">&quot;75b7c126127c9499e26cfab14795a9b6&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;db97b24be40c3d68ebec588209e41b36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;catid&quot;</span><span class="o">:</span> <span class="s2">&quot;9ca40f9be9423c169f395626f80e3c07&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;dirid&quot;</span><span class="o">:</span> <span class="s2">&quot;25296619b814452080f7ae451309b545&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="s2">&quot;67p7c126127c9499e26cfab19705c8k7&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;arcnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;arcruta&quot;</span><span class="o">:</span> <span class="s2">&quot;engideveloper/desarrollo/archivos/Categoria/Logo/&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;arcextension&quot;</span><span class="o">:</span> <span class="s2">&quot;png&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;archivob64&quot;</span><span class="o">:</span> <span class="s2">&quot;W3j3QHli8OYN&quot;</span>
+        <span class="p">},</span>
+       <span class="s2">&quot;sollink&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;soldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;GPU&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;solindicaciones&quot;</span><span class="o">:</span> <span class="s2">&quot;Comprar la de 6GB&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -899,6 +1611,8 @@ La codificación la puede realizar en el siguiente enlace: <a class="reference e
 <h3>TRANSACCIONES<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id14">
 <h4>CREAR<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h4>
+<p>Esta transacción recibe la petición para crear una forma de pago.</p>
+<p><strong>JSON IN</strong></p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span> <span class="p">{</span>
    <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[</span>
      <span class="p">{</span>
@@ -970,94 +1684,199 @@ La codificación la puede realizar en el siguiente enlace: <a class="reference e
 </tbody>
 </table>
 </div>
+<div class="section" id="id15">
+<h4>ACTUALIZAR<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h4>
+<p>Esta transacción recibe la petición para actualizar una forma de pago.</p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span> <span class="p">{</span>
+   <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[</span>
+     <span class="p">{</span>
+       <span class="s2">&quot;objeto&quot;</span><span class="o">:</span> <span class="p">{</span>
+         <span class="s2">&quot;fordi&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+         <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">39</span><span class="p">,</span>
+         <span class="s2">&quot;pal_palid&quot;</span><span class="o">:</span> <span class="mi">39</span><span class="p">,</span>
+         <span class="s2">&quot;forreferencia&quot;</span><span class="o">:</span> <span class="s2">&quot;Transferencia&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;fortipo&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="s2">&quot;formetodo&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="s2">&quot;forestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;foreliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;no&quot;</span>
+       <span class="p">}</span>
+     <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="s2">&quot;generarid&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+     <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;perestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+    <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+   <span class="p">},</span>
+  <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
+<p><strong>JSON OUT</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">header:</th><td class="field-body">“Código”</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>Descripcion</td>
+</tr>
+<tr class="row-even"><td><table class="first last docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">widths:</th><td class="field-body">40</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>100</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>sucess000</td>
+<td>Transacción Exitosa</td>
+</tr>
+<tr class="row-odd"><td>error008</td>
+<td>Datos Inválidos</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id16">
+<h4>LISTAR<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h4>
+<p>Esta transacción recibe la petición para listar una forma de pago.</p>
+<p><strong>FILTROS</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Filtro</th>
+<th class="head">Descripción</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>forid</td>
+<td>Id de forma de pago.</td>
+</tr>
+<tr class="row-odd"><td>forreferencia</td>
+<td>Nombre de la forma de pago</td>
+</tr>
+<tr class="row-even"><td>fortipo</td>
+<td>Tipo de pago”</td>
+</tr>
+<tr class="row-odd"><td>formetodo</td>
+<td>Metodo de pago</td>
+</tr>
+<tr class="row-even"><td>forestado</td>
+<td>Estado de la forma de pago</td>
+</tr>
+<tr class="row-odd"><td>foreliminado</td>
+<td>Eliminacion de la forma de pago</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span> <span class="p">{</span>
+      <span class="s2">&quot;limit&quot;</span><span class="o">:</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;orderby&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;filtro&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;forid&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;forestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+       <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
+       <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+   <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>JSON OUT</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;fordi&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">39</span><span class="p">,</span>
+    <span class="s2">&quot;pal_palid&quot;</span><span class="o">:</span> <span class="mi">39</span><span class="p">,</span>
+    <span class="s2">&quot;forreferencia&quot;</span><span class="o">:</span> <span class="s2">&quot;Transferencia&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;fortipo&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;formetodo&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;forestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;foreliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;no&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
 </div>
 </div>
 </div>
 
 
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">MICROSERVICIO VENTA</a><ul>
-<li><a class="reference internal" href="#configuraciones">CONFIGURACIONES</a><ul>
-<li><a class="reference internal" href="#modulo">MÓDULO</a></li>
-<li><a class="reference internal" href="#proyecto">PROYECTO</a></li>
-<li><a class="reference internal" href="#variables-de-configuracion">VARIABLES DE CONFIGURACIÓN</a><ul>
-<li><a class="reference internal" href="#generales">GENERALES</a></li>
-<li><a class="reference internal" href="#persistencia">PERSISTENCIA</a></li>
-<li><a class="reference internal" href="#parametros">PARÁMETROS</a></li>
-<li><a class="reference internal" href="#email">EMAIL</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#transacciones">TRANSACCIONES</a></li>
-<li><a class="reference internal" href="#entidades">ENTIDADES</a></li>
-<li><a class="reference internal" href="#pago">PAGO</a><ul>
-<li><a class="reference internal" href="#entidad">ENTIDAD</a></li>
-<li><a class="reference internal" href="#id1">TRANSACCIONES</a><ul>
-<li><a class="reference internal" href="#crear">CREAR</a></li>
-<li><a class="reference internal" href="#actualizar">ACTUALIZAR</a></li>
-<li><a class="reference internal" href="#listar">LISTAR</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#oferta">OFERTA</a><ul>
-<li><a class="reference internal" href="#id2">ENTIDAD</a></li>
-<li><a class="reference internal" href="#id3">TRANSACCIONES</a><ul>
-<li><a class="reference internal" href="#id4">CREAR</a></li>
-<li><a class="reference internal" href="#id5">ACTUALIZAR</a></li>
-<li><a class="reference internal" href="#id6">LISTAR</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#solicitud">SOLICITUD</a><ul>
-<li><a class="reference internal" href="#id7">ENTIDAD</a></li>
-<li><a class="reference internal" href="#id8">TRANSACCIONES</a><ul>
-<li><a class="reference internal" href="#id9">CREAR</a></li>
-<li><a class="reference internal" href="#id10">ACTUALIZAR</a></li>
-<li><a class="reference internal" href="#id11">LISTAR</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#forma-de-pag0">FORMA DE PAG0</a><ul>
-<li><a class="reference internal" href="#id12">ENTIDAD</a></li>
-<li><a class="reference internal" href="#id13">TRANSACCIONES</a><ul>
-<li><a class="reference internal" href="#id14">CREAR</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/archivos/venta.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

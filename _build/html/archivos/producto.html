@@ -1,23 +1,28 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<!doctype html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>MICROSERVICIO PRODUCTO &#8212; Engideveloper-Maletero 0.1 documentation</title>
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bizstyle.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
     
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <script type="text/javascript" src="../_static/language_data.js"></script>
-    
+    <script type="text/javascript" src="../_static/bizstyle.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -27,7 +32,60 @@
              accesskey="I">index</a></li>
         <li class="nav-item nav-item-0"><a href="../index.html">Engideveloper-Maletero 0.1 documentation</a> &#187;</li> 
       </ul>
-    </div>  
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="../index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">MICROSERVICIO PRODUCTO</a><ul>
+<li><a class="reference internal" href="#modulo">MÓDULO</a></li>
+<li><a class="reference internal" href="#proyecto">PROYECTO</a></li>
+<li><a class="reference internal" href="#variables-de-configuracion">VARIABLES DE CONFIGURACIÓN</a><ul>
+<li><a class="reference internal" href="#generales">GENERALES</a></li>
+<li><a class="reference internal" href="#persistencia">PERSISTENCIA</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#transacciones">TRANSACCIONES</a></li>
+<li><a class="reference internal" href="#entidades">ENTIDADES</a></li>
+<li><a class="reference internal" href="#interes">INTERES</a></li>
+<li><a class="reference internal" href="#id1">TRANSACCIONES</a><ul>
+<li><a class="reference internal" href="#crear">CREAR</a></li>
+<li><a class="reference internal" href="#actualizar">ACTUALIZAR</a></li>
+<li><a class="reference internal" href="#listar">LISTAR</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#categoria">CATEGORIA</a></li>
+<li><a class="reference internal" href="#id2">TRANSACCIONES</a><ul>
+<li><a class="reference internal" href="#id3">CREAR</a></li>
+<li><a class="reference internal" href="#id4">ACTUALIZAR</a></li>
+<li><a class="reference internal" href="#id5">LISTAR</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/archivos/producto.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
 
     <div class="document">
       <div class="documentwrapper">
@@ -36,19 +94,82 @@
             
   <div class="section" id="microservicio-producto">
 <span id="index-0"></span><h1>MICROSERVICIO PRODUCTO<a class="headerlink" href="#microservicio-producto" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="creacion-del-modulo">
-<h2>CREACIÓN  DEL MODULO<a class="headerlink" href="#creacion-del-modulo" title="Permalink to this headline">¶</a></h2>
-<p><strong>Modulo</strong></p>
+<div class="section" id="modulo">
+<h2>MÓDULO<a class="headerlink" href="#modulo" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Especificar en el archivo “engiAcceso” la clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo.</li>
-<li>Crear un archivo para la persistencia a la base de datos en este caso “EngiMysql.EngiMaletero.Persona”.</li>
-<li>Agregar la persistencia del modulo en  archivo standalone.</li>
+<li>Especificar en el archivo “engiAcceso” la clave del módulo.</li>
+<li>Crear un archivo para la persistencia a la base de datos en este caso “EngiMysql.EngiMaletero.Producto”</li>
+<li>Agregar la persistencia de JBOSS para el modulo en  archivo standalone-full.xml</li>
 </ul>
-<p><strong>Proyecto</strong></p>
+</div>
+<div class="section" id="proyecto">
+<h2>PROYECTO<a class="headerlink" href="#proyecto" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li>Crear el nombre de la persistencia con el nombre que se .</li>
-<li>Agregar los paquetes que deseamos importar en el persistence.xml.</li>
+<li>Crear el nombre de la persistencia y agregar al archivo persistence.xml</li>
+<li>Agregar los paquetes que deseamos importar en el persistence.xml</li>
 </ul>
+</div>
+<div class="section" id="variables-de-configuracion">
+<h2>VARIABLES DE CONFIGURACIÓN<a class="headerlink" href="#variables-de-configuracion" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="generales">
+<h3>GENERALES<a class="headerlink" href="#generales" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="colwidths-given docutils" id="id6">
+<caption><span class="caption-text"><strong>Configuración</strong></span><a class="headerlink" href="#id6" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Seguridad</td>
+<td>La clave del del esb debe ser la inicial del resto del modulo admin.nombremodulo.</td>
+</tr>
+<tr class="row-odd"><td>Persistencia</td>
+<td>Para la conexión a la base de datos debe esta compuesto de la siguiente manera : EngiMysql.NombredelProyecto.NombredelModulo</td>
+</tr>
+<tr class="row-even"><td>Parametros</td>
+<td>Para la conexión a la base de datos debe esta compuesto de la siguiente manera : EngiParametros.NombredelProyecto.NombredelModulo</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="persistencia">
+<h3>PERSISTENCIA<a class="headerlink" href="#persistencia" title="Permalink to this headline">¶</a></h3>
+<p>Nombre del Archivo: EngiMysql.Maletero.Producto.properties” ,este archivo debe ser agregado en la carpeta configuraciones del servidor Wildfly.</p>
+<table border="1" class="colwidths-given docutils" id="id7">
+<caption><span class="caption-text"><strong>Persistencia de Datos</strong></span><a class="headerlink" href="#id7" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="7%" />
+<col width="93%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributo</th>
+<th class="head">Detalle</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>persistence.nombre</td>
+<td>Nombre de la persistencia para la conexión a la base.</td>
+</tr>
+<tr class="row-odd"><td>jdbc.url</td>
+<td>URL de la base de datos</td>
+</tr>
+<tr class="row-even"><td>jdbc.user</td>
+<td>Usuario</td>
+</tr>
+<tr class="row-odd"><td>jdbc.password</td>
+<td>Clave</td>
+</tr>
+<tr class="row-even"><td>jdbc.driver</td>
+<td>Nombre del driver para la conexión</td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="section" id="transacciones">
 <h2>TRANSACCIONES<a class="headerlink" href="#transacciones" title="Permalink to this headline">¶</a></h2>
@@ -58,7 +179,6 @@
 <li>Actualizar.</li>
 <li>Listar.</li>
 <li>EliminarLogicamente.</li>
-<li>Listar.</li>
 </ul>
 </div>
 <div class="section" id="entidades">
@@ -71,182 +191,57 @@
 </div>
 <div class="section" id="interes">
 <h2>INTERES<a class="headerlink" href="#interes" title="Permalink to this headline">¶</a></h2>
+<p><strong>ENTIDAD</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Código</th>
+<th class="head">Descripción</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>intid</td>
+<td>Id del interés.</td>
+</tr>
+<tr class="row-odd"><td>viaid</td>
+<td>Id del viajero.</td>
+</tr>
+<tr class="row-even"><td>catid</td>
+<td>Id de la categoría.</td>
+</tr>
+<tr class="row-odd"><td>viaid</td>
+<td>Id del viajero.</td>
+</tr>
+<tr class="row-even"><td>inestado</td>
+<td>Estado del interés.</td>
+</tr>
+<tr class="row-odd"><td>ineliminado</td>
+<td>Eliminación del interés.</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="section" id="id1">
-<h3>TRANSACCIONES<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h2>TRANSACCIONES<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="crear">
-<h4>CREAR<a class="headerlink" href="#crear" title="Permalink to this headline">¶</a></h4>
-<p><strong>JSON IN</strong></p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
-<p><strong>JSON OUT</strong></p>
-<table border="1" class="colwidths-given docutils">
-<colgroup>
-<col width="29%" />
-<col width="71%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Código</th>
-<th class="head">Descripcion</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>sucess000</td>
-<td>Transacción Exitosa</td>
-</tr>
-<tr class="row-odd"><td>error008</td>
-<td>Datos Inválidos</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="actualizar">
-<h4>ACTUALIZAR<a class="headerlink" href="#actualizar" title="Permalink to this headline">¶</a></h4>
-<p><strong>JSON IN</strong></p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
-<p><strong>JSON OUT</strong></p>
-<table border="1" class="colwidths-given docutils">
-<colgroup>
-<col width="29%" />
-<col width="71%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Código</th>
-<th class="head">Descripcion</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>sucess000</td>
-<td>Transacción Exitosa</td>
-</tr>
-<tr class="row-odd"><td>error008</td>
-<td>Datos Inválidos</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="section" id="listar">
-<h4>LISTAR<a class="headerlink" href="#listar" title="Permalink to this headline">¶</a></h4>
-<p><strong>JSON IN</strong></p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
-<p><strong>JSON OUT</strong></p>
-<table border="1" class="colwidths-given docutils">
-<colgroup>
-<col width="29%" />
-<col width="71%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Código</th>
-<th class="head">Descripcion</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>sucess000</td>
-<td>Transacción Exitosa</td>
-</tr>
-<tr class="row-odd"><td>error008</td>
-<td>Datos Inválidos</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<div class="section" id="categoria">
-<h2>CATEGORIA<a class="headerlink" href="#categoria" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3>TRANSACCIONES<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id3">
-<h4>CREAR<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<h3>CREAR<a class="headerlink" href="#crear" title="Permalink to this headline">¶</a></h3>
+<p>Esta transacción recibe la petición para crear un interés.</p>
 <p><strong>JSON IN</strong></p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
- <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[</span>
-   <span class="p">{</span>
-     <span class="s2">&quot;objeto&quot;</span><span class="o">:</span> <span class="p">{</span>
-       <span class="s2">&quot;catreferencia&quot;</span><span class="o">:</span> <span class="s2">&quot;Tecnologia&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;catnivel&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
-       <span class="s2">&quot;catpadre&quot;</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
-       <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-       <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="p">{</span>
-         <span class="s2">&quot;arcextension&quot;</span><span class="o">:</span> <span class="s2">&quot;png&quot;</span><span class="p">,</span>
-         <span class="s2">&quot;archivob64&quot;</span><span class="o">:</span> <span class="s2">&quot;iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAADsQ</span>
-<span class="s2">         AAA7EB9YPtSQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAABHvSURBVHic7Z17eJTVncc/7zv3JORObi</span>
-<span class="s2">         QkECAQAREEa4ugXCxeqtiqtZbWum3XQp/tY7sWUbe12rWWbZ+tXRexVrvWdtVWHqyXlq4i2EKVVkBBCAmJECYhN5LMJJO5v/</span>
-<span class="s2">         Oe/WNIICaQuYVkkvP5IzN533P5Jef7ntvvnPOCRCKRSCQSiUQikUgkEolEIpFIJBKJRCKRSCQSiUQiGTsosUS6y7TxUgXuVB</span>
-<span class="s2">         QxDYGaaKMkUaCgI9RaFX61Kbh+f/TRo2SdceMDQuGHscSVDCsCwQObtXsfjSZSVIX4DfNPblKEvlU1KCy56xJmrZyCyWLA7/</span>
-<span class="s2">         Ui9FB05kriIhgM4nQ6Cfo1GvZ08OFLdnQdFFXc8IR/w2uRpmOMJlNF6OsBVv/oSlZ8e2HYEJ+XgM8blfGSxNDVlUlXVxdTrp</span>
-<span class="s2">         jIhAIru39+FKErG4CIBRBx+/0DfqACCxQFPnXn3L7rWjAYldGSxGG12vq+V944CSVcn196uqwiIuKA9WAGTEaLEVum5aw7It</span>
-<span class="s2">         IkJAlGVc+04JZ0EwazCmCuD5dVZGkk3ixJMiEFMM6RAhjnxCyAtjoHbz+xn1BQT6Q9kgtMzAJ4/aHd/P7u7Rzd2ZBIeyQXmJ</span>
-<span class="s2">         gFEAqEJ36CflkDJDOyDzDOkQIY50gBjHOkAMY5MQvAaAn7kUwWqaFkJipv4Nlc/+CnmHp5ETOuKkH6A5KXmAUwsTyLpWuz8L</span>
-<span class="s2">         q60ENjfy2Au8NHZ0MPzgYXHSdcCF2wdN0cVGNy14AxC2Cs4esK0NngosPeg9PuorPBReeJnvCn3UXAPdDtPXlBHuWfKhwBax</span>
-<span class="s2">         PHmBeA0AXdbV7c7V4KK7NRVIWaHY3UvN2I0x4u8M4GF76uwHnTsaVpZBf4yMn3Y69Jw9luIRRI/kmwMSGA7lZPX/Xcae/Bcf</span>
-<span class="s2">         qp7bS7cJ50o/nDTdSNj1zOojUVPPvlN9A+VngWm052gZecAj+5hT6y831kF/jJLfCRXeDDlqb1hd20fg7OdgtjgaQUQP3eNn</span>
-<span class="s2">         b87AM66rtx2F0E/efvg5gsOkG/iqvNQ8gfQgvomK06X7q3pq+g0zLG58qmpBTAric/5Mib9r7f0zKDZOf7yTn9BIerah/ZhX</span>
-<span class="s2">         5yCnzs3DKJ154p65eG0aQzb0n7BbZ89JGUAhBauPq++V8+4vJVrZitY38UMlwk9RgmMzcgCz9OkloAkviRAhjnSAGMc6QAxj</span>
-<span class="s2">         lJOQoYbQgBe547wsHXjuM40XMB8xWEzvLDhAJhp5zNlFK1lo2Deeg0BFWgPLZZW/8XSHIBuBwm2putQ4bz9gz8M4VORHEHIx</span>
-<span class="s2">         DoX3G+9uAedj15KKa0hgcx5Zy3FGaAuGGt4cfXbw5t2JbUAvjdY9OijqOc3kDndRt5aM3C+AxQwN3uZfdTh1HNgtLvO7BVBA</span>
-<span class="s2">         lqGqdOnQpXDaMATdNoa2sDXcG4rwzzjkoVVf0hIZJTABddW0ZztQMRxRSAwawyc1kxlnQzs68ppbnKEZcNablWJs3JobXGgd</span>
-<span class="s2">         AFqbODZFzlAyDo9qDiiyv9RGIGFOEjFAoRWFGFeUclIOZCkjYBC26dzoJbp8cc/45fr0yYLb1OJcV45mkXmkC4R9e/tm8bqa</span>
-<span class="s2">         HPCWaCJBVA9VsN7HrqEEKPvIo1mgyseuBSii7K4dXv7aGlujMuG1KzbNz8n4sHvdf04CQ8782IK/1EY7zRhPbJmoHXR8CWuP</span>
-<span class="s2">         nH/9ZwdOfJqOMVzc4mu2QCu36RmA7bZWsqBr0ebAjvzramm1HUkT1JJ+QPEfBqKG0TBr2flALo7Vtd8+UTlM92DRl+386JvL</span>
-<span class="s2">         stHyHoqzUsNp2vP1QVU/5/+GUZjbVp6EPUQHe/tZqc0vSY8kgU7/76CFu/+7dz3u8ngG8aNy4XqrJCCJHdd1FQgiJKFVRVIN</span>
-<span class="s2">         D8Gg/Pfabvth7D2UDWNBNFF+X0NUxGq4HCWdlc8rlpmKyGiNOZVO6hYsHQnbkTNWkDrhmMekRxByPtd8UxxRuNGAFu4feGXF</span>
-<span class="s2">         P9szpizYChixL+IU6v/BUCWqo74s7Yvv/UgGt/3fwhd/72anLKRvapGU8YAXKNx78DrLFlWlhy1yVkFacS9PsBqHrDzpE37K</span>
-<span class="s2">         jpQUxzu+LKLNRkQzuWSnp+Ciu/Ox8Avz+As81J9bZmWo86eXHd26x7/TMj3naOF8JNgMI3Ab7+wmpmLi/F293VV7VXfnoyjy</span>
-<span class="s2">         54Ec1txHZbA2qOP+bMun9wEQAr7rmET3x5Zt/15uYW5txcwnM37aZ+bxuNBzsomZcbcz6SyOmd0ywBmLG0BITo166n56cw+7</span>
-<span class="s2">         opEFLw/bkg5oy0j9LQaiZgzTCz4Jb+Y3iz2YTRZqBgdgYAzsYLN58+3untBKpAeJPDINOXS9bO4cArx/D/qYCQPQXFpg0Ic1</span>
-<span class="s2">         50Be1IuF3/5B2VmFMGH3woxnC1H834XhIfEQ0DS+blcv2Di9j2yHsED2bEnNnM5SUs/868mONLEk/E8wBL1s5h3mfLaTzQju</span>
-<span class="s2">         aLbuinGhRypqRTWJk9dOAo2PL4VN7dlk9hmYfCUjcFpR4KSr1ynWAURDURlJ6fQuXVk4fLloiZtXIyNdsbcLZbcLZbOLznjL</span>
-<span class="s2">         AURZBT4KegzENhmZuCyR46W8fGJo7hIClnAhfdPoNLb52G42QPrTUOWqud4c+j4c/2ZoX2ZiuH3j13jRP0q+x4aRJFUzzkl3</span>
-<span class="s2">         rImhj76CaZSUoBQLjDmlOaTk5pOpVXl/Zd1zWd9vpuWqudtNQ4wsKocdLd4qZ0YR4mmxFzqomAO8jLT07ti2dL1Sgo9VBY5j</span>
-<span class="s2">         nzWeYhM3dsCyNpBXAuVKNK3rRM8qZlMuf6skHDfHv7amp3naT5iJO2Wgct1U7c7V6OV6VzvKr/LKQtNURBqZvCKR4KJnsonO</span>
-<span class="s2">         LG7x07SynHnAAiIbc8g9zy/qMZr9NPa42Dlpre5iTctHS3egYVxlhhXApgMGyZFsouK6Dssv6TXe52Ly3VTlqPOmg54qC11k</span>
-<span class="s2">         lLtQNFgYnTMjhVF/30eHerh4BbI3dqYkRl33+KwsrsqBxpvQyLAE7sa6Px/Xb0kE7lqskj7hKNh9RcG+WLbZQv7n8QhBCgKM</span>
-<span class="s2">         QkgKc+9yc66l186VfL4x5Vvf7QP/jLpoNc8Y3Z3PDwJ6KOn1ABtB/r5oV1O/t5+qretHPXlmsTmc2oQInDVzX72lLeeuwAv/</span>
-<span class="s2">         mnt/qJQAhoPNDOkTdO0FbbRVeLB6NFJSM/hZJL8qi8ZjJZk864tnsL32g2MHNZSUy2JEwAjsYe/vu6V3F3+MiwqExKVanq1P</span>
-<span class="s2">         A6x3YvOhZW3b8QIWDHz8MiWPP0Msw2E68/9HeaDg3uat/3Uh1/uP8dpi8t4oaHP8H7Wz/qK/w1Ty9jxpWTYrIlYQJ45b53cH</span>
-<span class="s2">         f4mJVl5GuzbLzbEqSqUyN3auxTx2OZax5YiBbQ+evmD3nuK9v7Vhep2QHMizoxVrhQswIQVAl1mAkeyCTwfha1f2niZ8teRg</span>
-<span class="s2">         +JcOE/s5yLPh17M5IQAbg7fFS92YBRVbijwoorqLOtIfzkz7upPBFZjEmu+95CPvxjPQ67C4yClNvtWFa29FthDOFCsiw9he</span>
-<span class="s2">         404X2pBP+OPADm3TQ1rsKHBO0NbDsaXhufZlT4sz3Aj/Z7cAcFs1aUxG3gWOaVf9uDw+5CnRAi/fuHsV7TPKDwz0bNDJL69W</span>
-<span class="s2">         OkfOkEiirY91Idh//Pfs7wkZAQARhOnxrqDOi83RQgEBLMvWEKX3xqmVzZcw7q97bx7v9UoZh10u6twjg98jUQ1mubsX3Bjt</span>
-<span class="s2">         AFW+/ZTcATpXv+LGJuAgJeDdWgYDQbKJmXy6r7LqXT7iI938asq0spnpvTdzqXZCB/fuQ9hADbZ5owlrujjm+9roXAP7Lpro</span>
-<span class="s2">         XdTx9i2bdic7NHJYCAR+PNn+7n/S11dLV4AMgqTqN8cSHzVpcza2UJh7edYOv63bTWONH8ISxpJiqWFXP1d+eTX5EVk5Fjja</span>
-<span class="s2">         5mN8feaUax6livbwJA+FV82woxL+rAUDT4trLA/ixwmTAvbQNFYPtcI64fz+L9LR8NvwDcHT6eunkbTYfDwxSTqqDpAkdjD3</span>
-<span class="s2">         tfrGXvi7UD4phU8PcEOfjqcY68YeerL6xK+pM1E0H19gaEAPPFThRreKtW8INMvL8rIdRkJW3dR4PG8/xyKrrTRNaiThSbhm</span>
-<span class="s2">         l2N2qaRku1A0djD1nFA5e/D0XEAthyz26aDndQkGLg9ukWpqYbEUCrJ8T77RpHHBq+kGBKupH5uSbK01XMBoUOn86LdT4Od2</span>
-<span class="s2">         r85qvbuXfPrR978eT4o70+vJnFOPWsdj90ujsWOnefSfTe623yDQJDmQf9UDodx7qHTwDNVZ0c+mM9NqPCt+bayDSf6TsWpR</span>
-<span class="s2">         ooSjVwXengheoPQb0r3BdQVEWu9wNcreE2X806czytkhIuVTX13P0mxRZC+FQwnznlVMkMp9HdFn0/AiIUwAdbjwFweb6pX+</span>
-<span class="s2">         FHwnM1XtxBQeXVpXz+v64gJTu2QxnGEr0neXDWkM90cRcT7j+Csfzco4H0+48gfAYUy1kCMIW/azG+vCsiAZzY3wpAZVZ0g4</span>
-<span class="s2">         Z6Vwh7T4gJeTbWPL0sJm/VuEERmOac37Gk5if+zIGIStR5Mly95KVE9/Sf7AlXZzOXl8jCHwStIQUlLfYxPIDuiPg90YMSkQ</span>
-<span class="s2">         B6z8qPsvbHcHoSSNeiq57+9O/vsfPxA9FlNkL4XNEfMt07OeZ7eRK+l2Nz4nwc1RDbnF5EAjBZw8GifUtscWr4qa/e0YjfFc</span>
-<span class="s2">         QywRRRvI767ugySjIuW1OBt8tPSEvMRJk13cKMq4bRG5iWaw2fve8X5ETRhytOU5mWYaCuw8ezX3mT2zZdSUZBytARFTYg9O</span>
-<span class="s2">         2D3NgBSrr/s3sR5viqzkShtmRgfntWVHHKFxcOWGAyUkQkgPyKLOz7T3HSHaI8I7q2/I4KGz/5wEPdriYenf8iK9cvYPndFw</span>
-<span class="s2">         8RSzm2OXjfvo9fXWvaqAEE5zRCyvnf8HGhMNTmQ5QCGE1E1HCUzJ8IQI0z+qcux6qyYX4q0zMNhDSd43uao05DMnxEJICZK0</span>
-<span class="s2">         pQFKhyhPDFUPNmmhWshnDHJ9alS5LhIaImIGtSGuWLi6jb1cTulgAriqMberR5Qxzu1DCaDFy8euqQ4RXBjWuNGwcLaAWwPX</span>
-<span class="s2">         85qKNkRtEd3zBspIl4ZufKb86lblcT2xr8zMs1kmuNbNihC3i22ocuYOHnpzEhzzZkHIH4IudZRmCozY/UbMkQRCyAimXFzL</span>
-<span class="s2">         m+jA9fr+exA25um26jItOIJ6jzQYfGgY4g7iDMzDKyKM9Enk2h3Sf4w3Ef9a4QablWVt0X2dGspksdGIq8A67rbVb0jtH1xA</span>
-<span class="s2">         mPgdDJoUU9Wolqbve2x5fiOuWj/u8tPHHIM2iYhp4Qbzb0Xwmcmm3hzt9+mrSJkY0hLYvbMV8W/0FUF4LgwQxcjybvKCAqAZ</span>
-<span class="s2">         hTTXxj67X87enD7HupjrZaJ5YJZorn5jD/lmlkT57Ae88fpfbtk3S1esialMb0pUWs+NdLyChMHa6/QRIHUS8JM5hUlqydw5</span>
-<span class="s2">         K1cwa9X7ZQts/JxNjZ5iqJCbk5dBjpOhnbIo1E4u44/84sKYBhZPPqP460CUMyKgXgfX4yvleKRtqMiBDegb6RtCtddO0YRZ</span>
-<span class="s2">         1egyAwq2XQW6NSAKE2C5C8C0dz7mxHufHoSJvRj6aTzTCI93lUCuDc7uDRh456mQqbEp5wUCWwNwt1goZxdnxnNJ+P0SmAc7</span>
-<span class="s2">         iDRyN3GTdmn2/aOlZ6Hp9G4L3wKWepXzuOZXlr4jNBDgNHLVr1mTd8BKsGf9tHIugVgICRf8tZb/7KiFsy8pivCp+yohgFli</span>
-<span class="s2">         vahy2f3ibgFJB38mAbxRfnoagqQo9tnXksBIMaug4dteE18UJXhqe+GwZUFB8IhP9MO6Co8VesKV+wY7niFEpqqN8GklgRvc</span>
-<span class="s2">         +U1mebD84I4Hng7qdvf5XrvvdJbJkmNP+FOdolGAzQ3tZB1WtNOO1ugLp2zfP3C5J5ItBChzCpwZ5DZtOpLalYSzV03UioM4</span>
-<span class="s2">         SeiIfIAaHG+LyNmhaEzokYAOPBvgU5++D0C2Hu4SepbpPYCSLOV2nGiUKXootrn9A2vDOidkTJWuN/3I8iHhlpOyJFKCKAri</span>
-<span class="s2">         57Ulv/t75665/5hclo6lonFLECIS7s/i0FHaFUCaPpp096vxP9++BGAWvNG1cjlFtAzxtpW86FgiIESp2q6Js2BTYcHml7JB</span>
-<span class="s2">         KJRCKRSCQSiUQikUgkEolEIpFIJBKJRCKRSCQSSaL5fzAknEZcoVqIAAAAAElFTkSuQmCC&quot;</span>
-        <span class="p">}</span>
+   <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;objeto&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;intid&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;viaid&quot;</span><span class="o">:</span> <span class="s2">&quot;via1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;catid&quot;</span><span class="o">:</span> <span class="s2">&quot;b12223334444&quot;</span>
       <span class="p">}</span>
     <span class="p">}</span>
   <span class="p">],</span>
-  <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+  <span class="s2">&quot;generarid&quot;</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+   <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
     <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
     <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
@@ -261,22 +256,440 @@
      <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
      <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
      <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;jeisson.millos@hotmail.com&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;perestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+    <span class="p">},</span>
+     <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
+<p><strong>JSON OUT</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Código</th>
+<th class="head">Descripción</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>sucess000</td>
+<td>Transacción Exitosa</td>
+</tr>
+<tr class="row-odd"><td>error008</td>
+<td>Datos Inválidos</td>
+</tr>
+<tr class="row-even"><td>errorcategoria001</td>
+<td>Error: solo se permiten archivos .png</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="actualizar">
+<h3>ACTUALIZAR<a class="headerlink" href="#actualizar" title="Permalink to this headline">¶</a></h3>
+<p>Esta transacción recibe la petición para crear un interés.</p>
+<p>Los campos que se pueden actualizar del interés son:</p>
+<ul class="simple">
+<li>Viajero.</li>
+<li>Categoría.</li>
+<li>Estado.</li>
+</ul>
+<p><strong>JSON IN</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;objeto&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;intid&quot;</span><span class="o">:</span> <span class="s2">&quot;A59IFU8Q6cCAoIC1qu&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;viaid&quot;</span><span class="o">:</span> <span class="s2">&quot;via1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;catid&quot;</span><span class="o">:</span> <span class="s2">&quot;3ODk00CpEpqTJsPZDKcQ5&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;inestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;inteliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span>
+       <span class="p">}</span>
+    <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;generarid&quot;</span><span class="o">:</span> <span class="s2">&quot;false&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+     <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;perestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+    <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+   <span class="p">},</span>
+  <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+   <span class="p">}</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
+<p><strong>JSON OUT</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Código</th>
+<th class="head">Descripcion</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>sucess000</td>
+<td>Transacción Exitosa</td>
+</tr>
+<tr class="row-odd"><td>error008</td>
+<td>Datos Inválidos</td>
+</tr>
+<tr class="row-even"><td>errorcategoria001</td>
+<td>Error: solo se permiten archivos .png</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="listar">
+<h3>LISTAR<a class="headerlink" href="#listar" title="Permalink to this headline">¶</a></h3>
+<p>Esta transacción recibe la petición para listar un interés,aquí se puede aplicar filtros que son los siguientes:</p>
+<p><strong>FILTROS</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Código</th>
+<th class="head">Descripción</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>intid</td>
+<td>Id del interés.</td>
+</tr>
+<tr class="row-odd"><td>viaid</td>
+<td>Id del viajero.</td>
+</tr>
+<tr class="row-even"><td>catid</td>
+<td>Id de la categoría.</td>
+</tr>
+<tr class="row-odd"><td>viaid</td>
+<td>Id del viajero.</td>
+</tr>
+<tr class="row-even"><td>inestado</td>
+<td>Estado del interés.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>JSON IN</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;limit&quot;</span><span class="o">:</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;orderby&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;filtro&quot;</span><span class="o">:</span> <span class="p">{</span>
+     <span class="s2">&quot;intid&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;inestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span>
+   <span class="p">},</span>
+  <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
+     <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
      <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
      <span class="s2">&quot;perestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
      <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
      <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
      <span class="p">},</span>
-     <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
-     <span class="p">},</span>
+   <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+  <span class="p">},</span>
   <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
+<p><strong>JSON OUT</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="s2">&quot;catid&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;intid&quot;</span><span class="o">:</span> <span class="s2">&quot;d41894808ec78f3d028fc06b22f2a85f&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;viaid&quot;</span><span class="o">:</span> <span class="s2">&quot;75b7c126127c9499e26cfab14795a9b6&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;intestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ineliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="categoria">
+<h2>CATEGORIA<a class="headerlink" href="#categoria" title="Permalink to this headline">¶</a></h2>
+<p><strong>MODELO</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Atributos</th>
+<th class="head">Campos</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>catid</td>
+<td>Id de la categoría.</td>
+</tr>
+<tr class="row-odd"><td>arcid</td>
+<td><blockquote class="first">
+<div>Objeto Archivo:</div></blockquote>
+<ul class="last simple">
+<li>arcid: Id del archivo.</li>
+<li>arcnombre: Nombre del archivo.</li>
+<li>arcruta: Ruta donde se almacena el archivo.</li>
+<li>arcextension: Extensión del archivo.</li>
+<li>arcestado: Ruta donde se almacena el archivo.</li>
+<li>arceliminado: Eliminación del archivo.</li>
+</ul>
+</td>
+</tr>
+<tr class="row-even"><td>palid</td>
+<td>Id de la palabra.</td>
+</tr>
+<tr class="row-odd"><td>catreferencia</td>
+<td>Descripción de la categoría.</td>
+</tr>
+<tr class="row-even"><td>catnivel</td>
+<td>Nivel de la categoría.</td>
+</tr>
+<tr class="row-odd"><td>catpadre</td>
+<td>Categoría Padre.</td>
+</tr>
+<tr class="row-even"><td>catestado</td>
+<td>Estado de la categoría.</td>
+</tr>
+<tr class="row-odd"><td>cateliminado</td>
+<td>Eliminación de la categoría</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id2">
+<h2>TRANSACCIONES<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>CREAR<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>Esta transacción recibe la petición para crear una categoria.</p>
+<p><strong>JSON IN</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span> <span class="p">{</span>
+   <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;objeto&quot;</span><span class="o">:</span> <span class="p">{</span>
+         <span class="s2">&quot;catid&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;catreferencia&quot;</span><span class="o">:</span> <span class="s2">&quot;Tecnologia&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;catnivel&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+         <span class="s2">&quot;catpadre&quot;</span><span class="o">:</span> <span class="s2">&quot;null&quot;</span><span class="p">,</span>
+         <span class="s2">&quot;palid&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+         <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="p">{</span>
+           <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;arcruta&quot;</span><span class="o">:</span> <span class="s2">&quot;/archivos/Categoria/Logo/&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;arcextension&quot;</span><span class="o">:</span> <span class="s2">&quot;png&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;archivob64&quot;</span><span class="o">:</span> <span class="s2">&quot;iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVA</span>
+<span class="s2">            AAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAA</span>
+<span class="s2">            AOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAADsQAAA7E</span>
+<span class="s2">            AZUrDhsAAAAHdElNRQfjCQsOKDIZAfTcAAAB2ElEQVRo3u2ZQStEURTHf40p</span>
+<span class="s2">            hLGQmlCzUNTY2EhJKCkLK6YkDclCVhYWs2Mr2RtlbGTHF5BENj6AjSYLSVnM</span>
+<span class="s2">            giw0k4zFzDQJ993zuuOk3nmr9+7/nPt753/ffa8eVGOR4h8di9VJQyiHOkD4</span>
+<span class="s2">            h2u3PAEwSAOQ59rZbFF6TcOVNbBUPr+jSJEHh7e7FKyB7xH2lTVFn4Vqj+fa</span>
+<span class="s2">            AITYpctC90Lappg8xq2mh6Td3cjDqjAwZH7oSiG3oJlpAF5J8PGLZppVAObZ</span>
+<span class="s2">            cA8wQxMAJ5z+qsmyQghYYJOiuZzcgooBhwbNPVcAxBj2KicF6GQMgEcujboK</span>
+<span class="s2">            nud6kVqQpK4M8m6ln2WNN5cdSAj1ESbMAilARKiHVvOwv604X15kpuggblPK</span>
+<span class="s2">            H0DOq7HAMvs2pdTfhuoA/ixoIeWpGaglQIQtVx1Qt0AdwO9jOOepmWS9dgB5</span>
+<span class="s2">            zjw1MbtS6haoA0gt6LFWZsj8iw6oA0gt6KdRmJEl5xLgmG5hxoLx81XfAnUA</span>
+<span class="s2">            qQVp2oQZN24Bdlx3QN0CdQCpBQd0CDO2OXcJMCLeB47Mw+oWqANILYiLkQtu</span>
+<span class="s2">            AQpCvWeoWxAABAABQAAQAAQAP70NU+X/eqWPr3YunM0WtQPo/fKrpZ7RWnZA</span>
+<span class="s2">            3QJ1gE8Ja3VeRqLkhQAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAxOS0wOS0xMVQx</span>
+<span class="s2">            NDo0MDo1MCswMDowMIYQLAYAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMTktMDkt</span>
+<span class="s2">            MTFUMTQ6NDA6NTArMDA6MDD3TZS6AAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5r</span>
+<span class="s2">            c2NhcGUub3Jnm+48GgAAAABJRU5ErkJggg==&quot;</span>
+           <span class="p">}</span>
+         <span class="p">}</span>
+       <span class="p">}</span>
+     <span class="p">],</span>
+    <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;perestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+      <span class="p">},</span>
+    <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+   <span class="p">},</span>
+   <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
      <span class="s2">&quot;rolid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
      <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
      <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
      <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
      <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
-     <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+     <span class="s2">&quot;palid&quot;</span><span class="o">:</span><span class="mi">1</span>
     <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
+<p><strong>JSON OUT</strong></p>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="29%" />
+<col width="71%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Código</th>
+<th class="head">Descripción</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>sucess000</td>
+<td>Transacción Exitosa</td>
+</tr>
+<tr class="row-odd"><td>error008</td>
+<td>Datos Inválidos</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="id4">
+<h3>ACTUALIZAR<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>Esta transacción recibe la petición para crear una categoria.</p>
+<p><strong>JSON IN</strong></p>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>  <span class="p">{</span>
+    <span class="s2">&quot;detail&quot;</span><span class="o">:</span> <span class="p">[</span>
+       <span class="p">{</span>
+         <span class="s2">&quot;objeto&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;catid&quot;</span><span class="o">:</span> <span class="s2">&quot;d41894808ec78f3d028fc06b22f2a85f&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;catreferencia&quot;</span><span class="o">:</span> <span class="s2">&quot;Tecnologia&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;catnivel&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="s2">&quot;catpadre&quot;</span><span class="o">:</span> <span class="s2">&quot;null&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;catestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;cateliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="p">{</span>
+              <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="s2">&quot;2acdcb0e49419ff0509a10ad909eda24&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;arcruta&quot;</span><span class="o">:</span> <span class="s2">&quot;/archivos/Categoria/Logo/&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;arcextension&quot;</span><span class="o">:</span> <span class="s2">&quot;png&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;arcestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;arceliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;archivob64&quot;</span><span class="o">:</span> <span class="s2">&quot;iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAABGdBTUEAAL</span>
+<span class="s2">               GPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAm</span>
+<span class="s2">               JLR0QAAKqNIzIAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAAHdElNRQfjCQsOKDIZAfTcAAAB2E</span>
+<span class="s2">               lEQVRo3u2ZQStEURTHf40phLGQmlCzUNTY2EhJKCkLK6YkDclCVhYWs2Mr2RtlbGTHF5BENj</span>
+<span class="s2">               6AjSYLSVnMgiw0k4zFzDQJ993zuuOk3nmr9+7/nPt753/ffa8eVGOR4h8di9VJQyiHOkD4h2</span>
+<span class="s2">               u3PAEwSAOQ59rZbFF6TcOVNbBUPr+jSJEHh7e7FKyB7xH2lTVFn4Vqj+faAITYpctC90Lapp</span>
+<span class="s2">               g8xq2mh6Td3cjDqjAwZH7oSiG3oJlpAF5J8PGLZppVAObZcA8wQxMAJ5z+qsmyQghYYJOiuZ</span>
+<span class="s2">               zcgooBhwbNPVcAxBj2KicF6GQMgEcujboKnud6kVqQpK4M8m6ln2WNN5cdSAj1ESbMAilARK</span>
+<span class="s2">               iHVvOwv604X15kpuggblPKH0DOq7HAMvs2pdTfhuoA/ixoIeWpGaglQIQtVx1Qt0AdwO9jOO</span>
+<span class="s2">               epmWS9dgB5zjw1MbtS6haoA0gt6LFWZsj8iw6oA0gt6KdRmJEl5xLgmG5hxoLx81XfAnUAqQ</span>
+<span class="s2">               Vp2oQZN24Bdlx3QN0CdQCpBQd0CDO2OXcJMCLeB47Mw+oWqANILYiLkQtuAQpCvWeoWxAABA</span>
+<span class="s2">               ABQAAQAAQAP70NU+X/eqWPr3YunM0WtQPo/fKrpZ7RWnZA3QJ1gE8Ja3VeRqLkhQAAACV0RV</span>
+<span class="s2">               h0ZGF0ZTpjcmVhdGUAMjAxOS0wOS0xMVQxNDo0MDo1MCswMDowMIYQLAYAAAAldEVYdGRhdG</span>
+<span class="s2">               U6bW9kaWZ5ADIwMTktMDktMTFUMTQ6NDA6NTArMDA6MDD3TZS6AAAAGXRFWHRTb2Z0d2FyZQ</span>
+<span class="s2">               B3d3cuaW5rc2NhcGUub3Jnm+48GgAAAABJRU5ErkJggg==&quot;</span>
+              <span class="p">}</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+        <span class="p">],</span>
+      <span class="s2">&quot;generarid&quot;</span><span class="o">:</span> <span class="s2">&quot;false&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;usuario&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;usuid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;usuclave&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a0e4a801fc3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;usuverificado&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s2">&quot;usucodigoverificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;SU91L9&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;usufechacodigo&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;usufechacreacion&quot;</span><span class="o">:</span> <span class="s2">&quot;2019-07-08 11:27:36&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;usuestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;usueliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;perid&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;peridentificacion&quot;</span><span class="o">:</span> <span class="s2">&quot;1725101784&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;pernombre&quot;</span><span class="o">:</span> <span class="s2">&quot;admin&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;perapellido&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;pertelefono&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;percorreo&quot;</span><span class="o">:</span> <span class="s2">&quot;blgomez@engideveloper.com&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;perfechanacimiento&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-05-23 00:00:00&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;perestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;pereliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;sexid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+        <span class="p">},</span>
+      <span class="s2">&quot;lenid&quot;</span><span class="o">:</span> <span class="s2">&quot;es&quot;</span>
+     <span class="p">},</span>
+    <span class="s2">&quot;rol&quot;</span><span class="o">:</span> <span class="p">{</span>
+     <span class="s2">&quot;rolid&quot;</span><span class="o">:</span><span class="mi">1</span><span class="p">,</span>
+     <span class="s2">&quot;rolnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;Administrador&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;roldescripcion&quot;</span><span class="o">:</span> <span class="s2">&quot;Rol para administrador&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;rolestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;roleliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+     <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span>
+   <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -302,14 +715,10 @@
 </tbody>
 </table>
 </div>
-<div class="section" id="id4">
-<h4>ACTUALIZAR<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
-<p><strong>JSON IN</strong></p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-<p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
-<p><strong>JSON OUT</strong></p>
+<div class="section" id="id5">
+<h3>LISTAR<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>Esta transacción recibe la petición para listar un interés,aquí se puede aplicar filtros que son los siguientes:</p>
+<p><strong>FILTROS</strong></p>
 <table border="1" class="colwidths-given docutils">
 <colgroup>
 <col width="29%" />
@@ -317,21 +726,24 @@
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Código</th>
-<th class="head">Descripcion</th>
+<th class="head">Descripción</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>sucess000</td>
-<td>Transacción Exitosa</td>
+<tr class="row-even"><td>catid</td>
+<td>Id de la categoría.</td>
 </tr>
-<tr class="row-odd"><td>error008</td>
-<td>Datos Inválidos</td>
+<tr class="row-odd"><td>catestado</td>
+<td>Estado del categoría.</td>
+</tr>
+<tr class="row-even"><td>catnivel</td>
+<td>Nivel de la categoría.</td>
+</tr>
+<tr class="row-odd"><td>catpadre</td>
+<td>Categoría padre.</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="id5">
-<h4>LISTAR<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p><strong>JSON IN</strong></p>
 <div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="s2">&quot;limit&quot;</span><span class="o">:</span> <span class="s2">&quot;10&quot;</span><span class="p">,</span>
@@ -376,25 +788,26 @@
 </div>
 <p>Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.</p>
 <p><strong>JSON OUT</strong></p>
-<table border="1" class="colwidths-given docutils">
-<colgroup>
-<col width="29%" />
-<col width="71%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Código</th>
-<th class="head">Descripcion</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>sucess000</td>
-<td>Transacción Exitosa</td>
-</tr>
-<tr class="row-odd"><td>error008</td>
-<td>Datos Inválidos</td>
-</tr>
-</tbody>
-</table>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span> <span class="p">[</span>
+   <span class="p">{</span>
+    <span class="s2">&quot;catid&quot;</span><span class="o">:</span> <span class="s2">&quot;21232f297a57a5a743894a&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;arcid&quot;</span><span class="o">:</span> <span class="s2">&quot;67p7c126127c9499e26cfab19705c8k7&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;arcnombre&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;arcruta&quot;</span><span class="o">:</span> <span class="s2">&quot;engideveloper/desarrollo/archivos/Categoria/Logo/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;arcextension&quot;</span><span class="o">:</span> <span class="s2">&quot;.png&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;arcestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;arceliminado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;palid&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;catnivel&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;catpadre&quot;</span><span class="o">:</span> <span class="s2">&quot;null&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cattestado&quot;</span><span class="o">:</span> <span class="s2">&quot;Activo&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;catelimcatado&quot;</span><span class="o">:</span> <span class="s2">&quot;No&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;catreferencia&quot;</span><span class="o">:</span> <span class="s2">&quot;Tecnologia&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
 </div>
 </div>
 </div>
@@ -402,57 +815,6 @@
 
 
           </div>
-        </div>
-      </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="../index.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">MICROSERVICIO PRODUCTO</a><ul>
-<li><a class="reference internal" href="#creacion-del-modulo">CREACIÓN  DEL MODULO</a></li>
-<li><a class="reference internal" href="#transacciones">TRANSACCIONES</a></li>
-<li><a class="reference internal" href="#entidades">ENTIDADES</a></li>
-<li><a class="reference internal" href="#interes">INTERES</a><ul>
-<li><a class="reference internal" href="#id1">TRANSACCIONES</a><ul>
-<li><a class="reference internal" href="#crear">CREAR</a></li>
-<li><a class="reference internal" href="#actualizar">ACTUALIZAR</a></li>
-<li><a class="reference internal" href="#listar">LISTAR</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a class="reference internal" href="#categoria">CATEGORIA</a><ul>
-<li><a class="reference internal" href="#id2">TRANSACCIONES</a><ul>
-<li><a class="reference internal" href="#id3">CREAR</a></li>
-<li><a class="reference internal" href="#id4">ACTUALIZAR</a></li>
-<li><a class="reference internal" href="#id5">LISTAR</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="../_sources/archivos/producto.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-    </div>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>

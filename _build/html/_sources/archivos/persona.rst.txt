@@ -25,7 +25,7 @@ VARIABLES DE CONFIGURACIÓN
 
 GENERALES
 ~~~~~~~~~
-.. csv-table:: Configuración
+.. csv-table:: **Configuración**
    :header: "Atributo", "Detalle"
    :widths: 40, 500
 
@@ -39,7 +39,7 @@ PERSISTENCIA
 ~~~~~~~~~~~~
 Nombre del Archivo: EngiMysql.Maletero.Persona.properties" ,este archivo debe ser agregado en la carpeta configuraciones del servidor Wildfly. 
 
-.. csv-table:: Persistencia de Datos
+.. csv-table:: **Persistencia de Datos**
    :header: "Atributo", "Detalle"
    :widths: 40, 500
 
@@ -48,9 +48,7 @@ Nombre del Archivo: EngiMysql.Maletero.Persona.properties" ,este archivo debe se
     "jdbc.user", "Usuario"
     "jdbc.password", "Clave"
     "jdbc.driver", "Nombre del driver para la conexión"
-
 ..
-
 
 TRANSACCIONES
 -------------
@@ -75,15 +73,15 @@ Dentro del modulo persona tenemos las siguientes entidades.
 DIRECCION
 ---------
 
-ENTIDAD
+**ENTIDAD**
 
 .. csv-table:: 
    :header: "Atributo", "Detalle"
    :widths: 40, 100
  
     "dirid","Id de la direccion"
-    "ciuid", "Se envía el valor del transporte a modificar."
-    "estid", "Se envía la fecha de entrega a modificar."
+    "ciuid", "Id de la ciduad."
+    "estid", "Id del estado."
     "paisid", "Id del país"
     "usuid", "Id del usuario"
     "dirdireccion","Dirección"
@@ -92,7 +90,6 @@ ENTIDAD
     "dircodigopostal","Código postal"
     "dirtelefono","Número de teléfono"
     "direstado","Estado de la dirección"
-
 ..
 
 TRANSACCIONES
@@ -101,26 +98,134 @@ TRANSACCIONES
 CREAR
 ~~~~~
 
-Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
+Esta transacción recibe la petición para crear una dirección.
 
+.. code-block:: javascript
+
+    {
+      "detail": [
+        {
+          "objeto": {
+            "dirid": "dir2",
+            "ciuid": 99,
+            "estid": 3,
+            "paisid": "1",
+            "usuid": "2",
+            "dirdireccion": "Av de las Americas",
+            "dirlatitud": "-2.78921",
+            "dirlongitud": "-79.735758",
+            "dircodigopostal": "010111",
+            "dirtelefono": "98499568710",
+            "direstado": "Activo",
+            "direliminado": "No"
+           }
+        }
+      ],
+     "generarid": true,
+     "usuario": {
+       "usuid": "1",
+       "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+       "usuverificado": 1,
+       "usucodigoverificacion": "SU91L9",
+       "usufechacodigo": "2019-07-08 11:27:36",
+       "usufechacreacion": "2019-07-08 11:27:36",
+       "usuestado": "Activo",
+       "usueliminado": "No",
+     "perid": {
+       "perid": "1",
+       "peridentificacion": "1725101784",
+       "pernombre": "admin",
+       "perapellido": "",
+       "pertelefono": "",
+       "percorreo": "blgomez@engideveloper.com",
+       "perfechanacimiento": "2017-05-23 00:00:00",
+       "perestado": "Activo",
+       "pereliminado": "No",
+       "sexid": 1
+       },
+     "lenid": "es"
+    },
+    "rol": {
+      "rolid": 1,
+      "rolnombre": "Administrador",
+      "roldescripcion": "Rol para administrador",
+      "rolestado": "Activo",
+      "roleliminado": "No",
+      "palid": 1
+     }
+  }
+
+
+Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
 
 **JSON OUT**
 
 .. csv-table:: 
-   :header: "Código", "Descripcion"
+   :header: "Código", "Descripción"
    :widths: 40, 100
 
     "sucess000", "Transacción Exitosa"
     "error008", "Datos Inválidos"
 
-
-
 ACTUALIZAR
 ~~~~~~~~~~
 
+Esta transacción recibe la petición para actualizar una dirección.
+
 .. code-block:: javascript
   
-
+       {
+       "detail": [
+          {
+          "objeto": {
+             "dirid": "dir2",
+             "ciuid": 98,
+             "estid": 4,
+             "paisid": "2",
+             "usuid": "1",
+             "dirdireccion": "Challuabamba",
+             "dirlatitud": "-2.33333",
+             "dirlongitud": "-79.7377",
+             "dircodigopostal": "101105",
+             "dirtelefono": "984998988",
+             "direstado": "Activo",
+             "direliminado": "No"
+            }
+          }
+        ],
+      "generarid": false,
+      "usuario": {
+        "usuid": "1",
+        "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+        "usuverificado": 1,
+        "usucodigoverificacion": "SU91L9",
+        "usufechacodigo": "2019-07-08 11:27:36",
+        "usufechacreacion": "2019-07-08 11:27:36",
+        "usuestado": "Activo",
+        "usueliminado": "No",
+      "perid": {
+        "perid": "1",
+        "peridentificacion": "1725101784",
+        "pernombre": "admin",
+        "perapellido": "",
+        "pertelefono": "",
+        "percorreo": "blgomez@engideveloper.com",
+        "perfechanacimiento": "2017-05-23 00:00:00",
+        "perestado": "Activo",
+        "pereliminado": "No",
+        "sexid": 1
+        },
+      "lenid": "es"
+     },
+     "rol": {
+       "rolid": 1,
+       "rolnombre": "Administrador",
+       "roldescripcion": "Rol para administrador",
+       "rolestado": "Activo",
+       "roleliminado": "No",
+       "palid": 1
+      }
+   }
 
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
 
@@ -138,8 +243,26 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 LISTAR
 ~~~~~~
 
-**JSON IN**
+Esta transacción recibe la petición para listar una dirección, aquí se puede aplicar filtros que son los siguientes:
 
+**FILTROS**
+
+.. csv-table:: 
+   :header: "Atributo", "Detalle"
+   :widths: 40, 100
+ 
+    "dirid","Id de la direccion"
+    "ciuid", "Id de la ciduad."
+    "estid", "Id del estado."
+    "paisid", "Id del país"
+    "usuid", "Id del usuario"
+    "dirdireccion","Dirección"
+    "dircodigopostal","Código postal"
+    "dirtelefono","Número de teléfono"
+    "direstado","Estado de la dirección"
+..
+
+**JSON IN**
 
 .. code-block:: javascript
 
@@ -263,11 +386,79 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
     }
   ]
 
-
 ..
+
+ELIMINAR LOGICAMENTE
+~~~~~~~~~~~~~~~~~~~~
+
+Esta transacción recibe la petición para eliminar una dirección.
+
+.. note::
+
+   Cuando se va eliminar la dirección el campo ``direliminado`` se le asigna un valor de ``si``.
+
+**JSON IN**
+
+.. code-block:: javascript
+
+       {
+       "detail": [
+          {
+          "objeto": {
+             "dirid": "dir2",
+             "ciuid": 98,
+             "estid": 4,
+             "paisid": "2",
+             "usuid": "1",
+             "dirdireccion": "Challuabamba",
+             "dirlatitud": "-2.33333",
+             "dirlongitud": "-79.7377",
+             "dircodigopostal": "101105",
+             "dirtelefono": "984998988",
+             "direstado": "No",
+             "direliminado": "Si"
+            }
+          }
+        ],
+      "generarid": false,
+      "usuario": {
+        "usuid": "1",
+        "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+        "usuverificado": 1,
+        "usucodigoverificacion": "SU91L9",
+        "usufechacodigo": "2019-07-08 11:27:36",
+        "usufechacreacion": "2019-07-08 11:27:36",
+        "usuestado": "Activo",
+        "usueliminado": "No",
+      "perid": {
+        "perid": "1",
+        "peridentificacion": "1725101784",
+        "pernombre": "admin",
+        "perapellido": "",
+        "pertelefono": "",
+        "percorreo": "blgomez@engideveloper.com",
+        "perfechanacimiento": "2017-05-23 00:00:00",
+        "perestado": "Activo",
+        "pereliminado": "No",
+        "sexid": 1
+        },
+      "lenid": "es"
+     },
+     "rol": {
+       "rolid": 1,
+       "rolnombre": "Administrador",
+       "roldescripcion": "Rol para administrador",
+       "rolestado": "Activo",
+       "roleliminado": "No",
+       "palid": 1
+      }
+   }
+
 
 VIAJERO
 -------
+
+**ENTIDAD**
 
 +-------------------+--------------------------------------------------------+
 |     Atributos     |         Campos                                         |
@@ -325,16 +516,15 @@ TRANSACCIONES
 CREAR
 ~~~~~
 
- Al crear el viajero se pueden presentar dos casos:
+Al crear el viajero se pueden presentar dos casos:
 
  - El viajero puede estar asociado a un usuario.
  - El viajero es nuevo se crea  el usuario y la persona.
 
+
 **JSON IN**
 
 Viajero sin usuario.
-
-**JSON IN**
 
 .. code-block:: javascript
 
@@ -409,33 +599,35 @@ Viajero sin usuario.
 .. code-block:: javascript
 
    {
-      "detail": [
-         {
-      "objeto": {
-        "usuid": {
-          "usuid": "1",
-          "perid": 1,
-          "lenid": "es",
-          "usuclave": "21232f297a57a5a743894a0e4a801fc3",
-          "usuverificado": 1,
-          "usucodigoverificacion": "SU91L9",
-          "usufechacodigo": "2019-07-08 11:27:36",
-          "usufechacreacion": "2019-07-08 11:27:36",
-          "usuestado": "Activo",
-          "usueliminado": "No"
-        },
-        "arcid": {
-          "arcid": "",
-          "arcnombre": "",
-          "arcruta": "engideveloper/desarrollo/archivos/Categoria/Logo/",
-          "arcextension": "png",
-          "archivob64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzI"
-        },
-        "vianombrecomercial": "Heinkel",
-        "viaidentificacion": "0104741805"
-        }
-          }
-      ],
+       "detail": [
+          {
+       "objeto": {
+         "usuid": {
+            "usuid": "1",
+            "perid": 1,
+            "lenid": "es",
+            "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+            "usuverificado": 1,
+            "usucodigoverificacion": "SU91L9",
+            "usufechacodigo": "2019-07-08 11:27:36",
+            "usufechacreacion": "2019-07-08 11:27:36",
+            "usuestado": "Activo",
+            "usueliminado": "No"
+            },
+          "arcid": {
+            "arcid": "",
+            "arcnombre": "",
+            "arcruta": "engideveloper/desarrollo/archivos/Categoria/Logo/",
+            "arcextension": "png",
+            "archivob64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAA
+            BGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA
+            6mAAAF3CculE8AAAAAmJLR0QAAKqNIzI"
+          },
+          "vianombrecomercial": "Heinkel",
+          "viaidentificacion": "0104741805"
+           }
+         }
+       ],
        "usuario": {
          "usuid": "1",
          "usuclave": "21232f297a57a5a743894a0e4a801fc3",
@@ -474,8 +666,7 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 
 .. note::
 
-   Cuando el ``Viajero`` se registra se le envía un correo con su código de verificación. 
-
+  - Cuando el ``Viajero`` se registra se le envía un correo con su código de verificación y se le asigna el rol ``viajero``.
 
 **JSON OUT**
 
@@ -485,18 +676,86 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 
     "sucess000", "Transacción Exitosa"
     "error008", "Datos Inválidos"
-
+    "errorPersona001","Error: la clave anterior no es la correcta"
+    "errorPersona002","Error: la extension del archivo no es valida"
+    "errorPersona003","Error: el usuario ya esta vinculado a un viajero"
 
 
 ACTUALIZAR
 ~~~~~~~~~~
 
-**JSON IN**
+Esta transacción recibe la petición para actualizar un viajero.
 
+**JSON IN**
 
 .. code-block:: javascript
 
-
+   {
+       "detail": [
+          {
+       "objeto": {
+         "viaid": "6mAAAF3CculE9iu9klo"
+         "usuid": {
+            "usuid": "1",
+            "perid": 1,
+            "lenid": "es",
+            "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+            "usuverificado": 1,
+            "usucodigoverificacion": "SU91L9",
+            "usufechacodigo": "2019-07-08 11:27:36",
+            "usufechacreacion": "2019-07-08 11:27:36",
+            "usuestado": "Activo",
+            "usueliminado": "No"
+            },
+          "arcid": {
+            "arcid": "",
+            "arcnombre": "",
+            "arcruta": "engideveloper/desarrollo/archivos/Categoria/Logo/",
+            "arcextension": "png",
+            "archivob64": "iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAQAAAAAYLlVAAAA
+            BGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA
+            6mAAAF3CculE8AAAAAmJLR0QAAKqNIzI"
+          },
+          "viafechacreacion": "2019-08-10",
+          "vianombrecomercial": "Arado Ar",
+          "viaidentificacion": "0104741805",
+          "viaestado": "Activo",
+          "viaeliminado": "No",
+           }
+         }
+       ],
+       "usuario": {
+         "usuid": "1",
+         "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+         "usuverificado": 1,
+         "usucodigoverificacion": "SU91L9",
+         "usufechacodigo":  "2019-07-08 11:27:36",
+         "usufechacreacion": "2019-07-08 11:27:36",
+         "usuestado": "Activo",
+         "usueliminado": "No",
+        "perid": {
+         "perid": "1",
+         "peridentificacion": "1725101784",
+         "pernombre": "admin",
+         "perapellido": "",
+         "pertelefono": "",
+         "percorreo": "blgomez@engideveloper.com",
+         "perfechanacimiento": "2017-05-23 00:00:00",
+         "perestado": "Activo",
+         "pereliminado": "No",
+         "sexid": 1
+        },
+       "lenid": "es"
+        },
+        "rol": {
+         "rolid": 1,
+         "rolnombre": "Administrador",
+         "roldescripcion": "Rol para administrador",
+         "rolestado": "Activo",
+         "roleliminado": "No",
+        "palid": 1
+        }
+   }
 ..
 
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
@@ -509,30 +768,100 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 
     "sucess000", "Transacción Exitosa"
     "error008", "Datos Inválidos"
-
 
 LISTAR
 ~~~~~~
+Esta transacción recibe la petición para listar un viajero.
 
 **JSON IN**
 
 .. code-block:: javascript
 
-
+       {
+       "limit": "10",
+       "orderby": "",
+       "filtro": {
+        "viaid": "",
+        "viaestado": "Activo"
+       },
+       "usuario": {
+        "usuid": "1",
+        "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+        "usuverificado": 1,
+        "usucodigoverificacion": "SU91L9",
+        "usufechacodigo": "2019-07-08 11:27:36",
+        "usufechacreacion": "2019-07-08 11:27:36",
+        "usuestado": "Activo",
+        "usueliminado": "No",
+        "perid": {
+        "perid": "1",
+        "peridentificacion": "1725101784",
+        "pernombre": "admin",
+        "perapellido": "",
+        "pertelefono": "",
+        "percorreo": "blgomez@engideveloper.com",
+        "perfechanacimiento": "2017-05-23 00:00:00",
+        "perestado": "Activo",
+        "pereliminado": "No",
+        "sexid": 1
+       },
+    "lenid": "es"
+   },
+   "rol": {
+     "rolid": 1,
+     "rolnombre": "Administrador",
+     "roldescripcion": "Rol para administrador",
+     "rolestado": "Activo",
+     "roleliminado": "No",
+     "palid": 1
+    }
+ }
 
 ..
 
-
-
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
-
-
 
 **JSON OUT**
 
-.. csv-table:: 
-   :header: "Código", "Descripción"
-   :widths: 40, 100
+.. code-block:: javascript
 
-    "sucess000", "Transacción Exitosa"
-    "error008", "Datos Inválidos"
+ [ 
+   {
+    
+     "viaid": "75b7c126127c9499e26cfab14795a9b6",
+     "usuario": {
+         "usuid": "1",
+         "perid": {
+          "perid": "1",  
+          "sexid": 1,
+          "peridentificacion": "1725101784",
+          "pernombre": "admin",
+          "perapellido": "",
+          "pertelefono": "",
+          "percorreo": "blgomez@engideveloper.com",
+          "perfechanacimiento": "2017-05-23 00:00:00",
+          "perestado": "Activo",
+          "pereliminado": "No",
+         }
+      "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+        "usuverificado": 1,
+        "usucodigoverificacion": "SU91L9",
+        "usufechacodigo": "2019-07-08 11:27:36",
+        "usufechacreacion": "2019-07-08 11:27:36",
+        "usuestado": "Activo",
+        "usueliminado": "No",
+      }   
+     "arcid": {
+       "arcid": "67p7c126127c9499e26cfab19705c8k7",
+       "arcnombre": "",
+       "arcruta": "engideveloper/desarrollo/archivos/Categoria/Logo/",
+       "arcextension": ".png",
+       "arcestado": "Activo",
+       "arceliminado": "No",
+     },
+    "viaestado": "Activo",
+    "viaeliminado": "No",
+    "viafechacreacion": "2019-07-15 00:00:00.000000",
+    "vianombrecomercial": "MotorSA"
+   }
+ ]
