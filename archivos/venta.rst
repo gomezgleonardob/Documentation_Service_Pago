@@ -20,6 +20,7 @@ PROYECTO
 
 VARIABLES DE CONFIGURACIÓN
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 GENERALES
 ~~~~~~~~~
 .. csv-table:: Configuración
