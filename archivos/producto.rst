@@ -5,6 +5,9 @@
 MICROSERVICIO PRODUCTO
 ======================
 
+CONFIGURACIONES
+---------------
+
 MÓDULO
 ^^^^^^
 - Especificar en el archivo "engiAcceso" la clave del módulo.
@@ -45,18 +48,20 @@ Nombre del Archivo: EngiMysql.Maletero.Producto.properties" ,este archivo debe s
     "jdbc.driver", "Nombre del driver para la conexión"
 ..
 
+
 TRANSACCIONES
-^^^^^^^^^^^^^
+-------------
 
 Las transacciones que se pueden realizar son las siguientes:
 
 - Crear.
 - Actualizar.
 - Listar.
-- EliminarLogicamente.
+- Cancelar.
 
 ENTIDADES
-^^^^^^^^^
+---------
+
 Dentro del modulo persona tenemos las siguientes entidades.
 
 - INTERES
@@ -64,7 +69,7 @@ Dentro del modulo persona tenemos las siguientes entidades.
 
 
 INTERES
-^^^^^^^
+-------
 
 **ENTIDAD**
 

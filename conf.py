@@ -1,3 +1,21 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@gomezgleonardob 
+1
+0 0 gomezgleonardob/Doc_React_Django
+ Code  Issues 0  Pull requests 1  Actions  Projects 0  Wiki  Security  Insights  Settings
+Doc_React_Django/conf.py
+@gomezgleonardob gomezgleonardob Update Docs
+5ee22a9 on 29 May
+262 lines (192 sloc)  8.21 KB
+  
 # -*- coding: utf-8 -*-
 #
 # SoundRevolution Documentacion documentation build configuration file, created by
@@ -14,7 +32,6 @@
 
 import sys
 import os
-import sphinx_theme
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -102,21 +119,15 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-# html_sidebars = {}
-#---sphinx-themes-----
 html_theme = 'default'
-
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {
-#'cssfiles': ['_static/bizstyle.css']
-#}
+#html_theme_options = {}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
-#custom css
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -137,12 +148,7 @@ html_theme = 'default'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-# These folders are copied to the documentation's HTML output
 html_static_path = ['nstatic']
-
-# These paths are either relative to html_static_path
-# or fully qualified paths (eg. https://...)
-
 
 # Add any extra paths that contain custom files (such as robots.txt or
 # .htaccess) here, relative to this directory. These files are copied
@@ -241,8 +247,8 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'Engideveloper_Maletero', u'Engideveloper_Maletero',
-     [u'Leonardo Gomez'], 1)
+    ('index', Engideveloper_Maletero', u'Engideveloper_Maletero',
+     [u'Byron Gomez'], 1)
 ]
 
 # If true, show URL addresses after external links.
