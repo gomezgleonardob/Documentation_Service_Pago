@@ -7,7 +7,7 @@ INTRODUCCION
 Estructura
 ----------
 
-La estructura del Proyecto esta de la siguiente forma que se esta usando es::
+La estructura del Proyecto es la siguiente::
 
     Engideveloper.Maletero
        │

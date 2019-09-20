@@ -96,9 +96,9 @@ Esta transacción recibe la petición para crear un interés.
 
 ::
     
-     Indicamos la url del webservice para crear.
+     Indicamos la url del webservice.
 
-    .. webservice: http://localhost:8080/engideveloper.esb-1.0/microservicio/ejecutar?abreviatura=ofe&menu=maletero_ventas.Oferta&nombreclase=Oferta&accion=actualizar&ip=200.55.237.21&claveacceso=b80eec776186087e832f4cb55b0f4ede&idtransaccion=1&aplicacion=chrome&idaplicacion=browser-chrome|version-75.0.3770|so-Linux
+    .. url: http://localhost:8080/engideveloper.esb-1.0/microservicio/ejecutar?abreviatura=ofe&menu=maletero_ventas.Oferta&nombreclase=Oferta&accion=actualizar&ip=200.55.237.21&claveacceso=b80eec776186087e832f4cb55b0f4ede&idtransaccion=1&aplicacion=chrome&idaplicacion=browser-chrome|version-75.0.3770|so-Linux
 
 **PARAMETROS DEL WEBSERVICE**
 
@@ -117,7 +117,7 @@ Esta transacción recibe la petición para crear un interés.
     "Nombreclase","GenericDao."
     "Ip", "Ip del usuario que realiza la petición."
 ..
-..
+
 
 **JSON IN**
 
@@ -166,8 +166,7 @@ Esta transacción recibe la petición para crear un interés.
         "roleliminado":"No",
         "palid":1
     }
-
-}
+  }
 ..
 
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
@@ -187,11 +186,13 @@ ACTUALIZAR
 
 Esta transacción recibe la petición para actualizar un interés.
 
+**URL DEL WEBSERVICE**
+
 ::
     
-     Indicamos la url del webservice .
+     Indicamos la url del webservice.
 
-    .. webservice: http://localhost:8080/engideveloper.esb-1.0/microservicio/ejecutar?abreviatura=int&menu=maletero_producto.Interes&nombreclase=GenericDao&accion=actualizar&ip=200.55.237.110&claveacceso=b80eec776186087e832f4cb55b0f4ede&idtransaccion=1&aplicacion=chrome&idaplicacion=browser-chrome|version-75.0.3770|so-Linux
+    .. url: http://localhost:8080/engideveloper.esb-1.0/microservicio/ejecutar?abreviatura=int&menu=maletero_producto.Interes&nombreclase=GenericDao&accion=actualizar&ip=200.55.237.110&claveacceso=b80eec776186087e832f4cb55b0f4ede&idtransaccion=1&aplicacion=chrome&idaplicacion=browser-chrome|version-75.0.3770|so-Linux
 
 **PARAMETROS DEL WEBSERVICE**
 
@@ -211,19 +212,6 @@ Esta transacción recibe la petición para actualizar un interés.
     "Ip", "Ip del usuario que realiza la petición."
 ..
 
-**JSON OUT**
-
-.. csv-table:: 
-   :header: "Código", "Descripción"
-   :widths: 40, 100
-
-    "sucess000", "Transacción Exitosa"
-    "error008", "Datos Inválidos"
-    "errorcategoria001","Error: solo se permiten archivos .png"
-
-Los campos que se pueden actualizar del interés son:
-
-- Estado.
 
 **JSON IN**
 
