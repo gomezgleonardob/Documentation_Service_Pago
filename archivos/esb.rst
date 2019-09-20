@@ -1,5 +1,6 @@
 .. index::
-   single: esb
+   single: practica
+
 
 MICROSERVICIO ESB
 =================

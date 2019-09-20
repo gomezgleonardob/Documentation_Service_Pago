@@ -1,6 +1,7 @@
 .. index::
    single: venta
 
+
 MICROSERVICIO VENTA
 ===================
 
@@ -9,6 +10,7 @@ CONFIGURACIONES
 
 MÓDULO
 ^^^^^^
+
 - Especificar en el archivo "engiAcceso" la clave del módulo.
 - Crear un archivo para la persistencia a la base de datos en este caso "EngiMysql.EngiMaletero.Venta"
 - Agregar la persistencia de JBOSS para el modulo en  archivo standalone-full.xml
@@ -23,7 +25,7 @@ VARIABLES DE CONFIGURACIÓN
 
 GENERALES
 ~~~~~~~~~
-.. csv-table:: Configuración
+.. csv-table:: **Configuración**
    :header: "Atributo", "Detalle"
    :widths: 40, 500
 
@@ -37,7 +39,7 @@ PERSISTENCIA
 ~~~~~~~~~~~~
 Nombre del Archivo: EngiMysql.Maletero.Ventas.properties" ,este archivo debe ser agregado en la carpeta configuraciones del servidor Wildfly. 
 
-.. csv-table:: Persistencia de Datos
+.. csv-table:: **Persistencia de Datos**
    :header: "Atributo", "Detalle"
    :widths: 40, 500
 
@@ -53,9 +55,9 @@ PARÁMETROS
 ~~~~~~~~~~
 Nombre del Archivo: EngiParametros.Maletero.Ventas.properties" ,este archivo debe ser agregado en la carpeta configuraciones del servidor Wildfly.
 
-.. csv-table:: Parametros
+.. csv-table:: **Parámetro**
    :header: "Atributo", "Detalle"
-   :widths: 40, 500
+   :widths:100, 500
 
     "Nombre del parámetro ", "Valor que se le va asignar"
 ..
@@ -64,11 +66,30 @@ EMAIL
 ~~~~~
 Nombre del Archivo: Engimail.properties" ,este archivo se especifican las variables del asunto y el cuerpo del email.
 
-.. csv-table:: Parametros
+.. csv-table:: **Parámetros Email**
    :header: "Atributo", "Detalle"
+   :widths: 100, 500
+
+    "Nombre del asunto ", "Valor que se le va asignar"
+    "Nombre del cuerpo html ", "Valor que se le va asignar"
+..
+
+PARÁMETROS DEL MICROSERVICIO
+----------------------------
+
+.. csv-table:: 
+   :header: "Campo", "Detalle"
    :widths: 40, 500
 
-    "Nombre del parámetro ", "Valor que se le va asignar"
+    "Protocolo", "Para pruebas se usa http y para producción https."
+    "IpServidor", "Ip o Url de producción solicitar a la persona encargada del modulo ESB."
+    "ClaveAcceso", "Clave única de acceso."
+    "Aplicacion","Tipo de plataforma desde donde se realiza la transacción ejemplo Chrome, Mozilla, Android, IOS."
+    "IdAplicacion", "Id del dispositivo desde donde se realiza la transacción ejemplo: “browser-firefox|version-63.0.0|so-Windows10” desde un navegador web.."
+    "Menu", "El menú hace referencia al microservicio que vamos a llamar y sobre la entidad que vamos a trabajar."
+    "Abreviatura", "Iniciales de la tabla o entidad sobre las cuales se va a realizar la operación ejemplo si voy a listar persona la abreviatura es per."
+    "Nombreclase","Nombre de la clase sobre la cual se va a realizar la operación por ejemplo GenericDao, este nombre debe estar especificado en la documentación del cada módulo."
+    "Ip", "Ip del usuario que realiza la petición."
 ..
 
 TRANSACCIONES
@@ -79,7 +100,7 @@ Las transacciones que se pueden realizar son las siguientes:
 - Crear.
 - Actualizar.
 - Listar.
-
+- Eliminar.
 
 ENTIDADES
 ---------
@@ -97,58 +118,63 @@ PAGO
 ENTIDAD
 ^^^^^^^
 
-+-------------------+--------------------------------------------------------+
-|     Atributos     |         Campos                                         |
-+===================+========================================================+
-| pagid             |   Id del pago.                                         |
-+-------------------+--------------------------------------------------------+
-| arcid             |    Objeto Archivo:                                     |
-|                   |  - arcid: Id del archivo.                              | 
-|                   |  - arcnombre: Nombre del archivo.                      |
-|                   |  - arcruta: Ruta donde se almacena el archivo.         | 
-|                   |  - arcextension: Extensión del archivo.                |
-|                   |  - arcestado: Estado del archivo.                      | 
-|                   |  - arceliminado: Eliminación del archivo.              |
-+-------------------+--------------------------------------------------------+
-| monid             |  Id de la moneda.                                      |
-+-------------------+--------------------------------------------------------+
-| forid             |  Id de la forma de pago.                               |
-+-------------------+--------------------------------------------------------+
-| solid             |  Id de la solicitud.                                   |
-+-------------------+--------------------------------------------------------+
-| viaid             |  Id del viajero.                                       |
-+-------------------+--------------------------------------------------------+
-| ofeid             |  Id de la oferta.                                      |
-+-------------------+--------------------------------------------------------+
-| usuid             |  Id del usuario.                                       |
-+-------------------+--------------------------------------------------------+
-| pagcomprobante    |  Nombre del comprobante de pago.                       |
-+-------------------+--------------------------------------------------------+
-| pagfechacreacion  |  Fecha de creación del pago.                           |
-+-------------------+--------------------------------------------------------+
-| pagfechapago      |  Fecha de validación   del pago.                       |
-+-------------------+--------------------------------------------------------+
-| pagfechaenviado   |  Fecha de envío de la compra.                          |
-+-------------------+--------------------------------------------------------+
-| pagfechaentregado |  Fecha de recepción de la compra.                      |
-+-------------------+--------------------------------------------------------+
-| pagfechaentregado |  Fecha de recepción de la compra.                      |
-+-------------------+--------------------------------------------------------+
-| pagfechaenviado   |  Fecha de envío de la compra.                          |
-+-------------------+--------------------------------------------------------+
-| pagfechaenviado   |  Fecha de envío de la compra.                          |
-+-------------------+--------------------------------------------------------+
-| pagfechacancelado |  Fecha de cancelación del pago.                        |
-+-------------------+--------------------------------------------------------+
-| pagvalor          |  Valor del pago.                                       |
-+-------------------+--------------------------------------------------------+
-| pagtraida         |  Valor de la importación.                              |
-+-------------------+--------------------------------------------------------+
-| pagcomision       |  Valor de la comisión.                                 |
-+-------------------+--------------------------------------------------------+
-| pagestado         |  Estado del pago.                                      |
-+-------------------+--------------------------------------------------------+
++-------------------+--------------------------------------------------------+-------------------+
+|     Atributos     |         Campos                                         |     Requerido     |
++===================+========================================================+===================+
+| pagid             |   Id del pago.                                         |         √         |
++-------------------+--------------------------------------------------------+-------------------+
+| arcid             |    Objeto Archivo:                                     |         √         |
+|                   |  - arcid: Id del archivo.                              |                   |
+|                   |  - arcnombre: Nombre del archivo.                      |                   |
+|                   |  - arcruta: Ruta donde se almacena el archivo.         |                   |
+|                   |  - arcextension: Extensión del archivo.                |                   |
+|                   |  - arcestado: Estado del archivo.                      |                   |
+|                   |  - arceliminado: Eliminación del archivo.              |                   |
++-------------------+--------------------------------------------------------+-------------------+
+| monid             |  Id de la moneda.                                      |           √       |
++-------------------+--------------------------------------------------------+-------------------+
+| forid             |  Id de la forma de pago.                               |            √      |
++-------------------+--------------------------------------------------------+-------------------+
+| solid             |  Id de la solicitud.                                   |         √         |
++-------------------+--------------------------------------------------------+-------------------+
+| viaid             |  Id del viajero.                                       |         √         |
++-------------------+--------------------------------------------------------+-------------------+
+| ofeid             |  Id de la oferta.                                      |         √         |
++-------------------+--------------------------------------------------------+-------------------+
+| usuid             |  Id del usuario.                                       |          √        |
++-------------------+--------------------------------------------------------+-------------------+
+| pagcomprobante    |  Nombre del comprobante de pago.                       |           √       |
++-------------------+--------------------------------------------------------+-------------------+
+| pagfechacreacion  |  Fecha de creación del pago.                           |                   |
++-------------------+--------------------------------------------------------+-------------------+
+| pagfechapago      |  Fecha de validación   del pago.                       |                   |
++-------------------+--------------------------------------------------------+-------------------+
+| pagfechaenviado   |  Fecha de envío de la compra.                          |                   |
++-------------------+--------------------------------------------------------+-------------------+
+| pagfechaentregado |  Fecha de recepción de la compra.                      |                   |
++-------------------+--------------------------------------------------------+-------------------+
+| pagfechaentregado |  Fecha de recepción de la compra.                      |                   |
++-------------------+--------------------------------------------------------+-------------------+
+| pagfechaenviado   |  Fecha de envío de la compra.                          |                   |
++-------------------+--------------------------------------------------------+-------------------+
+| pagfechaenviado   |  Fecha de envío de la compra.                          |                   |
++-------------------+--------------------------------------------------------+-------------------+
+| pagfechacancelado |  Fecha de cancelación del pago.                        |                   |
++-------------------+--------------------------------------------------------+-------------------+
+| pagvalor          |  Valor del pago.                                       |                   |
++-------------------+--------------------------------------------------------+-------------------+
+| pagtraida         |  Valor de la importación.                              |                   |
++-------------------+--------------------------------------------------------+-------------------+
+| pagcomision       |  Valor de la comisión.                                 |                   |
++-------------------+--------------------------------------------------------+-------------------+
+| pagestado         |  Estado del pago.                                      |                   |
++-------------------+--------------------------------------------------------+-------------------+
 ..
+
+.. tip::
+
+   Los campos de la entidad que son requeridos ``√``  son necesarios, no pueden llevar  valores ``null``.  
+
 
 TRANSACCIONES
 ^^^^^^^^^^^^^
@@ -157,6 +183,16 @@ CREAR
 ~~~~~
 
 Esta transacción recibe la petición para crear un pago, cuando el pago es creado puede llevar uno de los siguientes estados.
+
+**URL**
+
+
+
+   http://localhost:8080/engideveloper.esb-1.0/microservicio/ejecutar?abreviatura=pag&menu=maletero_ventas.Pago&nombreclase=Pago&accion
+   =crear&ip=200.55.237.21&claveacceso=b80eec776186087e832f4cb55b0f4ede&idtransaccion=1&aplicacion=chrome&idaplicacion=browser-chrome|
+   version-75.0.3770|so-Linux
+
+
 
 * 0: El pago va a ser creado ,esta pendiente de verificación.
 * 1 : El pago va a ser creado  y es verificado.
@@ -205,7 +241,7 @@ Esta transacción recibe la petición para crear un pago, cuando el pago es crea
        "pernombre": "admin",
        "perapellido": "",
        "pertelefono": "",
-       "percorreo": "blgomez@engideveloper.com",
+       "percorreo": "jeisson.millos@hotmail.com",
        "perfechanacimiento": "2017-05-23 00:00:00", 
        "perestado": "Activo",
        "pereliminado": "No",
@@ -241,58 +277,7 @@ Creación del pago con validación.
                "arcnombre": "",
                "arcruta": "engideveloper/desarrollo/archivos/Categoria/Logo/",
                "arcextension": "png",
-               "archivob64": "iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAB
-                LFBMVEX///9Pwvb+tk1CQkL+mAACWJs/vvXf8/3+piZ4Rxk0O0L/uE0yMjL+lg
-                D/vE7Hx8c9P0K3iUj+skP/mwDe3t7rqkxqWUT0sEz+oAAqKiopNkFwQBUAVp4A
-                UZY9PT05PUL+rzQAUqImJiZqOhIATpRHR0fPkDz/+PEJXZ/v+f6YmJjs7Ow2Nj
-                a+vr6nbyz/7NaD0fgtisQXa6rG6fxzc3NVVVXR0dFra2v/7Nj/4sT/qyS3fTOg
-                aSr/3ryjbCv/167+yIr+xHb+wnH+pzDwkxLY4u1GYouz4vtsa3zWizlnyfd/cH
-                TPiUCie2CzgFY8otkmgLw7n9eBgYFfX1+UlJRwWDuKZTjaki1TTEOIa0WKVyH+
-                ulrC0OGAps+TrMs1bqcARZK6gk+Rdmug2/rE1bViAAAIc0lEQVR4nO2aaVfaTB
-                SAAQ2mAupLpAKCgkZEccWlbm1dqFZstXaze237///DOyEhZJtsTLiXc+b50OUY
-                5twn986dBWMxDofD4XA4HA6Hw+FwOJygNBrTZhrQETFjen11d69ASJsojEAHxo
-                TG+m46vbY2NzdiJ70OHV3fNFaXCmtObhpL0AH2yf4zV72hT+LkXsFdb8iTuL+X9
-                vYb5iS+95G/YU7ipK/8DXES3xf8+g1nEht7awEER+Y+rE5ChxyMaf8VqimupRee
-                rQ/PBm5/IZhf13Jhdx86dH+shxLsSKb3hqFaJ0MLqo7T0AJehCtRg+PCR2gFdxrp
-                /gQJa0uoW85SwC7qmMYC4o6zG2gdpLKAdpez3n+N4lZsBNmqeSjiLNQPDCZhlwLG
-                dsOsRhXm9qB1HGApSBaNVWgfGx/Z9FGdBWy7m0afmxkbcx+glSywTiFpNrj6KfMU
-                okviaugUTo0X551/giuJIQWJ3tP/ZnLzU04/nHsPbWVgMsxSoepNpBIpimIBWsvA
-                s8DbGV1PgaK4hmd7GnRHatKjK849gxbTWQ8yDW16dEU8Zeq/SB31qIppNDdTPouU
-                qkdTXMNyaeOrk7rqURTRnDC8l3tPPYoilom45z4Nfek5K6aRHDDcpqFvPUdFJCvi
-                NHUaBtJzUkRyDqashoH1HBSRbE2dGk0oPbsikhPUrrXRhNZzUISW67DETs+miGO5
-                SDPUsyriuDfVFwsWepoiKkP96DTPRE9VHNfGRLHk68vh+AQTPYUJ3RDDXc2+bsgm
-                gQopbjhQJiM1xHAG5obckBvCww25ITeEhxtyQ1fDAgLDg4tP45EZFj8fHUALHkri
-                0ediRIbFjSNROoQVPMiLonh0XHQ2TBG8bRweUg2LtSMyeh42i1lR4ahWdDBMJWob
-                xzmvg/9E7nijlrB+dFy51Xo46oyehRQ8zIuqYm5qymqYys0SFk88vnA6WVQey1k+
-                Oz4yPzKjji3mIev0TAtCzM58mbcYziw+UZjdcMvixMZs56nFGYvh+JdEtjv4GaCh
-                qBumUk+LJsOUFrs1eDPaayDvwfzh4qdUSjcUAQ3zuiFJx1dzdp5ozNZcvvetzXYf
-                M2f6K/mvbphHYpgwx9ifofI/FIai0dDMxEm3SnNUwUQi163SE/tsRVGl53TDlBa8
-                U+z297CYsydaNzwHNHyepxqSClycfTK7+M3FT+Fb5ymnSu4a5p8DGsboOSSKM8cnL
-                2qeK37txcnxjNNU1XMIKRjblOiGxHHCz29g0B7SDKVNUMPYS8nFsD9UQ+klrKAyFf
-                MRGuZhJ6HK8mk+n69EYFgh454uQ+upHByesk9i9vQQ/PRr4CACQ0x+pFTZl2kFSYF
-                2iSCH0EoWzthd0qikIE+FTrxkncQs+DpoYZO5IfBWxg7rVlOBFrJxxjaJWWzTMBY7
-                ZGwIfBHsBFvDCrSOA0w3btlTaB0HDlj2GmwbGpVzhoaQVzN0GCaxgmvXrXPOSjCFM
-                4UMk4g1hczaKcpGqsHIEFrDhUMWdVpBuJ3pwaBOMdeowve+Db9DK3iw3G8Ssyh3M0
-                b6XDLwLhQ9+uo2uLtMlz4Uh0OwD8VhEYzFNsMpVtBdPtFZTgRvqdkE+i5q4ixoGiv4
-                rp48eB4si1kE3xMGRQqimJWgww1BJiP6FhQzGehwQ5AhXPjyu1AehQ43BJnM6CjJo1
-                etZkX1QehwQ6AEroQuuSXyQuo+Bh1uCNTQNUmnTGa7ekNv2BHISOJFNquKkr8vRGJn
-                egA63BAYBTRLI9YfQocbAquEK9wQJdyQG+KHGw6/4Wggw1HocIOy8uNnK4Dg6Gjr5w/
-                omAPw6tfvR7l6KwUQlG6r8uPvX6+gQ/fDq1/Co1wWhNJlIMPLkiAI8mMdu+TKVftRFl
-                SqDwEMH6rap+TH9hW0BZ2xrWQy3tRCFUo3/pMovS51P9aMJ5P/xqBVHNlpJ+OE7XI31
-                mrLt2Grm0KhvE3GSCbb+Bx34h2/ePxO1pP42m8SDSmUtWGS7R1oJRO6H6Eu6Em89ml4
-                radQqOvjYMrjWLvnZyxToe4viVLvpXSKVHfcWoFWU/ln9CPoZeqz2Ug3eo0Ksnmo5D9
-                oOcJO0iIYf9dLYvWPt6L0p+qcwo5iHLxUt6x+hJ4hmYpeipJhElpTqJYqqN+YLYGWmSi
-                UHtwVpYdeidpTCJ5G6wzs0uscRPGNm6L0xiBoaKRmR7BdTpsiaFgTlUJ9S1eU3hpKVJD
-                vKOMBVepKnCZorlOhetlydpRal0ZBxxrVFNsA68YY3Y/QNCqWqn9H7Y7S6N+qsUTLTbc
-                BkwNX3HEVNE9FxfHmWpJ6luTf1zcmP+ok1BUH3G+8BONJQbA41m9ur1uSQuv69qZu8RME
-                zxEHqugpaFckkqVqVZl35M+SVc9bcLCKPgRJQPWyTYNG2aNEB63o3mR6NGVvN1XQtckYF
-                AfUblZ8Csbj9/4UZfoyYWUwhr7DIS/dRxrlpu83Fo+3ByHotNemc+cxG8t12kbG+ZUNYH
-                dzFUhQcWzKNMmy3AzkpyhGfrnhfxIaotquy2WrZbks17fDDBZ1t2kHj6kT1/27Zploasj
-                l5rv7EHoKEU9F2nnJn+bd3b3C3V1fo0R6lgpTo8yJtE63oO0UouynfjczERPh7i1km2FO
-                ZM3G14Z7EESWRCwpjCyJSGahQkRJRNFINSJppyjWwi6RrIl9bWdYE8nGBlrKAntBRH1GI
-                YJeg6pII/lmEVrJBmtBVJ1UgXk3DXx5ETXMrzMwLfcqrBd9aB8H2Aqim4bMJyKag1MPxh
-                MRXaNhvnELdtE9EBhf1+A5/PZgewzGl0KSRG4YBISLBePlAtnRSYXpAQrhcsh4QeSGIHD
-                DQFwlMcJy27YyhhEkv+fO4XA4HA6Hw+FwOBwOZyD8D7l5SgQCAxgLAAAAAElFTkSuQmCC"
+               "archivob64": "iVBORw0KGgoA...."
               },
              "forid": 12345,
              "monid": 1,
@@ -328,7 +313,7 @@ Creación del pago con validación.
          "pernombre": "admin",
          "perapellido": "",
          "pertelefono": "",
-         "percorreo": "blgomez@engideveloper.com",
+         "percorreo": "jeisson.millos@hotmail.com",
          "perfechanacimiento": "2017-05-23 00:00:00",
          "perestado": "Activo",
          "pereliminado": "No",
@@ -352,11 +337,8 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 ACTUALIZAR 
 ~~~~~~~~~
 
-Esta transacción recibe la petición  para actualizar un pago , luego se enruta hacia el microservicio correspondiente y responde en un objeto con formato JSON.
+Esta transacción recibe la petición  para actualizar un pago.
 
-eL que se pueden actualizar son :
-
-* Estados del Pago que se describen en el siguiente recuadro:
 
 **ESTADOS DEL PAG0**
 
@@ -420,7 +402,7 @@ Esta transacción recibe la petición para crear un pago, cuando el pago es crea
             "pernombre":"admin",
             "perapellido":"",
             "pertelefono":"",
-            "percorreo":"blgomez@engideveloper.com",
+            "percorreo":"jeisson.millos@hotmail.com",
             "perfechanacimiento":"2017-05-23 00:00:00",
             "perestado":"Activo",
             "pereliminado":"No",
@@ -513,7 +495,7 @@ Está transacción  recibe la petición para cancelar un pago, tomar en cuenta c
             "pernombre":"admin",
             "perapellido":"",
             "pertelefono":"",
-            "percorreo":"blgomez@engideveloper.com",
+            "percorreo":"jeisson.millos@hotmail.com",
             "perfechanacimiento":"2017-05-23 00:00:00",
             "perestado":"Activo",
             "pereliminado":"No",
@@ -589,7 +571,7 @@ Está transacción  recibe la petición para listar un pago, los filtros pueden 
         "pernombre": "admin",
         "perapellido": "",
         "pertelefono": "",
-        "percorreo": "blgomez@engideveloper.com",
+        "percorreo": "jeisson.millos@hotmail.com",
         "perfechanacimiento": "2017-05-23 00:00:00",
         "perestado": "Activo",
         "pereliminado": "No",
@@ -643,25 +625,25 @@ OFERTA
 ENTIDAD
 ^^^^^^^
 
-+-------------------+--------------------------------------------------------+
-|     Atributos     |         Campos                                         |
-+===================+========================================================+
-| ofertaPK          |  - ofeid: Id de la oferta generada por el sistema      | 
-|                   |  - solid: Id de la solicitud de compra.                | 
-|                   |  - viaid: Id del viajero que realiza la oferta.        | 
-+-------------------+--------------------------------------------------------+
-| monid             |  Id de la moneda.                                      |
-+-------------------+--------------------------------------------------------+
-| ofefechaentrega   |  Fecha de entrega de la compra.                        |
-+-------------------+--------------------------------------------------------+
-| ofechacreacion    |  La fecha de creación es insertada por el sistema."    |
-+-------------------+--------------------------------------------------------+
-| ofevalor          |  Valor de la oferta.                                   |
-+-------------------+--------------------------------------------------------+
-| ofetraida         |  Valor de traída de la compra.                         |
-+-------------------+--------------------------------------------------------+
-| ofeestado         |  Estado del  oferta.                                   |
-+-------------------+--------------------------------------------------------+
++-------------------+--------------------------------------------------------+-----------+
+|     Atributos     |               Campos                                   |  Requerido|
++===================+========================================================+===========+
+| ofertaPK          |  - ofeid: Id de la oferta generada por el sistema      |           |
+|                   |  - solid: Id de la solicitud de compra.                |     √     |
+|                   |  - viaid: Id del viajero que realiza la oferta.        |           |
++-------------------+--------------------------------------------------------+-----------+
+| monid             |  Id de la moneda.                                      |     √     |
++-------------------+--------------------------------------------------------+-----------+
+| ofefechaentrega   |  Fecha de entrega de la compra.                        |     √     |
++-------------------+--------------------------------------------------------+-----------+
+| ofechacreacion    |  La fecha de creación es insertada por el sistema."    |     √     |
++-------------------+--------------------------------------------------------+-----------+
+| ofevalor          |  Valor de la oferta.                                   |     √     |
++-------------------+--------------------------------------------------------+-----------+
+| ofetraida         |  Valor de traída de la compra.                         |     √     |
++-------------------+--------------------------------------------------------+-----------+
+| ofeestado         |  Estado del  oferta.                                   |     √     | 
++-------------------+--------------------------------------------------------+-----------+
 
 .. note::
 
@@ -672,10 +654,19 @@ ENTIDAD
 TRANSACCIONES
 ^^^^^^^^^^^^^
 
+
 CREAR 
 ~~~~~
 
 Esta transacción recibe la petición para crear una oferta.
+
+**URL DEL WEBSERVICE**
+
+.. _Webservice: http://localhost:8080/engideveloper.esb-1.0/microservicio/ejecutar?abreviatura=ofe&menu=maletero_ventas.Oferta&nombreclase=Oferta&accion=crear&ip=200.55.237.21&claveacceso=b80eec776186087e832f4cb55b0f4ede&idtransaccion=1&aplicacion=chrome&idaplicacion=browser-chrome|version-75.0.3770|so-Linux
+
+.. note::
+
+   El tipo de datos que vamos a enviar al webservice son ``(mediatype/json)`` 
 
 **JSON IN**
 
@@ -689,7 +680,7 @@ Esta transacción recibe la petición para crear una oferta.
          "ofertaPK": {
            "ofeid": "",
            "viaid": "8577325c12d271c28ca1d58e31ae0578",
-           "solid": "sol2"
+           "solid": "beab5726a4f3d29de293a210d4434495"
          },
          "ofevalor": 300,
          "ofetraida": 150,
@@ -711,7 +702,7 @@ Esta transacción recibe la petición para crear una oferta.
        "pernombre": "admin",
        "perapellido": "",
        "pertelefono": "",
-       "percorreo": "blgomez@engideveloper.com",
+       "percorreo": "jeisson.millos@hotmail.com",
        "perfechanacimiento": "2017-05-23 00:00:00",
        "perestado": "Activo",
        "pereliminado": "No",
@@ -747,13 +738,38 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 ACTUALIZAR
 ~~~~~~~~~~
 
-Esta transacción recibe la petición  para actualizar  una oferta , los atributos que se pueden actualizar son:
+**URL DEL WEBSERVICE**
 
-* Moneda.
-* Valor de la oferta.
-* Fecha de entrega.
+.. waring::
 
-**JSON IN**
+http://localhost:8080/engideveloper.esb-1.0/microservicio/ejecutar?abreviatura=ofe&menu=maletero_ventas.Oferta
+&nombreclase=Oferta&accion=actualizar&ip=200.55.237.21&claveacceso=b80eec776186087e832f4cb55b0f4ede&idtransaccion=1
+&aplicacion=chrome&idaplicacion=browser-chrome|version-75.0.3770|so-Linux
+
+.. note::
+
+   El tipo de datos que vamos a enviar al webservice son ``(mediatype/json)`` 
+
+
+Esta transacción recibe la petición  para actualizar  una oferta , el atributo  que se puede actualizar es:
+
+* Estado de la oferta.
+
+**ESTADOS DE LA OFERTA**
+
+Esta transacción recibe la petición para crear un pago, cuando el pago es creado puede llevar uno de los siguientes estados.
+
+.. csv-table:: 
+   :header: "Atributo", "Detalle"
+   :widths: 40, 200
+
+    "O", "Rechazada"
+    "1", "Verificada"
+    "2", "Cancelada"
+    "3", "Aceptada"
+..
+
+- Actualización cuando la oferta es Rechazada.
 
 .. code-block:: javascript
 
@@ -764,13 +780,13 @@ Esta transacción recibe la petición  para actualizar  una oferta , los atribut
          "ofertaPK": {
            "ofeid": "d27bb8672019709b96f0c9540c09dace",
            "viaid": "8577325c12d271c28ca1d58e31ae0578",
-           "solid": "sol2"
+           "solid": "beab5726a4f3d29de293a210d4434495"
          },
          "ofevalor": 300,
          "ofetraida": 150,
-         "ofefechaentrega": "2019-08-10",
-         "ofeestado": 4,
-         "ofefechacreacion": "2019-07-30"
+         "ofefechanetrega": "2019-09-20",
+         "ofefechacreacion": "2019-09-19 00:00:00.000000",
+         "ofeestado": 0,
         }
       }
      ],
@@ -789,7 +805,121 @@ Esta transacción recibe la petición  para actualizar  una oferta , los atribut
        "pernombre": "admin",
        "perapellido": "",
        "pertelefono": "",
-       "percorreo": "blgomez@engideveloper.com",
+       "percorreo": "jeisson.millos@hotmail.com",
+       "perfechanacimiento": "2017-05-23 00:00:00",
+       "perestado": "Activo",
+       "pereliminado": "No",
+       "sexid": 1
+              },
+      "lenid": "es"
+       },
+        "rol": {
+       "rolid": 1,
+       "rolnombre": "Administrador",
+       "roldescripcion": "Rol para administrador",
+       "rolestado": "Activo",
+       "roleliminado": "No",
+       "palid": 1
+     }
+   }
+..
+
+
+- Actualización cuando la oferta es Cancelada.
+
+.. code-block:: javascript
+
+   {
+       "detail": [
+     {
+       "objeto": {
+         "ofertaPK": {
+           "ofeid": "d27bb8672019709b96f0c9540c09dace",
+           "viaid": "8577325c12d271c28ca1d58e31ae0578",
+           "solid": "beab5726a4f3d29de293a210d4434495"
+         },
+         "ofevalor": 300,
+         "ofetraida": 150,
+         "ofefechanetrega": "2019-09-20",
+         "ofefechacreacion": "2019-09-19 00:00:00.000000",
+         "ofeestado": 2,
+        }
+      }
+     ],
+     "usuario": {
+         "usuid": "1",
+         "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+     "usuverificado": 1,
+     "usucodigoverificacion": "SU91L9",
+     "usufechacodigo": "2019-07-08 11:27:36",
+     "usufechacreacion": "2019-07-08 11:27:36",
+     "usuestado": "Activo",
+     "usueliminado": "No",
+     "perid": {
+       "perid": "1",
+       "peridentificacion": "1725101784",
+       "pernombre": "admin",
+       "perapellido": "",
+       "pertelefono": "",
+       "percorreo": "jeisson.millos@hotmail.com",
+       "perfechanacimiento": "2017-05-23 00:00:00",
+       "perestado": "Activo",
+       "pereliminado": "No",
+       "sexid": 1
+              },
+      "lenid": "es"
+       },
+        "rol": {
+       "rolid": 1,
+       "rolnombre": "Administrador",
+       "roldescripcion": "Rol para administrador",
+       "rolestado": "Activo",
+       "roleliminado": "No",
+       "palid": 1
+     }
+   }
+..
+
+
+- Actualización cuando la oferta es Aceptada
+
+**JSON IN**
+
+.. code-block:: javascript
+
+   {
+       "detail": [
+     {
+       "objeto": {
+         "ofertaPK": {
+           "ofeid": "d27bb8672019709b96f0c9540c09dace",
+           "viaid": "8577325c12d271c28ca1d58e31ae0578",
+           "solid": "beab5726a4f3d29de293a210d4434495"
+         },
+         "ofevalor": 300,
+         "ofetraida": 150,
+         "ofefechanetrega": "2019-09-20",
+         "ofefechacreacion": "2019-09-19 00:00:00.000000",
+         "ofeestado": 2,
+        }
+      }
+     ],
+     "usuario": {
+         "usuid": "1",
+         "usuclave": "21232f297a57a5a743894a0e4a801fc3",
+     "usuverificado": 1,
+     "usucodigoverificacion": "SU91L9",
+     "usufechacodigo": "2019-07-08 11:27:36",
+     "usufechacreacion": "2019-07-08 11:27:36",
+     "usuestado": "Activo",
+     "usueliminado": "No",
+     "perid": {
+       "perid": "1",
+       "peridentificacion": "1725101784",
+       "pernombre": "admin",
+       "perapellido": "",
+       "pertelefono": "",
+       "percorreo": "jeisson.millos@hotmail.com",
        "perfechanacimiento": "2017-05-23 00:00:00",
        "perestado": "Activo",
        "pereliminado": "No",
@@ -821,14 +951,72 @@ Esta transacción recibe la petición  para actualizar  una oferta , los atribut
 LISTAR
 ~~~~~~
 
-Esta transacción recibe la petición filtrar una oferta
+**URL DEL WEBSERViCE**
 
+.. tip::
+
+http://localhost:8080/engideveloper.esb-1.0/microservicio/ejecutar??abreviatura=ofe&menu=maletero_ventas.VistaOferta&nombreclase=GenericDao&accion=listar&
+ip=200.55.237.21&claveacceso=b80eec776186087e832f4cb55b0f4ede&idtransaccion=1&aplicacion=chrome&idaplicacion=browser-chrome|version-75.0.3770|so-Linux
+
+..
+
+Esta transacción recibe la petición filtrar una oferta.
 
 **JSON IN**
 
-
 .. code-block:: javascript
 
+  {
+    "limit": "200",
+    "orderby": "ofefechacreacion",
+    "filtro": {
+      "ofeid": "16fc186ea750ab42510c2b578193cc74",
+      "solid": "beab5726a4f3d29de293a210d4434495",
+      "viaid": "96c83e72e24c60dcb815fa1072c85425",
+      "monid": 1,
+      "ofevalor": 300,
+      "monnombre": "Dolar",
+      "ofetraida": 150,
+      "monsimbolo": "$",
+      "monabreviatura": "USD",
+      "ofestado": 1,
+      "ofefechanetrega": "2019-09-20",
+      "ofefechacreacion": "2019-09-19 00:00:00.000000",
+      "viaidentificacion": "0104741806",
+      "vianombrecomercial": "Alf"
+     },
+   "usuario": {
+      "usuid": "1",
+      " usuclave": "21232f297a57a5a743894a0e4a801fc3",
+      "usuverificado": 1,
+      "usucodigoverificacion": "SU91L9",
+      "usufechacodigo": "2019-09-17 16:08:44",
+      "usufechacreacion": "2019-09-17 16:08:44",
+      "usuestado": "Activo",
+      "usueliminado": "No",
+    "perid": {
+      "perid": "1",
+      "peridentificacion": "1725101784",
+      "pernombre": "admin",
+      "perapellido": "",
+      "pertelefono": ""
+      "percorreo": "jeisson.millos@hotmail.com",
+      "perfechanacimiento": "2017-05-23 00:00:00",
+      "perestado": "Activo",
+      "pereliminado": "No",
+      "sexid": 1
+      },
+     "lenid": "es"
+    },
+  "rol": {
+    "rolid": 1,
+    "rolnombre": "Administrador",
+    "roldescripcion": "Rol para administrador",
+    "rolestado": "Activo",
+    "roleliminado": "No",
+    "palid": 1
+   }
+ }
 ..
 
 
@@ -836,17 +1024,67 @@ Esta transacción recibe la petición filtrar una oferta
 
 Se detalla por los campos que se puede filtrar la solicitud.
 
-.. csv-table:: 
-   :header: "Campo", "Descripcion"
-   :widths: 40, 1000
+**FILTROS**
 
-    "ofertaPK", "Id de la oferta
-    "ofeestado", "Estado de la oferta"
+.. csv-table:: 
+   :header: "Campo", "Descripción"
+   :widths: 40, 100
+
+    "ofeid", "Id de la oferta"
+    "viaid","Id del Viajero"
+    "solid","Id  de la Solicitud"
+    "usuid","Id del Usuario"
+     "ofevalor","Valor de la Oferta"
+        "monnombre","Nombre de la Moneda"
+    "ofetraida","Valor de la Importación"
+        "monsimbolo","Simbolo de la Moneda"
+        "monabreviatura":"Abreviatura de la Moneda"
+        "ofestado","Estado de la Oferta"
+        "ofefechanetrega","Fecha de Entrega"
+        "ofefechacreacion","Fecha de Creación"
+        "viaidentificacion","Identificacion del Viajero""
+        "vianombrecomercial","Nombre del Viajero"
+  
 
 **JSON OUT**
 
+.. code-block:: javascript
 
+  [
 
+    {
+        "ofeid":"16fc186ea750ab42510c2b578193cc74",
+        "solid":"beab5726a4f3d29de293a210d4434495",
+        "viaid":"96c83e72e24c60dcb815fa1072c85425",
+        "monid":1,
+        "ofevalor":300,
+        "monnombre":"Dolar",
+        "ofetraida":150,
+        "monsimbolo":"$",
+        "monabreviatura":"USD",
+        "ofestado":1,
+        "ofefechanetrega":"2019-09-20",
+        "ofefechacreacion":"2019-09-19 00:00:00.000000",
+        "viaidentificacion":"0104741806",
+        "vianombrecomercial":"Alf"
+    },
+    {
+        "ofeid":"363b122c528f54df4a0446b6bab05515",
+        "solid":"beab5726a4f3d29de293a210d4434495",
+        "viaid":"96c83e72e24c60dcb815fa1072c85425",
+        "monid":1,
+        "ofevalor":300,
+        "monnombre":"Dolar",
+        "ofetraida":250,
+        "monsimbolo":"$",
+        "monabreviatura":"USD",
+        "ofestado":1,
+        "ofefechanetrega":"2019-09-22",
+        "ofefechacreacion":"2019-09-19 00:00:00.000000",
+        "viaidentificacion":"0104741806",
+        "vianombrecomercial":"Alf"
+    }
+ ]
 
 SOLICITUD
 ---------
@@ -935,7 +1173,7 @@ Solicitud creada que lleva link e imagen.
       "pernombre": "admin",
       "perapellido": "",
       "pertelefono": "",
-      "percorreo": "blgomez@engideveloper.com",
+      "percorreo": "jeisson.millos@hotmail.com",
       "perfechanacimiento": "2017-05-23 00:00:00",
       "perestado": "Activo",
       "pereliminado": "No",
@@ -991,7 +1229,7 @@ Solicitud creada que lleva link e imagen.
       "pernombre": "admin",
       "perapellido": "",
       "pertelefono": "",
-      "percorreo": "blgomez@engideveloper.com",
+      "percorreo": "jeisson.millos@hotmail.com",
       "perfechanacimiento": "2017-05-23 00:00:00",
       "perestado": "Activo",
       "pereliminado": "No",
@@ -1053,7 +1291,7 @@ Solicitud creada que lleva link e imagen.
       "pernombre": "admin",
       "perapellido": "",
       "pertelefono": "",
-      "percorreo": "blgomez@engideveloper.com",
+      "percorreo": "jeisson.millos@hotmail.com",
       "perfechanacimiento": "2017-05-23 00:00:00",
       "perestado": "Activo",
       "pereliminado": "No",
@@ -1134,7 +1372,7 @@ ACTUALIZAR
             "pernombre":"admin",
             "perapellido":"",
             "pertelefono":"",
-            "percorreo":"blgomez@engideveloper.com",
+            "percorreo":"jeisson.millos@hotmail.com",
             "perfechanacimiento":"2017-05-23 00:00:00",
             "perestado":"Activo",
             "pereliminado":"No",
@@ -1215,7 +1453,7 @@ LISTAR
         "pernombre": "admin",
         "perapellido": "",
         "pertelefono": "",
-        "percorreo": "blgomez@engideveloper.com",
+        "percorreo": "jeisson.millos@hotmail.com",
         "perfechanacimiento": "2017-05-23 00:00:00",
         "perestado": "Activo",
         "pereliminado": "No",
@@ -1321,7 +1559,7 @@ Esta transacción recibe la petición para crear una forma de pago.
         "pernombre": "admin",
         "perapellido": "",
         "pertelefono": "",
-        "percorreo": "blgomez@engideveloper.com",
+        "percorreo": "jeisson.millos@hotmail.com",
         "perfechanacimiento": "2017-05-23 00:00:00",
         "perestado": "Activo",
         "pereliminado": "No",
@@ -1388,7 +1626,7 @@ Esta transacción recibe la petición para actualizar una forma de pago.
         "pernombre": "admin",
         "perapellido": "",
         "pertelefono": "",
-        "percorreo": "blgomez@engideveloper.com",
+        "percorreo": "jeisson.millos@hotmail.com",
         "perfechanacimiento": "2017-05-23 00:00:00",
         "perestado": "Activo",
         "pereliminado": "No",
@@ -1462,7 +1700,7 @@ Esta transacción recibe la petición para listar una forma de pago.
         "pernombre": "admin",
         "perapellido": "",
         "pertelefono": "",
-        "percorreo": "blgomez@engideveloper.com",
+        "percorreo": "jeisson.millos@hotmail.com",
         "perfechanacimiento": "2017-05-23 00:00:00",
         "perestado": "Activo",
         "pereliminado": "No",

@@ -1,6 +1,5 @@
 .. index::
-   single: venta
-
+   single: producto
 
 MICROSERVICIO PRODUCTO
 ======================
@@ -71,7 +70,8 @@ Dentro del modulo persona tenemos las siguientes entidades.
 INTERES
 -------
 
-**ENTIDAD**
+ENTIDAD
+^^^^^^^
 
 .. csv-table:: 
    :header: "Código", "Descripción"
@@ -96,49 +96,51 @@ Esta transacción recibe la petición para crear un interés.
 
 .. code-block:: javascript
 
-  {
-     "detail": [
-      {
-        "objeto": {
-          "intid": "",
-          "viaid": "via1",
-          "catid": "b12223334444"
+ {
+
+    "detail":[
+        {
+            "objeto":{
+                "intid":"",
+                "viaid":"96c83e72e24c60dcb815fa1072c85425",
+                "catid":"b03c7c0ace395d80182db07ae2c30f034"
+            }
         }
-      }
     ],
-    "generarid": true,
-     "usuario": {
-      "usuid": "1",
-      "usuclave": "21232f297a57a5a743894a0e4a801fc3",
-      "usuverificado": 1,
-      "usucodigoverificacion": "SU91L9",
-      "usufechacodigo": "2019-07-08 11:27:36",
-      "usufechacreacion": "2019-07-08 11:27:36",
-      "usuestado": "Activo",
-      "usueliminado": "No",
-    "perid": {
-       "perid": "1",
-       "peridentificacion": "1725101784",
-       "pernombre": "admin",
-       "perapellido": "",
-       "pertelefono": "",
-       "percorreo": "blgomez@engideveloper.com",
-       "perfechanacimiento": "2017-05-23 00:00:00",
-       "perestado": "Activo",
-        "pereliminado": "No",
-       "sexid": 1
-      },
-       "lenid": "es"
-      },
-      "rol": {
-      "rolid": 1,
-      "rolnombre": "Administrador",
-      "roldescripcion": "Rol para administrador",
-      "rolestado": "Activo",
-      "roleliminado": "No",
-      "palid": 1
-     }
-  }
+    "generarid":true,
+    "usuario":{
+        "usuid":"1",
+        "usuclave":"21232f297a57a5a743894a0e4a801fc3",
+        "usuverificado":1,
+        "usucodigoverificacion":"SU91L9",
+        "usufechacodigo":"2019-07-08 11:27:36",
+        "usufechacreacion":"2019-07-08 11:27:36",
+        "usuestado":"Activo",
+        "usueliminado":"No",
+        "perid":{
+            "perid":"1",
+            "peridentificacion":"1725101784",
+            "pernombre":"admin",
+            "perapellido":"",
+            "pertelefono":"",
+            "percorreo":"jeisson.millos@hotmail.com",
+            "perfechanacimiento":"2017-05-23 00:00:00",
+            "perestado":"Activo",
+            "pereliminado":"No",
+            "sexid":1
+        },
+        "lenid":"es"
+    },
+    "rol":{
+        "rolid":1,
+        "rolnombre":"Administrador",
+        "roldescripcion":"Rol para administrador",
+        "rolestado":"Activo",
+        "roleliminado":"No",
+        "palid":1
+    }
+
+}
 
 ..
 
@@ -197,7 +199,7 @@ Los campos que se pueden actualizar del interés son:
          "pernombre": "admin",
          "perapellido": "",
          "pertelefono": "",
-         "percorreo": "blgomez@engideveloper.com",
+         "percorreo": "jeisson.millos@hotmail.com",
          "perfechanacimiento": "2017-05-23 00:00:00",
          "perestado": "Activo",
          "pereliminado": "No",
@@ -273,7 +275,7 @@ Esta transacción recibe la petición para listar un interés,aquí se puede apl
         "pernombre": "admin",
         "perapellido": "",
         "pertelefono": "",
-        "percorreo": "blgomez@engideveloper.com",
+        "percorreo": "jeisson.millos@hotmail.com",
         "perfechanacimiento": "2017-05-23 00:00:00",
         "perestado": "Activo",
         "pereliminado": "No",
@@ -311,9 +313,10 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
  ]
 
 CATEGORIA
-^^^^^^^^^
+---------
 
-**MODELO**
+ENTIDAD
+^^^^^^^
 
 +-------------------+--------------------------------------------------------+
 |     Atributos     |         Campos                                         |
@@ -403,7 +406,7 @@ Esta transacción recibe la petición para crear una categoria.
             "pernombre": "admin",
             "perapellido": "",
             "pertelefono": "",
-            "percorreo": "blgomez@engideveloper.com",
+            "percorreo": "jeisson.millos@hotmail.com",
             "perfechanacimiento": "2017-05-23 00:00:00",
             "perestado": "Activo",
             "pereliminado": "No",
@@ -492,7 +495,7 @@ Esta transacción recibe la petición para crear una categoria.
           "pernombre": "admin",
           "perapellido": "",
           "pertelefono": "",
-          "percorreo": "blgomez@engideveloper.com",
+          "percorreo": "jeisson.millos@hotmail.com",
           "perfechanacimiento": "2017-05-23 00:00:00",
           "perestado": "Activo",
           "pereliminado": "No",

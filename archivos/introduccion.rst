@@ -4,8 +4,6 @@
 INTRODUCCION
 ============
 
-
-
 Estructura
 ----------
 

@@ -2,7 +2,7 @@
 ENGIDEVELOPER MALETERO
 ======================
 
-Documentación del Proyecto Maletero.
+Bienvenidos se indicara las practicas a realizar.
 
 .. toctree::
    :hidden:
@@ -10,3 +10,7 @@ Documentación del Proyecto Maletero.
    archivos/index
 
 .. include:: /archivos/map.rst.inc
+
+
+
+
