@@ -1,21 +1,4 @@
-Skip to content
- 
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@gomezgleonardob 
-1
-0 0 gomezgleonardob/Doc_React_Django
- Code  Issues 0  Pull requests 1  Actions  Projects 0  Wiki  Security  Insights  Settings
-Doc_React_Django/conf.py
-@gomezgleonardob gomezgleonardob Update Docs
-5ee22a9 on 29 May
-262 lines (192 sloc)  8.21 KB
-  
 # -*- coding: utf-8 -*-
 #
 # SoundRevolution Documentacion documentation build configuration file, created by
@@ -51,7 +34,7 @@ extensions = [
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['ntemplates'
+templates_path = ['ntemplates']
 
 # The suffix of source filenames.
 source_suffix = '.rst'
