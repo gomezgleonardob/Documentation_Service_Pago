@@ -56,7 +56,7 @@ Las transacciones que se pueden realizar son las siguientes:
 - Crear.
 - Actualizar.
 - Listar.
-- Cancelar.
+- Eliminar.
 
 ENTIDADES
 ---------
@@ -74,15 +74,15 @@ ENTIDAD
 ^^^^^^^
 
 .. csv-table:: 
-   :header: "Código", "Descripción"
+   :header: "Código", "Descripción","Requerido"
    :widths: 40, 100
 
-    "intid", "Id del interés."
-    "viaid", "Id del viajero."
-    "catid", "Id de la categoría."
-    "viaid", "Id del viajero."
-    "inestado", "Estado del interés."
-    "ineliminado", "Eliminación del interés."
+    "intid", "Id del interés.","√"
+    "viaid", "Id del viajero.","√"
+    "catid", "Id de la categoría.,"√"
+    "viaid", "Id del viajero.","√"
+    "inestado", "Estado del interés.,"√"
+    "ineliminado", "Eliminación del interés.,"√"
 
 TRANSACCIONES
 ^^^^^^^^^^^^^
@@ -91,6 +91,33 @@ CREAR
 ~~~~~
 
 Esta transacción recibe la petición para crear un interés.
+
+**URL DEL WEBSERVICE**
+
+::
+    
+     Indicamos la url del webservice para crear.
+
+    .. webservice: http://localhost:8080/engideveloper.esb-1.0/microservicio/ejecutar?abreviatura=ofe&menu=maletero_ventas.Oferta&nombreclase=Oferta&accion=actualizar&ip=200.55.237.21&claveacceso=b80eec776186087e832f4cb55b0f4ede&idtransaccion=1&aplicacion=chrome&idaplicacion=browser-chrome|version-75.0.3770|so-Linux
+
+**PARAMETROS DEL WEBSERVICE**
+
+.. csv-table:: **Persistencia de Datos**
+   :header: "Parametro", "Detalle"
+   :widths: 40, 500
+
+    "Protocolo", "Para pruebas se usa http y para producción https."
+    "IpServidor", "Ip o Url de producción solicitar a la persona encargada del modulo ESB."
+    "ClaveAcceso", "Clave única de acceso."
+    "Accion", "crear."
+    "Aplicacion","Tipo de plataforma desde donde se realiza la transacción ejemplo Chrome, Mozilla, Android, IOS."
+    "IdAplicacion", "Id del dispositivo desde donde se realiza la transacción ejemplo."
+    "Menu", "Maletero_producto.Interes."
+    "Abreviatura", "int"
+    "Nombreclase","GenericDao."
+    "Ip", "Ip del usuario que realiza la petición."
+..
+..
 
 **JSON IN**
 
@@ -141,7 +168,6 @@ Esta transacción recibe la petición para crear un interés.
     }
 
 }
-
 ..
 
 Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,esta codificación esta basada en dos clave, clave de encriptación y clave del vector de inicialización. Estas claves deben ser brindadas se configuran en el properties engiAcceso.properties.
@@ -159,12 +185,44 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
 ACTUALIZAR
 ~~~~~~~~~~
 
-Esta transacción recibe la petición para crear un interés.
+Esta transacción recibe la petición para actualizar un interés.
+
+::
+    
+     Indicamos la url del webservice .
+
+    .. webservice: http://localhost:8080/engideveloper.esb-1.0/microservicio/ejecutar?abreviatura=int&menu=maletero_producto.Interes&nombreclase=GenericDao&accion=actualizar&ip=200.55.237.110&claveacceso=b80eec776186087e832f4cb55b0f4ede&idtransaccion=1&aplicacion=chrome&idaplicacion=browser-chrome|version-75.0.3770|so-Linux
+
+**PARAMETROS DEL WEBSERVICE**
+
+.. csv-table:: **Persistencia de Datos**
+   :header: "Parametro", "Detalle"
+   :widths: 40, 500
+
+    "Protocolo", "Para pruebas se usa http y para producción https."
+    "IpServidor", "Ip o Url de producción solicitar a la persona encargada del modulo ESB."
+    "ClaveAcceso", "Clave única de acceso."
+    "Accion", "Actualizar."
+    "Aplicacion","Tipo de plataforma desde donde se realiza la transacción ejemplo Chrome, Mozilla, Android, IOS."
+    "IdAplicacion", "Id del dispositivo desde donde se realiza la transacción ejemplo."
+    "Menu", "Maletero_producto.Interes."
+    "Abreviatura", "int"
+    "Nombreclase","GenericDao."
+    "Ip", "Ip del usuario que realiza la petición."
+..
+
+**JSON OUT**
+
+.. csv-table:: 
+   :header: "Código", "Descripción"
+   :widths: 40, 100
+
+    "sucess000", "Transacción Exitosa"
+    "error008", "Datos Inválidos"
+    "errorcategoria001","Error: solo se permiten archivos .png"
 
 Los campos que se pueden actualizar del interés son:
 
-- Viajero.
-- Categoría.
 - Estado.
 
 **JSON IN**
@@ -176,7 +234,7 @@ Los campos que se pueden actualizar del interés son:
        {
          "objeto": {
            "intid": "A59IFU8Q6cCAoIC1qu",
-           "viaid": "via1",
+           "viaid": "96c83e72e24c60dcb815fa1072c85425",
            "catid": "3ODk00CpEpqTJsPZDKcQ5",
            "inestado": "Activo",
            "inteliminado": "No"
@@ -230,7 +288,7 @@ Los datos de entrada deben ser en formato JSON y codificados en AES 128 bits,est
     "sucess000", "Transacción Exitosa"
     "error008", "Datos Inválidos"
     "errorcategoria001","Error: solo se permiten archivos .png"
-
+..
 
 LISTAR
 ~~~~~~
@@ -244,10 +302,10 @@ Esta transacción recibe la petición para listar un interés,aquí se puede apl
    :widths: 40, 100
 
     "intid", "Id del interés."
-    "viaid", "Id del viajero."
     "catid", "Id de la categoría."
     "viaid", "Id del viajero."
     "inestado", "Estado del interés."
+..
 
 **JSON IN**
 

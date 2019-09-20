@@ -8,7 +8,6 @@ ENGIDEVELOPER MALETERO
     esb
     venta
     producto
-    venta
     persona
 
 .. include:: /archivos/map.rst.inc
