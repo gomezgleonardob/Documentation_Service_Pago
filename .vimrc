@@ -58,10 +58,7 @@ set showmatch
 " Activa python highlight
 let python_highlight_all = 1
 
-" Tamaño por defecto del terminal
-set termwinsize=10x0
-
-" encoding
+" encoding"
 set encoding=utf-8
 
 " Configurando <leader> shortcut
@@ -73,7 +70,7 @@ let mapleader = ","
 map <C-n> :NERDTreeToggle<CR>
 
 " Abrir terminal
-map <F2> :belowright terminal<CR>
+map <F2> :let $VIM_DIR=expand('%:p:h')<CR>:belowright terminal<CR>cd $VIM_DIR<CR>
 
 "split navigations
 nnoremap <C-J> <C-W><C-J>
